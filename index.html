@@ -91,8 +91,8 @@
 
     <!-- Welcome Section -->
     <section id="welcome" class="welcome">
-      <a href="https://patheticcs.github.io/" target="_blank">GitHub</a>
-      <a href="https://pathetic.vercel.app/" target="_blank">Vercel</a>
+      <a href="https://patheticcs.github.io/" target="_blank" id="github-link">GitHub</a>
+      <a href="https://pathetic.vercel.app/" target="_blank" id="vercel-link">Vercel</a>
     </section>
 
     <!-- Audio -->
@@ -103,19 +103,20 @@
 
     <!-- JavaScript -->
     <script>
-      // Function to play audio on mouse move
-      function playAudioOnMouseMove() {
+      // Function to play audio when link is clicked
+      function playAudio() {
         var audio = document.getElementById('background-audio');
-        if (audio.paused) {
-          audio.play();  // Play audio when mouse moves
-        }
-
-        // Remove the event listener after the first mouse move to avoid repeated triggering
-        document.removeEventListener('mousemove', playAudioOnMouseMove);
+        audio.play(); // Play the audio
       }
 
-      // Add the mousemove event listener
-      document.addEventListener('mousemove', playAudioOnMouseMove);
+      // Add event listeners to GitHub and Vercel links to play audio on click
+      document.getElementById('github-link').addEventListener('click', function(event) {
+        playAudio();
+      });
+
+      document.getElementById('vercel-link').addEventListener('click', function(event) {
+        playAudio();
+      });
 
       // Disable right-click context menu
       document.addEventListener('contextmenu', function(e) {
