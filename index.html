@@ -96,18 +96,26 @@
     </section>
 
     <!-- Audio -->
-    <audio id="background-audio" autoplay>
+    <audio id="background-audio">
       <source src="https://dl.sndup.net/dy9vk/intro.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
 
     <!-- JavaScript -->
     <script>
-      // Ensure the audio element plays automatically without user interaction
-      document.addEventListener('DOMContentLoaded', function () {
+      // Function to play audio on mouse move
+      function playAudioOnMouseMove() {
         var audio = document.getElementById('background-audio');
-        audio.play();  // Ensure it plays as soon as the page loads
-      });
+        if (audio.paused) {
+          audio.play();  // Play audio when mouse moves
+        }
+
+        // Remove the event listener after the first mouse move to avoid repeated triggering
+        document.removeEventListener('mousemove', playAudioOnMouseMove);
+      }
+
+      // Add the mousemove event listener
+      document.addEventListener('mousemove', playAudioOnMouseMove);
 
       // Disable right-click context menu
       document.addEventListener('contextmenu', function(e) {
