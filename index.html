@@ -103,6 +103,12 @@
 
     <!-- JavaScript -->
     <script>
+      // Ensure the audio element plays automatically without user interaction
+      document.addEventListener('DOMContentLoaded', function () {
+        var audio = document.getElementById('background-audio');
+        audio.play();  // Ensure it plays as soon as the page loads
+      });
+
       // Disable right-click context menu
       document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
