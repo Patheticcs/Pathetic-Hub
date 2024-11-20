@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pathetic Hub: Offering the best Roblox scripts, executors, proxies, and bypasses to enhance your gaming experience.">
+    <title>Home</title>
+    <style>
+      #background-video {
+        background: linear-gradient(to bottom, black, white); /* Gradient from black to white */
+        width: 100%;
+        height: 100vh;
+        position: absolute; /* Ensure it's behind the content */
+        top: 0;
+        left: 0;
+        z-index: -1; /* Ensure it stays behind other content */
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: #000;
+        color: #fff;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        font-size: 16px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .welcome {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        animation: fadeIn 1.5s ease-out;
+      }
+
+      .welcome a {
+        margin-top: 5px;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, .6);
+        border: none;
+        color: var(--white);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
+        backdrop-filter: blur(5px);
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        margin-bottom: 15px;
+      }
+
+      .welcome a:hover {
+        transform: scale(1.1); /* Slightly enlarges the button */
+        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6); /* Larger shadow */
+        text-shadow: 0 0 15px #fff, 0 0 25px #fff; /* Glowing text effect */
+        color: #fff; /* Ensures text color remains white */
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background Gradient -->
+    <div id="background-video"></div>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="welcome">
+      <a href="https://patheticcs.github.io/" target="_blank">GitHub</a>
+      <a href="https://pathetic.vercel.app/" target="_blank">Vercel</a>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+      // Disable right-click context menu
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+      });
+
+      // Disable press and hold behavior on links (both desktop and mobile)
+      document.addEventListener('mousedown', function(e) {
+        if (e.target.tagName === 'A') {
+          e.preventDefault();
+        }
+      });
+
+      document.addEventListener('touchstart', function(e) {
+        if (e.target.tagName === 'A') {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>
