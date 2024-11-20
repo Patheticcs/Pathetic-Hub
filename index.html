@@ -8,13 +8,13 @@
     <link rel="icon" href="https://iili.io/25Go0TF.png" type="image/x-icon">
     <style>
       #background-video {
-        background: linear-gradient(to bottom, black, white); /* Gradient from black to white */
+        background: linear-gradient(to bottom, black, white);
         width: 100%;
         height: 100vh;
-        position: absolute; /* Ensure it's behind the content */
+        position: absolute;
         top: 0;
         left: 0;
-        z-index: -1; /* Ensure it stays behind other content */
+        z-index: -1;
       }
 
       * {
@@ -31,6 +31,7 @@
         overflow-x: hidden;
         overflow-y: hidden;
         font-size: 16px;
+        position: relative;
       }
 
       html {
@@ -53,10 +54,10 @@
         margin-top: 5px;
         padding: 15px 40px;
         font-size: 1.2rem;
-        background-color: rgba(255, 255, 255, 0);
-        box-shadow: 0 4px 25px rgba(0, 0, 0, .6);
+        background-color: transparent;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
         border: none;
-        color: var(--white);
+        color: #fff;
         border-radius: 30px;
         cursor: pointer;
         transition: transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
@@ -68,10 +69,10 @@
       }
 
       .welcome a:hover {
-        transform: scale(1.1); /* Slightly enlarges the button */
-        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6); /* Larger shadow */
-        text-shadow: 0 0 15px #fff, 0 0 25px #fff; /* Glowing text effect */
-        color: #fff; /* Ensures text color remains white */
+        transform: scale(1.1);
+        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6);
+        text-shadow: 0 0 15px #fff, 0 0 25px #fff;
+        color: #fff;
       }
 
       @keyframes fadeIn {
@@ -92,8 +93,8 @@
 
     <!-- Welcome Section -->
     <section id="welcome" class="welcome">
-      <a href="https://patheticcs.github.io/" target="_blank" id="github-link">GitHub</a>
-      <a href="https://pathetic.vercel.app/" target="_blank" id="vercel-link">Vercel</a>
+      <a href="https://patheticcs.github.io/" target="_blank" id="github-link" title="Visit GitHub">GitHub</a>
+      <a href="https://pathetic.vercel.app/" target="_blank" id="vercel-link" title="Visit Vercel">Vercel</a>
     </section>
 
     <!-- Audio -->
