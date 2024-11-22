@@ -5,6 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hub</title>
     <link rel="icon" href="https://iili.io/27ddQyB.md.png" type="image/x-icon">
+    <script>
+        // Disable keypress for I, F12, Ctrl, Shift
+        document.addEventListener('keydown', function(event) {
+            // Disable Ctrl+Shift+I (DevTools) and F12 and other keys
+            if (event.key === 'I' || event.key === 'F12' || 
+                (event.ctrlKey && (event.key === 'I' || event.key === 'U')) || 
+                event.shiftKey) {
+                event.preventDefault();
+            }
+        });
+
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+
+        // Disable the inspect element option (Ctrl + Shift + I or F12)
+        window.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey && e.shiftKey && e.key === 'I') || (e.key === 'F12')) {
+                e.preventDefault();
+            }
+        });
+
+        // Detect if dev tools are opened and disable functionality
+        function detectDevTools() {
+            const threshold = 160; // Value based on browser window size changes when dev tools open
+            const devTools = window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold;
+
+            if (devTools) {
+                alert('Developer tools detected! Some functionality has been disabled.');
+                // Optional: You can redirect, reload or prevent further access here
+                window.location.href = 'about:blank'; // Redirect to a blank page
+            }
+        }
+
+        // Detect dev tools every 500ms
+        setInterval(detectDevTools, 500);
+    </script>
 </head>
 <body>
     <iframe src="https://html.cafe/xbaade32f" 
