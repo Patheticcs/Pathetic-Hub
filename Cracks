@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A web page featuring custom styled buttons for games and universal scripts.">
+    <title>Scripts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        font-family: 'Lato', sans-serif;
+        background-color: white;
+        font-weight: bold;
+        box-sizing: border-box;
+        text-align: center;
+        overflow-x: hidden;
+        /* Prevent horizontal scrolling */
+        overflow-y: auto;
+        /* Allow vertical scrolling */
+        height: 100%;
+        /* Ensure body fills viewport height */
+      }
+
+      header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+      }
+
+      .back-button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+      }
+
+      #searchInput {
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 30px;
+        background-color: transparent;
+        color: black;
+        transition: box-shadow 0.5s ease, transform 0.5s ease, margin 0.5s ease;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 80px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        /* Enable scrolling when content overflows */
+      }
+
+      .buttons-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
+        max-width: 1000px;
+        padding: 0 20px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+      }
+
+      .button {
+        width: 100px;
+        height: 40px;
+        padding: 15px 40px;
+        font-size: 1rem;
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+        /* Black shadow */
+        color: black;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.4s ease-out;
+        /* Smoother hover transition */
+        backdrop-filter: blur(5px);
+        display: inline-flex;
+        /* Change from inline-block to inline-flex */
+        justify-content: center;
+        /* Horizontally center text */
+        align-items: center;
+        /* Vertically center text */
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .back-button {
+        background-color: white;
+        color: black;
+        height: 40px;
+        width: 100px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 30px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, margin-left 0.3s ease, margin-right 0.3s ease;
+      }
+
+      .button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6);
+        text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 0, 0, 0.3);
+        color: black;
+      }
+
+      .back-button:hover {
+        background-color: white;
+        color: black;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+        transform: scale(1.1);
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+
+      #searchInput:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.9), 0 0 70px rgba(0, 0, 0, 0.7);
+        transform: scale(1.1);
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      /* Media query for mobile screens */
+      @media (max-width: 768px) {
+        .button-container {
+          padding-top: 10px;
+        }
+
+        .button {
+          font-size: 12px;
+          height: 30px;
+          width: 90px;
+          margin: 5px 0;
+          user-select: none;
+          pointer-events: auto;
+        }
+
+        .button:hover {
+          text-shadow: 0 0 0px rgba(0, 0, 0, .3), 0 0 40px rgba(0, 0, 0, .5);
+          box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+          background-color: white;
+          font-size: 12px;
+          height: 30px;
+          width: 90px;
+          color: black;
+        }
+
+        /* Custom scrollbar style for mobile */
+        ::-webkit-scrollbar {
+          width: 8px;
+          /* Set scrollbar width */
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: rgba(0, 0, 0, 0.5);
+          /* Thumb color */
+          border-radius: 10px;
+          /* Round edges of the scrollbar thumb */
+        }
+
+        ::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.1);
+          /* Track color */
+          border-radius: 10px;
+        }
+      }
+
+      .text {
+        color: black;
+        /* Text color */
+        margin-top: 50px;
+        font-size: 16px;
+        /* Adjust font size if needed */
+      }
+
+      .text-button {
+        background-color: white;
+        color: black;
+        height: 30px;
+        width: 140px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 20px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .text-button:hover {
+        text-shadow: 0 0 0px rgba(0, 0, 0, .3), 0 0 40px rgba(0, 0, 0, .5);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+        background-color: white;
+        transform: scale(1.03);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="back-button-container">
+        <div class="back-button" id="backButton" onclick="window.open('https://html.cafe/x43aa6902', '_self')" role="button">
+          <span>BACK</span>
+        </div>
+        <input type="text" id="searchInput" placeholder="Search..." oninput="filterButtons()" />
+      </div>
+    </header>
+    <div class="button-container">
+      <div class="buttons-grid" id="universalButtons">
+        <div class="button" onclick="openLink('https://pastefy.app/OdJNvS1n/raw')" role="button" aria-label="Open">
+          <span>Rybowe Hub</span>
+        </div>
+        <div class="button" onclick="openLink('https://pastefy.app/XljmbRS8/raw')" role="button" aria-label="Open">
+          <span>Silent Hub</span>
+        </div>
+        <div class="button" onclick="openLink('https://raw.githubusercontent.com/venoxcc/universalscripts/refs/heads/main/fisch')" role="button" aria-label="Open">
+          <span>Rb1Scripts</span>
+        </div>
+        <div class="button" onclick="openLink('https://raw.githubusercontent.com/venoxcc/universalscripts/refs/heads/main/perfectushub')" role="button" aria-label="Open">
+          <span>PerfectusHub Anime Shadow</span>
+        </div>
+        <div class="button" onclick="openLink('https://raw.githubusercontent.com/venoxcc/universalscripts/refs/heads/main/prestinehubv3')" role="button" aria-label="Open">
+          <span>Prestine Hub</span>
+        </div>
+        <div class="button" onclick="openLink('https://raw.githubusercontent.com/venoxcc/universalscripts/refs/heads/main/Projeto_LKB')" role="button" aria-label="Open">
+          <span>Projeto LKB</span>
+        </div>
+        <div class="button" onclick="openLink('https://raw.githubusercontent.com/venoxcc/universalscripts/refs/heads/main/watchatv.lua')" role="button" aria-label="Open">
+          <span>Aqua Hub</span>
+        </div>
+      </div>
+      <span class="text">Thank you for venox for these cracks!</span>
+      <div class="text-button" onclick="openLink('https://discord.gg/APQqXe6mPv')" role="button" aria-label="Open">
+        <span>Their Discord</span>
+      </div>
+      <script>
+        // Function to open links
+        function openLink(url) {
+          window.open(url, '_blank');
+        }
+        // Function to filter buttons
+        function filterButtons() {
+          const input = document.getElementById('searchInput');
+          const filter = input.value.toLowerCase();
+          const buttons = document.querySelectorAll('.button');
+          buttons.forEach(function(button) {
+            const text = button.textContent || button.innerText;
+            if (text.toLowerCase().indexOf(filter) > -1) {
+              button.style.display = '';
+            } else {
+              button.style.display = 'none';
+            }
+          });
+        }
+        
+              // Function to disable right-click on the page
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+      });
+      // Prevent press and hold behavior on button links (for both desktop and mobile)
+      document.addEventListener('mousedown', function(e) {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+          e.preventDefault(); // Prevent the default behavior (click or long press) on links and buttons
+        }
+      });
+      // Disable long press on button links (mobile/touch devices)
+      document.addEventListener('touchstart', function(e) {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+          e.preventDefault(); // Prevent long press behavior on links and buttons (mobile)
+        }
+      });
+      // Additional handling for links after DOM content is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        // Select all links
+        const links = document.querySelectorAll("a");
+        // Add event listeners to each link for context menu prevention
+        links.forEach(link => {
+          link.addEventListener("contextmenu", (event) => {
+            event.preventDefault(); // Prevent context menu
+          });
+        });
+      });
+      </script>
+  </body>
+</html>
