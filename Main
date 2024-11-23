@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pathetic Hub: Offering the best Roblox scripts, executors, proxies, and bypasses to enhance your gaming experience.">
+    <title>Destination</title>
+    <link rel="icon" href="https://iili.io/25Go0TF.png" type="image/x-icon">
+    <style>
+      #background-video {
+        background: linear-gradient(to bottom, white, white);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: #000;
+        color: #fff;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        font-size: 16px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .welcome {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        animation: fadeIn 1.5s ease-out;
+      }
+
+      .button {
+        margin: 10px 0;
+        padding: 16px 20px; /* More balanced padding */
+        font-size: 1.2rem;
+        background-color: rgba(255, 255, 255, 0); /* Slight transparency for cleaner look */
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+        border: none;
+        color: #000;
+        border-radius: 30px; /* More rounded corners */
+        cursor: pointer;
+        transition: 
+          transform 0.3s ease, 
+          box-shadow 0.3s ease, 
+          text-shadow 0.3s ease,
+          margin-top 0.3s ease,
+          margin-bottom 0.3s ease;
+        backdrop-filter: blur(5px);
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        width: 200px;
+        height: 60px;
+      }
+
+      .button:hover {
+        transform: scale(1.01);
+        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6);
+        text-shadow: 0 0 15px #fff, 0 0 25px #fff;
+        color: black;
+      }
+
+.button.back {
+  margin-top: 5px;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, .3);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+  border: none;
+  color: black;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(5px);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 30px;
+  width: 130px;
+  height: 50px;
+}
+      
+      .button.back:hover {
+        transform: scale(1.01);
+        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6);
+        text-shadow: 0 0 15px #fff, 0 0 25px #fff;
+        color: black;
+}
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .text {
+        background-color: white;
+        color: black;
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .button {
+          width: 200px; /* Make buttons slightly smaller on smaller screens */
+          height: 60px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .button {
+          width: 180px; /* Even smaller on mobile devices */
+          height: 55px;
+          font-size: 1rem; /* Smaller font size for mobile */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="background-video"></div>
+
+    <section id="welcome" class="welcome">
+      <button class="button" onclick="navigateTo('https://html.cafe/xb665704f')" aria-label="Navigate to Games">Games</button>
+      <button class="button" onclick="navigateTo('https://html.cafe/xb75fbd5e')" aria-label="Navigate to Universal">Universal</button>
+      <button class="button" onclick="navigateTo('https://html.cafe/x1fe239eb')" aria-label="Navigate to Cracks">Cracks</button>
+      <button class="button back" onclick="navigateTo('https://html.cafe/xbaade32f')" aria-label="Navigate Back">Home</button>
+      <span class="text">We Don't Own These Scripts, all credits go to the rightful owner.</span>
+    </section>
+
+    <script>
+      // Define the navigateTo function
+      function navigateTo(url) {
+        window.location.href = url;
+      }
+      
+            // Function to disable right-click on the page
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+      });
+      // Prevent press and hold behavior on button links (for both desktop and mobile)
+      document.addEventListener('mousedown', function(e) {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+          e.preventDefault(); // Prevent the default behavior (click or long press) on links and buttons
+        }
+      });
+      // Disable long press on button links (mobile/touch devices)
+      document.addEventListener('touchstart', function(e) {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+          e.preventDefault(); // Prevent long press behavior on links and buttons (mobile)
+        }
+      });
+      // Additional handling for links after DOM content is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        // Select all links
+        const links = document.querySelectorAll("a");
+        // Add event listeners to each link for context menu prevention
+        links.forEach(link => {
+          link.addEventListener("contextmenu", (event) => {
+            event.preventDefault(); // Prevent context menu
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
