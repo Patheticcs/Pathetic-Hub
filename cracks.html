@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A web page featuring custom styled buttons for games and universal scripts.">
-    <title>Cracks</title>
+    <title>Games</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
       body {
@@ -86,8 +86,7 @@
         padding: 15px 40px;
         font-size: 1rem;
         background-color: rgba(255, 255, 255, 0);
-        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
-        /* Black shadow */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         color: black;
         border-radius: 30px;
         cursor: pointer;
@@ -120,7 +119,7 @@
       }
 
       .button:hover {
-        transform: scale(1.1);
+        transform: scale(1.03);
         box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6);
         text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 0, 0, 0.3);
         color: black;
@@ -220,12 +219,11 @@
     </style>
   </head>
   <body>
-    <header>
-      <div class="back-button-container">
+<header>
+  <div class="back-button-container">
 <button class="button back" onclick="navigateTo('/scripts.html')" aria-label="Navigate Back">Back</button>
-        <input type="text" id="searchInput" placeholder="Search..." oninput="filterButtons()" />
-      </div>
-    </header>
+  <input type="text" id="searchInput" placeholder="Search..." oninput="filterButtons()" />
+</header>
     <div class="button-container">
       <div class="buttons-grid" id="universalButtons">
         <div class="button" onclick="openLink('https://pastefy.app/OdJNvS1n/raw')" role="button" aria-label="Open">
@@ -249,12 +247,12 @@
         <div class="button" onclick="openLink('https://raw.githubusercontent.com/venoxcc/universalscripts/refs/heads/main/watchatv.lua')" role="button" aria-label="Open">
           <span>Aqua Hub</span>
         </div>
-      </div>
+        </div>
       <span class="text">Thank you for venox for these cracks!</span>
       <div class="text-button" onclick="openLink('https://discord.gg/APQqXe6mPv')" role="button" aria-label="Open">
         <span>Their Discord</span>
       </div>
-      <script>
+    <script>
         // Function to open links
         function openLink(url) {
           window.open(url, '_blank');
@@ -273,6 +271,11 @@
             }
           });
         }
+	    // Function to navigate to a relative path
+function navigateTo(path) {
+  window.location.href = path;
+}
+
 			// Function to disable right-click on the page
 			document.addEventListener('contextmenu', function(e) {
 				e.preventDefault();
