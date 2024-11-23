@@ -5,467 +5,450 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Pathetic Hub: Offering the best Roblox scripts, executors, proxies, and bypasses to enhance your gaming experience.">
 		<title>Home</title>
-		<style>
-			/* General Styles */
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-				user-select: none;
-			}
+<style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
 
-			body {
-				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-				background-color: #000;
-				color: #fff;
-				overflow-x: hidden;
-				overflow-y: hidden;
-				font-size: 16px;
-			}
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        font-size: 16px;
+      }
 
-			html {
-				scroll-behavior: smooth;
-				/* Smooth scrolling globally */
-			}
+      html {
+        scroll-behavior: smooth;
+      }
 
-			/* Background Image */
-			#background.background-image {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-image: url('https://r2.ammo.lol/a840e1f3-806d-4f67-95c4-0dbbabdd3bde.jpg');
-				background-size: cover;
-				background-position: center;
-				z-index: -1;
-				/* Ensures it stays behind content */
-			}
+      #background.background-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://r2.ammo.lol/a840e1f3-806d-4f67-95c4-0dbbabdd3bde.jpg');
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+      }
 
-			/* Header */
-			header {
-				position: fixed;
-				top: 0;
-				width: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-				padding: 10px 30px;
-				background: rgba(0, 0, 0, 0.5);
-				backdrop-filter: blur(15px);
-				z-index: 1000;
-				opacity: 0;
-				visibility: hidden;
-				transition: opacity 1s ease, visibility 0s linear 1s, background-color 0.5s ease;
-			}
+      header {
+        margin-top: 10px;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px 30px;
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+        opacity: 0;
+        background: rgba(0, 0, 0, 0.4);
+        transition: background 0.3s ease;
+        border-radius: 30px;
+      }
 
-			header.visible {
-				opacity: 1;
-				visibility: visible;
-				transition: opacity 2s ease;
-			}
+      header.visible {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 2s ease;
+      }
 
-			header h1 {
-				font-size: 1.6rem;
-				font-weight: bold;
-				text-shadow: 0 0 8px var(--highlight);
-				width: 100%;
-				text-align: center;
-			}
+      header:hover {
+        background: rgba(0, 0, 0, 0.6);
+      }
 
-			nav ul {
-				list-style: none;
-				font-size: 1rem;
-				display: flex;
-				gap: 20px;
-				flex-wrap: wrap;
-				justify-content: center;
-				margin-top: 10px;
-			}
+      header h1 {
+        font-size: 1.6rem;
+        font-weight: bold;
+        text-shadow: 0 0 8px var(--highlight);
+        width: 100%;
+        text-align: center;
+      }
 
-			nav ul li a {
-				text-decoration: none;
-				color: var(--white);
-				font-size: 1.1rem;
-				font-weight: 500;
-				transition: color 0.3s;
-			}
+      nav ul {
+        list-style: none;
+        font-size: 1rem;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+      }
 
-			nav ul li a:hover {
-				color: var(--highlight);
-			}
+      nav ul li a {
+        text-decoration: none;
+        color: var(--white);
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
 
-			.discord-button {
-				margin-top: 25px;
-				margin-bottom: 15px;
-				width: 100px;
-				height: 30px;
-				background-color: rgba(255, 255, 255, 1);
-				box-shadow: 0 4px 25px rgba(255, 255, 255, .6);
-				font-size: 13px;
-				border: none;
-				color: black;
-				border-radius: 30px;
-				cursor: pointer;
-				transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease, height 0.3s ease;
-				backdrop-filter: blur(15px);
-				font-weight: bold;
-			}
+      nav ul li a:hover {
+        color: var(--highlight);
+      }
 
-			.discord-button:hover {
-				box-shadow: 0 4px 30px rgba(255, 255, 255, .8);
-				text-shadow: 0 0 20px var(--highlight), 0 0 40px var(--highlight);
-				width: 110px;
-				height: 34px;
-			}
+      .discord-button {
+        margin-top: 25px;
+        margin-bottom: 15px;
+        width: 100px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0 4px 25px rgba(255, 255, 255, .6);
+        font-size: 13px;
+        border: none;
+        color: black;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease, height 0.3s ease;
+        backdrop-filter: blur(15px);
+        font-weight: bold;
+      }
 
-			.discord-button:focus-visible,
-			.discord-button:active {
-				outline: none;
-			}
+      .discord-button:hover {
+        box-shadow: 0 4px 30px rgba(255, 255, 255, .8);
+        text-shadow: 0 0 20px var(--highlight), 0 0 40px var(--highlight);
+        width: 110px;
+        height: 34px;
+      }
 
-			/* Welcome Section */
-			.welcome {
-				position: relative;
-				height: 100vh;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				text-align: center;
-				padding: 20px;
-				animation: fadeIn 1.5s ease-out;
-				background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.7));
-			}
+      .discord-button:focus-visible,
+      .discord-button:active {
+        outline: none;
+      }
 
-			.welcome h2 {
-				font-size: 6.5rem;
-				text-transform: uppercase;
-				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
-				margin-bottom: 30px;
-			}
+      .welcome {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        animation: fadeIn 1.5s ease-out;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.7));
+      }
 
-			.welcome p {
-				font-size: 1.1rem;
-				max-width: 600px;
-				line-height: 1.8;
-				opacity: 0.8;
-				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #000, 0 0 70px #000;
-				margin-bottom: 50px;
-			}
+      .welcome h2 {
+        font-size: 6.5rem;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+        margin-bottom: 30px;
+      }
 
-			.welcome button {
-				margin-top: 5px;
-				padding: 15px 40px;
-				font-size: 1.2rem;
-				background-color: rgba(255, 255, 255, 0);
-				box-shadow: 0 0px 25px rgba(255, 255, 255, 0.6);
-				border: none;
-				color: var(--white);
-				border-radius: 30px;
-				cursor: pointer;
-				transition: transform 0.5s ease, box-shadow 0.5s ease;
-				backdrop-filter: blur(5px);
-			}
+      .welcome p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        line-height: 1.8;
+        opacity: 0.8;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #000, 0 0 70px #000;
+        margin-bottom: 50px;
+      }
 
-			.welcome button:hover {
-				transform: scale(1.05);
-				box-shadow: 0 0px 25px rgba(255, 255, 255, .9);
-				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
-			}
+      .welcome button {
+        margin-top: 5px;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 0px 25px rgba(255, 255, 255, 0.6);
+        border: none;
+        color: var(--white);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        backdrop-filter: blur(5px);
+      }
 
-			/* Services Section */
-			#section1 {
-				height: 100vh;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				padding: 0 20px;
-				position: relative;
-				background: rgba(0, 0, 0, 0.7);
-				overflow: hidden;
-			}
+      .welcome button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0px 25px rgba(255, 255, 255, .9);
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+      }
 
-			.services-container {
-				display: grid;
-				gap: 40px;
-				padding: 0 40px;
-				justify-items: center;
-				align-items: center;
-				z-index: 2;
-				max-width: 1000px;
-				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-			}
+      #section1 {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        position: relative;
+        background: rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+      }
 
-			.section {
-				color: #fff;
-				border-radius: 30px;
-				box-shadow: 0 0px 15px rgba(255, 255, 255, .3);
-				padding: 40px;
-				width: 100%;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				align-items: center;
-				text-align: center;
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
-				backdrop-filter: blur(5px);
-			}
+      .services-container {
+        display: grid;
+        gap: 40px;
+        padding: 0 40px;
+        justify-items: center;
+        align-items: center;
+        z-index: 2;
+        max-width: 1000px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
 
-			.section:hover {
-				box-shadow: 0 0px 25px rgba(255, 255, 255, .7);
-				transform: scale(1.03);
-				background-color: rgba(0, 0, 0, 0.1);
-				backdrop-filter: blur(6px);
-			}
+      .section {
+        color: #fff;
+        border-radius: 30px;
+        box-shadow: 0 0px 15px rgba(255, 255, 255, .3);
+        padding: 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        backdrop-filter: blur(5px);
+      }
 
-			.section h3 {
-				font-size: 2rem;
-				margin-bottom: 20px;
-				text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
-			}
+      .section:hover {
+        box-shadow: 0 0px 25px rgba(255, 255, 255, .7);
+        transform: scale(1.03);
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6px);
+      }
 
-			.section p {
-				font-size: 1rem;
-				margin-bottom: 30px;
-			}
+      .section h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
+      }
 
-			.section a.button {
-				display: inline-block;
-				padding: 12px 40px;
-				background-color: rgba(255, 255, 255, 1);
-				color: black;
-				font-size: 1.2rem;
-				font-weight: bold;
-				border-radius: 100px;
-				cursor: pointer;
-				text-decoration: none;
-				width: 100%;
-				max-width: 200px;
-				max-height: 50px;
-				margin: 5px 0;
-				backdrop-filter: blur(10px);
-				transition: transform 0.3s ease, box-shadow 0.3s ease, margin 0.3s ease, width 0.3s ease, height 0.3s ease;
-			}
+      .section p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
 
-			.section a.button:hover {
-				transform: scale(1.03);
-				text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
-				box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.7);
-				margin: 10px 0;
-			}
+      .section a.button {
+        display: inline-block;
+        padding: 12px 40px;
+        background-color: rgba(255, 255, 255, 1);
+        color: black;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 100px;
+        cursor: pointer;
+        text-decoration: none;
+        width: 100%;
+        max-width: 200px;
+        max-height: 50px;
+        margin: 5px 0;
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, margin 0.3s ease, width 0.3s ease, height 0.3s ease;
+      }
 
-			/* About Section */
-			.about {
-				background: rgba(0, 0, 0, 0.7);
-				color: var(--white);
-				padding: 400px 20px;
-				text-align: center;
-			}
+      .section a.button:hover {
+        transform: scale(1.03);
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.7);
+        margin: 10px 0;
+      }
 
-			.about h2 {
-				font-size: 5rem;
-				margin-bottom: 50px;
-				text-transform: uppercase;
-				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000;
-			}
+      .about {
+        background: rgba(0, 0, 0, 0.7);
+        color: var(--white);
+        padding: 400px 20px;
+        text-align: center;
+      }
 
-			.about p {
-				font-size: 1.2rem;
-				line-height: 1.8;
-				max-width: 800px;
-				margin: 0 auto;
-			}
+      .about h2 {
+        font-size: 5rem;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000;
+      }
 
-			/* Footer */
-			footer {
-				background: rgba(0, 0, 0, 0.7);
-				color: var(--white);
-				text-align: center;
-				height: 3vh;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-			}
+      .about p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+      }
 
-			footer p {
-				font-size: 1rem;
-			}
+      footer {
+        background: rgba(0, 0, 0, 0.7);
+        color: var(--white);
+        text-align: center;
+        height: 3vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
 
-			footer a {
-				text-decoration: none;
-				color: var(--highlight);
-				font-weight: bold;
-			}
+      footer p {
+        font-size: 1rem;
+      }
 
-			ul.button-container li {
-				padding: 0;
-				margin: 0;
-			}
+      footer a {
+        text-decoration: none;
+        color: var(--highlight);
+        font-weight: bold;
+      }
 
-			ul.button-container {
-				list-style: none;
-				padding: 0;
-				margin: 0;
-			}
+      ul.button-container li {
+        padding: 0;
+        margin: 0;
+      }
 
-			.down-button {
-				height: 50px;
-				width: 50px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				margin-top: 70px;
-				margin-left: 500px;
-				font-size: 13px;
-				color: black;
-				border-radius: 100px;
-				cursor: pointer;
-				transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease, height 0.3s ease;
-			}
-          
-          .down-button:hover {
-				transform: scale(1.05);
-			}
+      ul.button-container {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
 
-			.down-button img {
-				height: 80%;
-				width: 80%;
-				object-fit: cover;
-				border-radius: 100px;
-			}
+      .down-button {
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+        margin-left: 500px;
+        font-size: 13px;
+        color: black;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, width 0.3s ease, height 0.3s ease;
+      }
 
-			@media (max-width: 768px) {
-				.discord-button {
-					height: 30px;
-					width: 90px;
-					margin-top: 15px;
-					font-size: 10px;
-				}
+      .down-button:hover {
+        transform: scale(1.05);
+      }
 
-				.welcome h2 {
-					font-size: 3.5rem;
-					margin-top: 5px;
-				}
+      .down-button img {
+        height: 80%;
+        width: 80%;
+        object-fit: cover;
+        border-radius: 100px;
+      }
 
-				.welcome p {
-					font-size: 0.7rem;
-					margin-top: 5px;
-				}
+      @media (max-width: 768px) {
+        .discord-button {
+          height: 30px;
+          width: 90px;
+          margin-top: 15px;
+          font-size: 10px;
+        }
 
-				.welcome button {
-					font-size: 1rem;
-					padding: 12px 25px;
-				}
+        .welcome h2 {
+          font-size: 3.5rem;
+          margin-top: 5px;
+        }
 
-				.about h2 {
-					font-size: 3rem;
-				}
+        .welcome p {
+          font-size: 0.7rem;
+          margin-top: 5px;
+        }
 
-				.about p {
-					font-size: 1rem;
-				}
+        .welcome button {
+          font-size: 1rem;
+          padding: 12px 25px;
+        }
 
-				nav ul {
-					font-size: 0.9rem;
-					gap: 15px;
-				}
+        .about h2 {
+          font-size: 3rem;
+        }
 
-				header h1 {
-					font-size: 1.4rem;
-				}
+        .about p {
+          font-size: 1rem;
+        }
 
-				footer p {
-					font-size: 0.9rem;
-				}
+        nav ul {
+          font-size: 0.9rem;
+          gap: 15px;
+        }
 
-				footer a {
-					font-size: 1rem;
-				}
+        header h1 {
+          font-size: 1.4rem;
+        }
 
-				.about {
-					padding: 100px 20px;
-				}
+        footer p {
+          font-size: 0.9rem;
+        }
 
-				footer {
-					height: auto;
-				}
+        footer a {
+          font-size: 1rem;
+        }
 
-				.services-container {
-					padding: 0 10px;
-					/* Smaller padding on mobile */
-					grid-template-columns: repeat(2, 1fr);
-					/* 2 columns layout on mobile */
-					gap: 10px;
-					/* Smaller gap between items */
-				}
+        .about {
+          padding: 100px 20px;
+        }
 
-				.services-container>* {
-					width: 100%;
-					max-width: 150px;
-					height: 150px;
-					margin: 0 auto;
-					object-fit: cover;
-				}
+        footer {
+          height: auto;
+        }
 
-				.section {
-					padding: 20px;
-					/* Reduced padding for smaller items */
-					width: 100%;
-					height: 100%;
-					max-width: 200px;
-					/* Match the square size */
-					max-height: 200px;
-					/* Match the square size */
-					display: flex;
-					flex-direction: column;
-					justify-content: space-between;
-					align-items: center;
-					text-align: center;
-					backdrop-filter: blur(5px);
-				}
+        .services-container {
+          padding: 0 10px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
 
-				.section h3 {
-					font-size: 1.2rem;
-					/* Smaller font size */
-					margin-bottom: 10px;
-					text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
-				}
+        .services-container>* {
+          width: 100%;
+          max-width: 150px;
+          height: 150px;
+          margin: 0 auto;
+          object-fit: cover;
+        }
 
-				.section p {
-					font-size: 0.8rem;
-					/* Smaller font size */
-					margin-bottom: 0px;
-				}
+        .section {
+          padding: 20px;
+          width: 100%;
+          height: 100%;
+          max-width: 200px;
+          max-height: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          text-align: center;
+          backdrop-filter: blur(5px);
+        }
 
-				.section a.button {
-					max-width: 90px;
-					/* Smaller button width */
-					max-height: 25px;
-					/* Smaller button height */
-					padding: 5px 15px;
-					/* Adjust padding to balance the size */
-					font-size: 0.7rem;
-					/* Smaller font size */
-					margin-top: 15px;
-					display: inline-block;
-					/* Ensures the button behaves like an inline element */
-					text-align: center;
-					/* Centers the text inside the button horizontally */
-					line-height: 15px;
-					/* Adjust line height to match content height and center vertically */
-					vertical-align: middle;
-					/* Fixes vertical alignment */
-					white-space: nowrap;
-					/* Prevents text from breaking */
-				}
+        .section h3 {
+          font-size: 1.2rem;
+          margin-bottom: 10px;
+          text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
+        }
 
-				footer {
-					height: 5vh;
-				}
-		</style>
+        .section p {
+          font-size: 0.8rem;
+          margin-bottom: 0px;
+        }
+
+        .section a.button {
+          max-width: 90px;
+          max-height: 25px;
+          padding: 5px 15px;
+          font-size: 0.7rem;
+          margin-top: 15px;
+          display: inline-block;
+          text-align: center;
+          line-height: 15px;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
+
+        footer {
+          height: 5vh;
+        }
+    </style>
+
 	</head>
 	<body>
 		<!-- Background Image -->
