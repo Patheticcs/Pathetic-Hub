@@ -221,7 +221,7 @@
   <body>
 <header>
   <div class="back-button-container">
-    <button class="button back" onclick="navigateTo('scripts.html')" aria-label="Navigate Back">Back</button>
+<button class="button back" onclick="navigateTo('/scripts.html')" aria-label="Navigate Back">Back</button>
   <input type="text" id="searchInput" placeholder="Search..." oninput="filterButtons()" />
 </header>
  <div class="button-container">
@@ -291,6 +291,12 @@
         </div>
       </div>
       <script>
+
+	      // Function to navigate to a relative path
+function navigateTo(path) {
+  window.location.href = path;
+}
+
         // Function to open links
         function openLink(url) {
           window.open(url, '_blank');
