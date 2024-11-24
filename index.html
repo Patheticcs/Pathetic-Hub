@@ -29,10 +29,13 @@
         font-size: 16px;
       }
 
-      html, body {
-  scroll-behavior: auto !important;
+      html,
+      body {
+        scroll-behavior: auto !important;
+      }
+html {
+  scroll-behavior: smooth;
 }
-
 
       #background.background-image {
         position: fixed;
@@ -351,29 +354,40 @@
         border-radius: 100px;
       }
 
-@media (max-width: 768px) {
-    /* Header */
-    header {
-        width: 90%; /* Slightly reduced width */
-        padding: 15px;
-    }
-    header h1 {
-        font-size: 1.4rem; /* Reduced font size */
-    }
+      @media (max-width: 768px) {
 
-    /* Welcome Section */
-    .welcome h2 {
-        font-size: 4.5rem; /* Adjusted size */
-        margin-bottom: 20px; /* Reduced margin */
-    }
-    .welcome p {
-        font-size: 0.9rem; /* Adjusted size */
-        margin-bottom: 15px; /* Reduced margin */
-    }
-    .welcome button {
-        font-size: 1rem;
-        padding: 12px 30px; /* Adjusted padding */
-    }
+        /* Header */
+        header {
+          width: 90%;
+          /* Slightly reduced width */
+          padding: 15px;
+        }
+
+        header h1 {
+          font-size: 1.4rem;
+          /* Reduced font size */
+        }
+
+        /* Welcome Section */
+        .welcome h2 {
+          font-size: 4.5rem;
+          /* Adjusted size */
+          margin-bottom: 20px;
+          /* Reduced margin */
+        }
+
+        .welcome p {
+          font-size: 0.9rem;
+          /* Adjusted size */
+          margin-bottom: 15px;
+          /* Reduced margin */
+        }
+
+        .welcome button {
+          font-size: 1rem;
+          padding: 12px 30px;
+          /* Adjusted padding */
+        }
 
         .services-container {
           padding: 0 10px;
@@ -426,38 +440,49 @@
           vertical-align: middle;
           white-space: nowrap;
         }
-    /* About Section */
-    .about {
-        padding: 100px 15px; /* Adjusted padding */
-    }
-    .about h2 {
-        font-size: 3.5rem; /* Adjusted font size */
-    }
-    .about p {
-        font-size: 1rem; /* Adjusted font size */
-    }
 
-    /* Footer */
-    footer {
-        height: auto;
-        padding: 10px 15px;
-    }
-    footer p {
-        font-size: 0.9rem; /* Adjusted font size */
-    }
+        /* About Section */
+        .about {
+          padding: 100px 15px;
+          /* Adjusted padding */
+        }
 
-    /* Button Container */
-    .down-button {
-        margin-top: 40px;
-        margin-left: 107%;
-        transform: translateX(-50%); /* Centering */
-    }
-    .down-button img {
-        height: 70%; /* Adjusted image size */
-        width: 70%; /* Adjusted image size */
-    }
-}
+        .about h2 {
+          font-size: 3.5rem;
+          /* Adjusted font size */
+        }
 
+        .about p {
+          font-size: 1rem;
+          /* Adjusted font size */
+        }
+
+        /* Footer */
+        footer {
+          height: auto;
+          padding: 10px 15px;
+        }
+
+        footer p {
+          font-size: 0.9rem;
+          /* Adjusted font size */
+        }
+
+        /* Button Container */
+        .down-button {
+          margin-top: 40px;
+          margin-left: 107%;
+          transform: translateX(-50%);
+          /* Centering */
+        }
+
+        .down-button img {
+          height: 70%;
+          /* Adjusted image size */
+          width: 70%;
+          /* Adjusted image size */
+        }
+      }
     </style>
   </head>
   <body>
@@ -587,19 +612,22 @@
         // Store a flag in sessionStorage to indicate that the "Get Started" button was clicked
         sessionStorage.setItem('getStartedClicked', 'true'); // Mark that the button was clicked
       });
-// Scroll to the top when the page is refreshed or loaded
-window.addEventListener('beforeunload', () => {
-  window.scrollTo(0, 0);
-});
-
-// Ensure it also resets after a reload
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    window.scrollTo(0, 0);
-  }, 0);
-});
-
-
+      // Scroll to the top when the page is refreshed or loaded
+      window.addEventListener('beforeunload', () => {
+        // Ensure smooth scroll is disabled here for instant reset
+        document.documentElement.style.scrollBehavior = 'auto';
+        window.scrollTo(0, 0);
+      });
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          // Re-enable smooth scrolling after the page is loaded
+          document.documentElement.style.scrollBehavior = 'smooth';
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        }, 0);
+      });
     </script>
   </body>
 </html>
