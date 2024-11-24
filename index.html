@@ -19,14 +19,15 @@
       }
 
       body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
-  overflow-x: hidden;  /* Disable horizontal scrolling */
-  overflow-y: auto;    /* Ensure vertical scrolling is enabled */
-  font-size: 16px;
-}
-
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+        overflow-x: hidden;
+        /* Disable horizontal scrolling */
+        overflow-y: auto;
+        /* Ensure vertical scrolling is enabled */
+        font-size: 16px;
+      }
 
       html {
         scroll-behavior: smooth;
@@ -104,7 +105,8 @@
       }
 
       nav ul li a:hover {
-        color: rgba(255, 255, 255, 0.2); /* White with 90% opacity */
+        color: rgba(255, 255, 255, 0.2);
+        /* White with 90% opacity */
       }
 
       .spacer {
@@ -537,70 +539,61 @@
     </footer>
     <!-- JavaScript -->
     <script>
-// Reset all page states when the page is loaded or refreshed
-document.addEventListener("DOMContentLoaded", () => {
-  // Reset sessionStorage to clear saved state
-  sessionStorage.clear();
-
-  // Disable scrolling initially
-  document.body.style.overflowY = 'hidden';
-
-  // Reset scroll position to the top when the page is loaded or refreshed
-  window.scrollTo(0, 0);
-
-  // Hide header on page load (since scrolling is initially disabled)
-  document.querySelector('header').classList.remove('visible');
-  
-  // Reapply any other dynamic styles or reset conditions
-  // (You can add more reset code if you have other states to reset)
-
-  // Disable right-click on the page
-  document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-  });
-
-  // Prevent press and hold behavior on button links (for both desktop and mobile)
-  document.addEventListener('mousedown', function (e) {
-    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-      e.preventDefault(); // Prevent the default behavior (click or long press) on links and buttons
-    }
-  });
-
-  // Disable long press on button links (mobile/touch devices)
-  document.addEventListener('touchstart', function (e) {
-    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-      e.preventDefault(); // Prevent long press behavior on links and buttons (mobile)
-    }
-  });
-
-  // Additional handling for links after DOM content is loaded
-  const links = document.querySelectorAll("a");
-  links.forEach(link => {
-    link.addEventListener("contextmenu", (event) => {
-      event.preventDefault(); // Prevent context menu
-    });
-  });
-
-  // Disable certain keypresses (e.g., F12, Ctrl key combinations)
-  document.addEventListener("keydown", function (event) {
-    if (event.ctrlKey || event.keyCode === 123) {
-      event.preventDefault();
-    }
-  });
-
-  // Reset visibility and scrolling state
-  if (sessionStorage.getItem('getStartedClicked')) {
-    // This will be reset, so it won't be available anymore on refresh
-    sessionStorage.removeItem('getStartedClicked');
-  }
-});
-
-// Function for Get Started button to reset everything when clicked
-document.querySelector('button').addEventListener('click', () => {
-  document.querySelector('header').classList.add('visible'); // Show header
-  document.body.style.overflowY = 'scroll';  // Enable scrolling
-  sessionStorage.setItem('getStartedClicked', 'true');  // Store that the button was clicked
-});
-</script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Reset scroll position to the top on page load
+        window.scrollTo(0, 0);
+        // Check sessionStorage to see if "Get Started" was clicked
+        const isGetStartedClicked = sessionStorage.getItem('getStartedClicked');
+        // If "Get Started" was not clicked, disable scrolling
+        if (!isGetStartedClicked) {
+          document.body.style.overflowY = 'hidden'; // Disable scrolling initially
+          document.querySelector('header').classList.remove('visible'); // Hide header
+        } else {
+          // If "Get Started" was clicked, enable scrolling
+          document.body.style.overflowY = 'scroll'; // Enable scrolling
+          document.querySelector('header').classList.add('visible'); // Show header
+        }
+        // Disable right-click on the page
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+        // Disable long press on links and buttons (mobile/touch devices)
+        document.addEventListener('mousedown', function(e) {
+          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            e.preventDefault();
+          }
+        });
+        document.addEventListener('touchstart', function(e) {
+          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            e.preventDefault();
+          }
+        });
+        // Disable right-click on links specifically
+        const links = document.querySelectorAll("a");
+        links.forEach(link => {
+          link.addEventListener("contextmenu", (event) => {
+            event.preventDefault(); // Prevent context menu
+          });
+        });
+        // Disable certain keypresses (e.g., F12, Ctrl key combinations)
+        document.addEventListener("keydown", function(event) {
+          if (event.ctrlKey || event.keyCode === 123) {
+            event.preventDefault();
+          }
+        });
+      });
+      // Function for Get Started button to enable scrolling and reset everything
+      document.querySelector('button').addEventListener('click', () => {
+        // Enable scrolling and show header when the "Get Started" button is clicked
+        document.body.style.overflowY = 'scroll'; // Enable scrolling
+        document.querySelector('header').classList.add('visible'); // Show header
+        // Store a flag in sessionStorage to indicate that the "Get Started" button was clicked
+        sessionStorage.setItem('getStartedClicked', 'true'); // Mark that the button was clicked
+      });
+      // Scroll to the top when the page is refreshed or loaded
+      window.addEventListener('load', () => {
+        window.scrollTo(0, 0);
+      });
+    </script>
   </body>
 </html>
