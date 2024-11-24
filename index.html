@@ -19,13 +19,14 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        background-color: #000;
-        color: #fff;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        font-size: 16px;
-      }
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;  /* Disable horizontal scrolling */
+  overflow-y: auto;    /* Ensure vertical scrolling is enabled */
+  font-size: 16px;
+}
+
 
       html {
         scroll-behavior: smooth;
@@ -536,64 +537,70 @@
     </footer>
     <!-- JavaScript -->
     <script>
-      // Function to disable right-click on the page
-      document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-      });
-      // Prevent press and hold behavior on button links (for both desktop and mobile)
-      document.addEventListener('mousedown', function(e) {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-          e.preventDefault(); // Prevent the default behavior (click or long press) on links and buttons
-        }
-      });
-      // Disable long press on button links (mobile/touch devices)
-      document.addEventListener('touchstart', function(e) {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-          e.preventDefault(); // Prevent long press behavior on links and buttons (mobile)
-        }
-      });
-      // Additional handling for links after DOM content is loaded
-      document.addEventListener("DOMContentLoaded", () => {
-        // Select all links
-        const links = document.querySelectorAll("a");
-        // Add event listeners to each link for context menu prevention
-        links.forEach(link => {
-          link.addEventListener("contextmenu", (event) => {
-            event.preventDefault(); // Prevent context menu
-          });
-        });
-      });
-      // Function to enable smooth scroll on header button clicks
-      document.querySelectorAll('header nav ul li a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href').substring(1); // Get the target section's id
-          const targetElement = document.getElementById(targetId);
-          // Smooth scroll to the target element
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start' // Scroll to the top of the target element
-          });
-          // Optionally, add a delay before showing the header (if needed for effect)
-          setTimeout(() => {
-            document.querySelector('header').classList.add('visible');
-          }, 500); // Adjust timing as needed
-        });
-      });
-      document.addEventListener("keydown", function(event) {
-        if (event.ctrlKey) {
-          event.preventDefault();
-        }
-        if (event.keyCode == 123) {
-          event.preventDefault();
-        }
-      });
-      document.querySelector('.down-button').addEventListener('click', function() {
-        window.scrollBy({
-          top: window.innerHeight, // Scroll by the full height of the viewport
-          behavior: 'smooth' // Smooth scroll effect
-        });
-      });
-    </script>
+// Reset all page states when the page is loaded or refreshed
+document.addEventListener("DOMContentLoaded", () => {
+  // Reset sessionStorage to clear saved state
+  sessionStorage.clear();
+
+  // Disable scrolling initially
+  document.body.style.overflowY = 'hidden';
+
+  // Reset scroll position to the top when the page is loaded or refreshed
+  window.scrollTo(0, 0);
+
+  // Hide header on page load (since scrolling is initially disabled)
+  document.querySelector('header').classList.remove('visible');
+  
+  // Reapply any other dynamic styles or reset conditions
+  // (You can add more reset code if you have other states to reset)
+
+  // Disable right-click on the page
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
+
+  // Prevent press and hold behavior on button links (for both desktop and mobile)
+  document.addEventListener('mousedown', function (e) {
+    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+      e.preventDefault(); // Prevent the default behavior (click or long press) on links and buttons
+    }
+  });
+
+  // Disable long press on button links (mobile/touch devices)
+  document.addEventListener('touchstart', function (e) {
+    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+      e.preventDefault(); // Prevent long press behavior on links and buttons (mobile)
+    }
+  });
+
+  // Additional handling for links after DOM content is loaded
+  const links = document.querySelectorAll("a");
+  links.forEach(link => {
+    link.addEventListener("contextmenu", (event) => {
+      event.preventDefault(); // Prevent context menu
+    });
+  });
+
+  // Disable certain keypresses (e.g., F12, Ctrl key combinations)
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey || event.keyCode === 123) {
+      event.preventDefault();
+    }
+  });
+
+  // Reset visibility and scrolling state
+  if (sessionStorage.getItem('getStartedClicked')) {
+    // This will be reset, so it won't be available anymore on refresh
+    sessionStorage.removeItem('getStartedClicked');
+  }
+});
+
+// Function for Get Started button to reset everything when clicked
+document.querySelector('button').addEventListener('click', () => {
+  document.querySelector('header').classList.add('visible'); // Show header
+  document.body.style.overflowY = 'scroll';  // Enable scrolling
+  sessionStorage.setItem('getStartedClicked', 'true');  // Store that the button was clicked
+});
+</script>
   </body>
 </html>
