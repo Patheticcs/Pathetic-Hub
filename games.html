@@ -129,16 +129,26 @@
         background-color: white;
         color: black;
         box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
-        transform: scale(1.1);
+        transform: scale(1.03);
         margin-right: 5px;
         margin-left: 5px;
       }
 
       #searchInput:hover {
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.9), 0 0 70px rgba(0, 0, 0, 0.7);
-        transform: scale(1.1);
+        transform: scale(1.03);
         margin-left: 5px;
         margin-right: 5px;
+      }
+
+      .back-search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        /* Space between back button and search field */
+        width: 100%;
+        padding: 10px;
       }
 
       /* Media query for mobile screens */
@@ -219,13 +229,14 @@
     </style>
   </head>
   <body>
-<header>
-  <div class="back-button-container">
-<button class="button back" onclick="navigateTo('/scripts.html')" aria-label="Navigate Back">Back</button>
-  <input type="text" id="searchInput" placeholder="Search..." oninput="filterButtons()" />
-</header>
- <div class="button-container">
-  <div class="buttons-grid" id="gamesButtons">
+    <header>
+      <div class="back-search-container">
+        <button class="back-button" onclick="navigateTo('/scripts.html')" aria-label="Navigate Back">Back</button>
+        <input type="text" id="searchInput" placeholder="Search..." oninput="filterButtons()" />
+      </div>
+    </header>
+    <div class="button-container">
+      <div class="buttons-grid" id="gamesButtons">
         <div class="button" onclick="openLink('https://pastebin.com/raw/K0hmtmnh')" role="button" aria-label="Open Rivals">
           <span>Rivals</span>
         </div>
@@ -334,103 +345,102 @@
         <div class="button" onclick="openLink('https://raw.githubusercontent.com/Bac0nHck/Scripts/main/BeNpcOrDie')" role="button" aria-label="Open Bloxfruits">
           <span>Be NPC or DIE</span>
         </div>
-            <div class="button" onclick="openLink('https://raw.githubusercontent.com/PorryDepTrai/exploit/main/DashBoostSolora.lua')" role="button" aria-label="Open Bloxfruits">
+        <div class="button" onclick="openLink('https://raw.githubusercontent.com/PorryDepTrai/exploit/main/DashBoostSolora.lua')" role="button" aria-label="Open Bloxfruits">
           <span>Ro-Ghoul</span>
         </div>
-            <div class="button" onclick="openLink('https://raw.githubusercontent.com/9ur98wh8fjkerbngo12ikontgg/fortnite/main/locky%20blocks12nyhubf87yh189j98ihuygrweyugf12ou8r')" role="button" aria-label="Open Bloxfruits">
+        <div class="button" onclick="openLink('https://raw.githubusercontent.com/9ur98wh8fjkerbngo12ikontgg/fortnite/main/locky%20blocks12nyhubf87yh189j98ihuygrweyugf12ou8r')" role="button" aria-label="Open Bloxfruits">
           <span>Lucky Blocks</span>
         </div>
-            <div class="button" onclick="openLink('https://raw.githubusercontent.com/venoxcc/universalscripts/refs/heads/main/prestinehubv3')" role="button" aria-label="Open Bloxfruits">
+        <div class="button" onclick="openLink('https://raw.githubusercontent.com/venoxcc/universalscripts/refs/heads/main/prestinehubv3')" role="button" aria-label="Open Bloxfruits">
           <span>Pets Go</span>
         </div>
-            <div class="button" onclick="openLink('https://raw.githubusercontent.com/fgdergewrgegr/SVH/main/VHSV4')" role="button" aria-label="Open Bloxfruits">
+        <div class="button" onclick="openLink('https://raw.githubusercontent.com/fgdergewrgegr/SVH/main/VHSV4')" role="button" aria-label="Open Bloxfruits">
           <span>Fling Things and People</span>
         </div>
-            <div class="button" onclick="openLink('https://raw.githubusercontent.com/Marwanleprodu91670/lite-hub-ml/refs/heads/main/README.md')" role="button" aria-label="Open Bloxfruits">
+        <div class="button" onclick="openLink('https://raw.githubusercontent.com/Marwanleprodu91670/lite-hub-ml/refs/heads/main/README.md')" role="button" aria-label="Open Bloxfruits">
           <span>Muscle Legends</span>
         </div>
-    <script>
-        // Function to open links
-        function openLink(url) {
-          window.open(url, '_blank');
-        }
-        // Function to filter buttons
-        function filterButtons() {
-          const input = document.getElementById('searchInput');
-          const filter = input.value.toLowerCase();
-          const buttons = document.querySelectorAll('.button');
-          buttons.forEach(function(button) {
-            const text = button.textContent || button.innerText;
-            if (text.toLowerCase().indexOf(filter) > -1) {
-              button.style.display = '';
-            } else {
-              button.style.display = 'none';
+        <script>
+          // Function to open links
+          function openLink(url) {
+            window.open(url, '_blank');
+          }
+          // Function to filter buttons
+          function filterButtons() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const buttons = document.querySelectorAll('.button');
+            buttons.forEach(function(button) {
+              const text = button.textContent || button.innerText;
+              if (text.toLowerCase().indexOf(filter) > -1) {
+                button.style.display = '';
+              } else {
+                button.style.display = 'none';
+              }
+            });
+          }
+          // Function to navigate to a relative path
+          function navigateTo(path) {
+            window.location.href = path;
+          }
+          // Function to disable right-click on the page
+          document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+          });
+          // Prevent press and hold behavior on button links (for both desktop and mobile)
+          document.addEventListener('mousedown', function(e) {
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+              e.preventDefault(); // Prevent the default behavior (click or long press) on links and buttons
             }
           });
-        }
-	    // Function to navigate to a relative path
-function navigateTo(path) {
-  window.location.href = path;
-}
-
-			// Function to disable right-click on the page
-			document.addEventListener('contextmenu', function(e) {
-				e.preventDefault();
-			});
-			// Prevent press and hold behavior on button links (for both desktop and mobile)
-			document.addEventListener('mousedown', function(e) {
-				if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-					e.preventDefault(); // Prevent the default behavior (click or long press) on links and buttons
-				}
-			});
-			// Disable long press on button links (mobile/touch devices)
-			document.addEventListener('touchstart', function(e) {
-				if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-					e.preventDefault(); // Prevent long press behavior on links and buttons (mobile)
-				}
-			});
-			// Additional handling for links after DOM content is loaded
-			document.addEventListener("DOMContentLoaded", () => {
-				// Select all links
-				const links = document.querySelectorAll("a");
-				// Add event listeners to each link for context menu prevention
-				links.forEach(link => {
-					link.addEventListener("contextmenu", (event) => {
-						event.preventDefault(); // Prevent context menu
-					});
-				});
-			});
-			// Function to enable smooth scroll on header button clicks
-			document.querySelectorAll('header nav ul li a').forEach(anchor => {
-				anchor.addEventListener('click', function(e) {
-					e.preventDefault();
-					const targetId = this.getAttribute('href').substring(1); // Get the target section's id
-					const targetElement = document.getElementById(targetId);
-					// Smooth scroll to the target element
-					targetElement.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start' // Scroll to the top of the target element
-					});
-					// Optionally, add a delay before showing the header (if needed for effect)
-					setTimeout(() => {
-						document.querySelector('header').classList.add('visible');
-					}, 500); // Adjust timing as needed
-				});
-			});
-			document.addEventListener("keydown", function(event) {
-				if (event.ctrlKey) {
-					event.preventDefault();
-				}
-				if (event.keyCode == 123) {
-					event.preventDefault();
-				}
-			});
-			document.querySelector('.down-button').addEventListener('click', function() {
-				window.scrollBy({
-					top: window.innerHeight, // Scroll by the full height of the viewport
-					behavior: 'smooth' // Smooth scroll effect
-				});
-			});
-      </script>
+          // Disable long press on button links (mobile/touch devices)
+          document.addEventListener('touchstart', function(e) {
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+              e.preventDefault(); // Prevent long press behavior on links and buttons (mobile)
+            }
+          });
+          // Additional handling for links after DOM content is loaded
+          document.addEventListener("DOMContentLoaded", () => {
+            // Select all links
+            const links = document.querySelectorAll("a");
+            // Add event listeners to each link for context menu prevention
+            links.forEach(link => {
+              link.addEventListener("contextmenu", (event) => {
+                event.preventDefault(); // Prevent context menu
+              });
+            });
+          });
+          // Function to enable smooth scroll on header button clicks
+          document.querySelectorAll('header nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+              e.preventDefault();
+              const targetId = this.getAttribute('href').substring(1); // Get the target section's id
+              const targetElement = document.getElementById(targetId);
+              // Smooth scroll to the target element
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start' // Scroll to the top of the target element
+              });
+              // Optionally, add a delay before showing the header (if needed for effect)
+              setTimeout(() => {
+                document.querySelector('header').classList.add('visible');
+              }, 500); // Adjust timing as needed
+            });
+          });
+          document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey) {
+              event.preventDefault();
+            }
+            if (event.keyCode == 123) {
+              event.preventDefault();
+            }
+          });
+          document.querySelector('.down-button').addEventListener('click', function() {
+            window.scrollBy({
+              top: window.innerHeight, // Scroll by the full height of the viewport
+              behavior: 'smooth' // Smooth scroll effect
+            });
+          });
+        </script>
   </body>
 </html>
