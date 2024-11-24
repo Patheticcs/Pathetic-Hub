@@ -24,13 +24,13 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        background: #000;
-        color: #fff;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        font-size: 16px;
-      }
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    overflow-y: hidden; /* Initially disable scrolling */
+    font-size: 16px;
+  }
 
       html {
         scroll-behavior: smooth;
@@ -213,6 +213,14 @@ function replaceWithLink(url) {
 					behavior: 'smooth' // Smooth scroll effect
 				});
 			});
+      
+      // Enable scrolling when the "Get Started" button is clicked
+  function enableScrolling() {
+    document.body.style.overflowY = "scroll";
+  }
+
+  // Example: Attach the function to a button click event
+  document.querySelector('.button.back').addEventListener('click', enableScrolling);
     </script> 
   </body>
 </html>
