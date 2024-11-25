@@ -31,7 +31,7 @@
 
       html,
       body {
-        scroll-behavior: auto !important;
+        scroll-behavior: smooth !important;
       }
       
       #background.background-image {
@@ -473,15 +473,15 @@
     <header>
       <nav>
         <ul>
-          <li>
-            <a href="#welcome">Home</a>
-          </li>
-          <li>
-            <a href="#section1">Services</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
+      <li>
+        <a href="#welcome" onclick="scrollToSection('welcome')">Home</a>
+      </li>
+      <li>
+        <a href="#section1" onclick="scrollToSection('section1')">Services</a>
+      </li>
+      <li>
+        <a href="#about" onclick="scrollToSection('about')">About</a>
+      </li>
         </ul>
       </nav>
       <!-- Button Container -->
@@ -601,6 +601,7 @@
           });
         }, 0);
       });
+
     </script>
   </body>
 </html>
