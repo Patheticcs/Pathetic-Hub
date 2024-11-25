@@ -91,7 +91,6 @@
         gap: 20px;
         flex-wrap: wrap;
         justify-content: center;
-        font-weight: bold;
         margin-top: 30px;
       }
 
@@ -572,6 +571,22 @@
             behavior: 'smooth'
           });
         }, 0);
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        // Smooth scroll for header links
+        const navLinks = document.querySelectorAll("header nav ul li a");
+        navLinks.forEach(link => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default anchor behavior
+            const targetId = link.getAttribute("href").substring(1); // Get the ID without the '#'
+            const targetSection = document.getElementById(targetId); // Find the target section
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: "smooth"
+              }); // Smooth scroll to the target
+            }
+          });
+        });
       });
     </script>
   </body>
