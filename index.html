@@ -23,17 +23,15 @@
         background-color: #000;
         color: #fff;
         overflow-x: hidden;
-        /* Disable horizontal scrolling */
         overflow-y: auto;
-        /* Ensure vertical scrolling is enabled */
         font-size: 16px;
       }
 
       html,
       body {
-        scroll-behavior: smooth !important;
+        scroll-behavior: auto !important;
       }
-      
+
       #background.background-image {
         position: fixed;
         top: 0;
@@ -53,7 +51,7 @@
         left: 50%;
         transform: translateX(-50%);
         width: 80%;
-        max-width: 1000px;
+        max-width: 800px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -66,6 +64,7 @@
         background: rgba(0, 0, 0, 0.4);
         border-radius: 50px;
         transition: opacity 2s ease, background 0.5s ease;
+        height: 140px;
       }
 
       header.visible {
@@ -93,11 +92,10 @@
         gap: 20px;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 15px;
+        margin-top: 30px;
       }
 
       nav ul li a {
-        margin-top: 10px;
         text-decoration: none;
         color: var(--white);
         font-size: 1rem;
@@ -106,21 +104,16 @@
       }
 
       nav ul li a:hover {
-        color: rgba(255, 255, 255, 0.2);
-        /* White with 90% opacity */
-      }
-
-      .spacer {
-        height: 10px;
+        color: rgba(255, 255, 255, 0.5);
       }
 
       .discord-button {
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 25px;
+        margin-bottom: 25px;
         width: 100px;
         height: 30px;
         background-color: rgba(255, 255, 255, 1);
-        box-shadow: 0 4px 25px rgba(255, 255, 255, .6);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.9), 0 0 0px rgba(255, 255, 255, 0.9);
         font-size: 13px;
         border: none;
         color: black;
@@ -132,10 +125,10 @@
       }
 
       .discord-button:hover {
-        box-shadow: 0 4px 30px rgba(255, 255, 255, .8);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.7);
         text-shadow: 0 0 20px var(--highlight), 0 0 40px var(--highlight);
-        width: 110px;
-        height: 34px;
+        width: 105px;
+        height: 32px;
       }
 
       .discord-button:focus-visible,
@@ -473,15 +466,15 @@
     <header>
       <nav>
         <ul>
-      <li>
-        <a href="#welcome" onclick="scrollToSection('welcome')">Home</a>
-      </li>
-      <li>
-        <a href="#section1" onclick="scrollToSection('section1')">Services</a>
-      </li>
-      <li>
-        <a href="#about" onclick="scrollToSection('about')">About</a>
-      </li>
+          <li>
+            <a href="#welcome">Home</a>
+          </li>
+          <li>
+            <a href="#section1">Services</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
         </ul>
       </nav>
       <!-- Button Container -->
@@ -601,7 +594,6 @@
           });
         }, 0);
       });
-
     </script>
   </body>
 </html>
