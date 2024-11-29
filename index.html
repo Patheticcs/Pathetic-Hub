@@ -375,14 +375,28 @@
       }
 
       @media (max-width: 1280px) {
-          .services-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
-    gap: 20px; /* Smaller gap between items */
+  .services-container {
+    padding: 0 15px;
+    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    gap: 20px;
   }
 
   .section {
-    max-width: 250px; /* Adjust section width for medium screens */
-    padding: 25px; /* Reduce padding */
+    max-width: 250px; /* Smaller max width for smaller screens */
+    padding: 20px; /* Reduced padding */
+  }
+
+  .section h3 {
+    font-size: 1.4rem; /* Slightly smaller font for titles */
+  }
+
+  .section p {
+    font-size: 0.8rem; /* Smaller text */
+  }
+
+  .section a.button {
+    font-size: 0.8rem; /* Adjust button font size */
+    max-width: 140px;
   }
 }
 
