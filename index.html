@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Pathetic Hub: Offering the best Roblox scripts, executors, proxies, and bypasses to enhance your gaming experience.">
     <meta name="keywords" content="Roblox, scripts, executors, proxies, bypass, gaming, tools">
     <meta name="author" content="Pathetic Hub">
@@ -13,26 +13,24 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        user-select: none;
+        user-select: none
       }
 
       body {
-        font-family: 'Lato', Arial, sans-serif !important;
+        font-family: Lato, Arial, sans-serif !important;
         background-color: #000;
         color: #fff;
         overflow-x: hidden;
         overflow-y: auto;
-        font-size: 16px;
+        font-size: 16px
       }
 
       body {
-        overflow: hidden;
-        /* Hide the scrollbar */
+        overflow: hidden
       }
 
       body::-webkit-scrollbar {
-        display: none;
-        /* Hide scrollbar in Webkit-based browsers (Chrome, Safari) */
+        display: none
       }
 
       #background.background-image {
@@ -41,10 +39,10 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url('https://r2.ammo.lol/a840e1f3-806d-4f67-95c4-0dbbabdd3bde.jpg');
+        background-image: url(https://r2.ammo.lol/a840e1f3-806d-4f67-95c4-0dbbabdd3bde.jpg);
         background-size: cover;
         background-position: center;
-        z-index: -1;
+        z-index: -1
       }
 
       header {
@@ -64,55 +62,55 @@
         z-index: 1000;
         opacity: 0;
         visibility: hidden;
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, .2);
         border-radius: 50px;
         transition: opacity 1s ease, background 1s ease, box-shadow 1s ease, max-width 1s ease, height 1s ease;
         height: 140px;
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(15px);
+        box-shadow: 0 0 5px rgba(255, 255, 255, .2), 0 0 20px rgba(255, 255, 255, .3);
+        backdrop-filter: blur(15px)
       }
 
       header.visible {
         opacity: 1;
-        visibility: visible;
+        visibility: visible
       }
 
       header:hover {
         height: 145px;
         max-width: 850px;
-        background: rgba(0, 0, 0, 0.5);
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(15px);
+        background: rgba(0, 0, 0, .5);
+        box-shadow: 0 0 15px rgba(255, 255, 255, .4), 0 0 30px rgba(255, 255, 255, .6);
+        backdrop-filter: blur(15px)
       }
 
       header h1 {
         margin-top: 20px;
         font-size: 1.2rem;
-        font-weight: bold;
+        font-weight: 700;
         text-shadow: 0 0 8px var(--highlight);
         width: 100%;
-        text-align: center;
+        text-align: center
       }
 
       nav ul {
         list-style: none;
-        font-size: 0.6rem;
+        font-size: .6rem;
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 30px;
+        margin-top: 30px
       }
 
       nav ul li a {
         text-decoration: none;
-        color: white;
+        color: #fff;
         font-size: 16px;
-        transition: color 0.3s ease;
+        transition: color .3s ease
       }
 
       nav ul li a:hover {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, .5)
       }
 
       .discord-button {
@@ -121,26 +119,26 @@
         width: 40px;
         height: 40px;
         background-color: rgba(255, 255, 255, 1);
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.9), 0 0 0px rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 5px rgba(255, 255, 255, .9), 0 0 0 rgba(255, 255, 255, .9);
         font-size: 13px;
         border: none;
-        color: black;
+        color: #000;
         border-radius: 100px;
         cursor: pointer;
-        transition: width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
+        transition: width .3s ease, height .3s ease, box-shadow .3s ease;
         backdrop-filter: blur(15px);
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        position: relative;
+        position: relative
       }
 
       .discord-button img.discord-icon {
         width: 20px;
         height: 20px;
         object-fit: contain;
-        transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+        transition: transform .3s ease, width .3s ease, height .3s ease
       }
 
       .discord-button .discord-text {
@@ -150,25 +148,25 @@
         transform: translate(-50%, -50%);
         opacity: 0;
         font-size: 14px;
-        color: black;
+        color: #000;
         pointer-events: none;
-        transition: opacity 0.3s ease;
+        transition: opacity .3s ease
       }
 
       .discord-button:hover {
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.7);
+        box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
         width: 150px;
-        height: 40px;
+        height: 40px
       }
 
       .discord-button:hover .discord-icon {
         transform: translateX(-40px);
         width: 18px;
-        height: 18px;
+        height: 18px
       }
 
       .discord-button:hover .discord-text {
-        opacity: 1;
+        opacity: 1
       }
 
       .welcome {
@@ -181,23 +179,23 @@
         text-align: center;
         padding: 20px;
         animation: fadeIn 1.5s ease-out;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.7));
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .4) 80%, rgba(0, 0, 0, .7))
       }
 
       .welcome h2 {
         font-size: 6.5rem;
         text-transform: uppercase;
         text-shadow: 0 0 100px #fff, 0 0 20px #fff, 0 0 30px #fff;
-        margin-bottom: 30px;
+        margin-bottom: 30px
       }
 
       .welcome p {
         font-size: 1.1rem;
         max-width: 600px;
         line-height: 1.8;
-        opacity: 0.8;
+        opacity: .8;
         text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #000, 0 0 70px #000;
-        margin-bottom: 50px;
+        margin-bottom: 50px
       }
 
       .welcome button {
@@ -205,19 +203,19 @@
         padding: 15px 40px;
         font-size: 1.2rem;
         background-color: rgba(255, 255, 255, 0);
-        box-shadow: 0 0px 25px rgba(255, 255, 255, 0.6);
+        box-shadow: 0 0 25px rgba(255, 255, 255, .6);
         border: none;
         color: var(--white);
         border-radius: 30px;
         cursor: pointer;
-        transition: transform 0.5s ease, box-shadow 0.5s ease, text-shadow 0.5s ease;
-        backdrop-filter: blur(2px);
+        transition: transform .5s ease, box-shadow .5s ease, text-shadow .5s ease;
+        backdrop-filter: blur(2px)
       }
 
       .welcome button:hover {
         transform: scale(1.03);
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.7);
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+        box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 30px rgba(255, 255, 255, .7);
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000
       }
 
       #section1 {
@@ -228,9 +226,9 @@
         align-items: center;
         padding: 20px;
         position: relative;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, .7);
         overflow-y: auto;
-        scroll-behavior: smooth;
+        scroll-behavior: smooth
       }
 
       .services-container {
@@ -241,14 +239,13 @@
         align-items: center;
         z-index: 2;
         max-width: 1000px;
-        /* Ensure it doesn't exceed 1000px */
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
       }
 
       .section {
         color: #fff;
         border-radius: 30px;
-        box-shadow: 0 0px 15px rgba(255, 255, 255, .3);
+        box-shadow: 0 0 15px rgba(255, 255, 255, .3);
         padding: 40px;
         width: 100%;
         display: flex;
@@ -256,35 +253,35 @@
         justify-content: space-between;
         align-items: center;
         text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        backdrop-filter: blur(5px);
+        transition: transform .3s ease, box-shadow .3s ease;
+        backdrop-filter: blur(5px)
       }
 
       .section:hover {
-        box-shadow: 0 0px 25px rgba(255, 255, 255, .7);
+        box-shadow: 0 0 25px rgba(255, 255, 255, .7);
         transform: scale(1.03);
-        background-color: rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(6px);
+        background-color: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(6px)
       }
 
       .section h3 {
         font-size: 2.3rem;
         margin-bottom: 30px;
-        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1)
       }
 
       .section p {
-        font-size: 0.8rem;
-        margin-bottom: 35px;
+        font-size: .8rem;
+        margin-bottom: 35px
       }
 
       .section a.button {
         display: inline-block;
         padding: 12px 40px;
         background-color: rgba(255, 255, 255, 1);
-        color: black;
+        color: #000;
         font-size: 1rem;
-        font-weight: bold;
+        font-weight: 700;
         border-radius: 100px;
         cursor: pointer;
         text-decoration: none;
@@ -293,50 +290,46 @@
         max-height: 40px;
         margin: 5px 0;
         backdrop-filter: blur(10px);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, margin 0.3s ease, width 0.3s ease, height 0.3s ease;
+        transition: transform .3s ease, box-shadow .3s ease, margin .3s ease, width .3s ease, height .3s ease
       }
 
       .section a.button:hover {
         transform: scale(1.03);
         text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.7);
-        margin: 10px 0;
+        box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
+        margin: 10px 0
       }
 
       .section.pcrblx {
-        background-image: url('https://iili.io/2ls9nZ7.png');
+        background-image: url(https://iili.io/2ls9nZ7.png);
         background-size: cover;
         background-position: center;
         color: #fff;
         width: 210%;
-        /* 100% for full width, if you want to set a max width */
         max-width: 1000px;
-        /* Ensures the section doesn't exceed 1000px */
         margin: 0 auto;
-        /* Centers the section horizontally */
-        padding: 20px;
-        /* Optional padding for spacing inside */
+        padding: 20px
       }
 
       .about {
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, .7);
         color: var(--white);
         padding: 400px 20px;
-        text-align: center;
+        text-align: center
       }
 
       .about h2 {
         font-size: 5rem;
         margin-bottom: 70px;
         text-transform: uppercase;
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000
       }
 
       .about p {
         font-size: 1.2rem;
         line-height: 1.8;
         max-width: 800px;
-        margin: 0 auto;
+        margin: 0 auto
       }
 
       footer {
@@ -347,109 +340,103 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
+        flex-direction: column
       }
 
       footer p {
-        font-size: 1rem;
+        font-size: 1rem
       }
 
       footer a {
         text-decoration: none;
         color: var(--highlight);
-        font-weight: bold;
+        font-weight: 700
       }
 
       ul.button-container li {
         padding: 0;
-        margin: 0;
+        margin: 0
       }
 
       ul.button-container {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 0
       }
 
-      @media (max-width: 1280px) {
+      @media (max-width:1280px) {
         .services-container {
           padding: 0 15px;
           grid-template-columns: repeat(2, 1fr);
-          /* Two columns on medium screens */
-          gap: 20px;
+          gap: 20px
         }
 
         .section {
           max-width: 250px;
-          /* Smaller max width for smaller screens */
-          padding: 20px;
-          /* Reduced padding */
+          padding: 20px
         }
 
         .section h3 {
-          font-size: 1.4rem;
-          /* Slightly smaller font for titles */
+          font-size: 1.4rem
         }
 
         .section p {
-          font-size: 0.8rem;
-          /* Smaller text */
+          font-size: .8rem
         }
 
         .section a.button {
-          font-size: 0.8rem;
-          /* Adjust button font size */
-          max-width: 140px;
+          font-size: .8rem;
+          max-width: 140px
         }
       }
 
-      @media (max-width: 768px) {
+      @media (max-width:768px) {
         header {
           width: 90%;
           height: 120px;
-          padding: 15px;
+          padding: 15px
         }
 
         header h1 {
           margin-bottom: 40px;
-          font-size: 1.2rem;
+          font-size: 1.2rem
         }
 
         nav ul {
           list-style: none;
-          font-size: 0.6rem;
+          font-size: .6rem;
           display: flex;
           gap: 10px;
           flex-wrap: wrap;
           justify-content: center;
-          font-weight: bold;
-          margin-top: 50px;
+          font-weight: 700;
+          margin-top: 50px
         }
 
         nav ul li a {
-          font-size: 14px;
+          font-size: 14px
         }
 
         .welcome h2 {
           font-size: 4rem;
-          margin-bottom: 55px;
+          margin-bottom: 55px
         }
 
         .welcome p {
-          font-size: 0.9rem;
-          margin-bottom: 15px;
+          font-size: .9rem;
+          margin-bottom: 15px
         }
 
         .welcome button {
           margin-top: 80px;
           font-size: 1rem;
-          padding: 12px 30px;
+          padding: 12px 30px
         }
 
         .services-container {
           padding: 0 10px;
           grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
+          gap: 10px
         }
 
         .services-container>* {
@@ -457,11 +444,11 @@
           max-width: 150px;
           height: 150px;
           margin: 0 auto;
-          object-fit: cover;
+          object-fit: cover
         }
 
         .discord-button {
-          margin-bottom: 50px;
+          margin-bottom: 50px
         }
 
         .section {
@@ -475,53 +462,54 @@
           justify-content: space-between;
           align-items: center;
           text-align: center;
-          backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px)
         }
 
         .section h3 {
           font-size: 1.2rem;
           margin-bottom: 10px;
-          text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
+          text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1)
         }
 
         .section p {
-          font-size: 0.8rem;
-          margin-bottom: 0px;
+          font-size: .8rem;
+          margin-bottom: 0
         }
 
         .section a.button {
           max-width: 90px;
           max-height: 25px;
           padding: 5px 15px;
-          font-size: 0.7rem;
+          font-size: .7rem;
           margin-top: 15px;
           display: inline-block;
           text-align: center;
           line-height: 15px;
           vertical-align: middle;
-          white-space: nowrap;
+          white-space: nowrap
         }
 
         .about {
-          padding: 100px 15px;
+          padding: 100px 15px
         }
 
         .about h2 {
-          font-size: 3.5rem;
+          font-size: 3.5rem
         }
 
         .about p {
-          font-size: 1rem;
+          font-size: 1rem
         }
 
         footer {
           height: auto;
-          padding: 10px 15px;
+          padding: 10px 15px
         }
 
         footer p {
-          font-size: 0.9rem;
+          font-size: .9rem
         }
+      }
     </style>
   </head>
   <body>
@@ -541,7 +529,7 @@
         </ul>
       </nav>
       <div class="header-buttons">
-        <button class="discord-button" onclick="window.open('https://discord.gg/Eg2EWXwYcn', '_blank')">
+        <button class="discord-button" onclick='window.open("https://discord.gg/Eg2EWXwYcn","_blank")'>
           <img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6ac3c481f273141736_icon_clyde_black_RGB.png" alt="Discord" class="discord-icon">
           <span class="discord-text">Discord</span>
         </button>
@@ -550,11 +538,7 @@
     <section id="welcome" class="welcome">
       <h2>Welcome</h2>
       <p>We are here to offer the best services for you!</p>
-      <button onclick="
-    document.getElementById('section1').scrollIntoView({behavior: 'smooth'}); 
-    document.querySelector('header').classList.add('visible'); 
-    document.body.style.overflowY = 'scroll';  // Enable scrolling
-  "> Get Started </button>
+      <button onclick='document.getElementById("section1").scrollIntoView({behavior:"smooth"}),document.querySelector("header").classList.add("visible"),document.body.style.overflowY="scroll"'>Get Started</button>
     </section>
     <section id="section1">
       <div class="services-container">
