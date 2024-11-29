@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pathetic Hub: Offering the best Roblox scripts, executors, proxies, and bypasses to enhance your gaming experience.">
-    <title>Home</title>
-    <style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pathetic Hub: Offering the best Roblox scripts, executors, proxies, and bypasses to enhance your gaming experience.">
+  <meta name="keywords" content="Roblox, scripts, executors, proxies, bypass, gaming, tools">
+  <meta name="author" content="Pathetic Hub">
+  <title>Home</title>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" as="style">
+  <style>
       * {
         margin: 0;
         padding: 0;
@@ -14,19 +17,22 @@
       }
 
       body {
-        font-family: 'Arial' !important;
+        font-family: 'Lato', Arial, sans-serif !important;
         background-color: #000;
         color: #fff;
         overflow-x: hidden;
         overflow-y: auto;
         font-size: 16px;
       }
+    
+body {
+  overflow: hidden; /* Hide the scrollbar */
+}
 
-      html,
-      body {
-        scroll-behavior: auto !important;
-      }
-
+body::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Webkit-based browsers (Chrome, Safari) */
+}
+    
       #background.background-image {
         position: fixed;
         top: 0;
@@ -111,9 +117,7 @@
         margin-top: 25px;
         margin-bottom: 25px;
         width: 40px;
-        /* Set width for the icon */
         height: 40px;
-        /* Set height for the icon */
         background-color: rgba(255, 255, 255, 1);
         box-shadow: 0 0 5px rgba(255, 255, 255, 0.9), 0 0 0px rgba(255, 255, 255, 0.9);
         font-size: 13px;
@@ -122,13 +126,11 @@
         border-radius: 100px;
         cursor: pointer;
         transition: width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
-        /* Focus on width and box-shadow */
         backdrop-filter: blur(15px);
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        /* To prevent the text from overflowing */
         position: relative;
       }
 
@@ -142,41 +144,29 @@
       .discord-button .discord-text {
         position: absolute;
         top: 50%;
-        /* Center vertically */
         left: 50%;
-        /* Center horizontally */
         transform: translate(-50%, -50%);
-        /* Ensure text stays centered */
         opacity: 0;
-        /* Initially hidden */
         font-size: 14px;
         color: black;
         pointer-events: none;
-        /* Prevent text from interacting with mouse events */
         transition: opacity 0.3s ease;
-        /* Only opacity transition */
       }
 
       .discord-button:hover {
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.7);
         width: 150px;
-        /* Increase width on hover to fit both icon and text */
         height: 40px;
-        /* Maintain height for consistency */
       }
 
       .discord-button:hover .discord-icon {
         transform: translateX(-40px);
-        /* Move the icon smoothly to the left */
         width: 18px;
-        /* Slightly reduce size for a better fit */
         height: 18px;
-        /* Adjust height of the icon */
       }
 
       .discord-button:hover .discord-text {
         opacity: 1;
-        /* Fade the text in */
       }
 
       .welcome {
@@ -229,26 +219,29 @@
       }
 
       #section1 {
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0 20px;
+        padding: 20px;
         position: relative;
         background: rgba(0, 0, 0, 0.7);
-        overflow: hidden;
+        overflow-y: auto;
+        scroll-behavior: smooth;
       }
 
       .services-container {
-  display: grid;
-  gap: 40px;
-  padding: 0 40px;
-  justify-items: center;
-  align-items: center;
-  z-index: 2;
-  max-width: 1000px; /* Ensure it doesn't exceed 1000px */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
+        display: grid;
+        gap: 40px;
+        padding: 0 40px;
+        justify-items: center;
+        align-items: center;
+        z-index: 2;
+        max-width: 1000px;
+        /* Ensure it doesn't exceed 1000px */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
 
       .section {
         color: #fff;
@@ -308,18 +301,20 @@
         margin: 10px 0;
       }
 
-.section.pcrblx {
-    background-image: url('https://iili.io/2ls9nZ7.png');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    width: 210%; /* 100% for full width, if you want to set a max width */
-    max-width: 1000px; /* Ensures the section doesn't exceed 1000px */
-    margin: 0 auto; /* Centers the section horizontally */
-    padding: 20px; /* Optional padding for spacing inside */
-}
-
-
+      .section.pcrblx {
+        background-image: url('https://iili.io/2ls9nZ7.png');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        width: 210%;
+        /* 100% for full width, if you want to set a max width */
+        max-width: 1000px;
+        /* Ensures the section doesn't exceed 1000px */
+        margin: 0 auto;
+        /* Centers the section horizontally */
+        padding: 20px;
+        /* Optional padding for spacing inside */
+      }
 
       .about {
         background: rgba(0, 0, 0, 0.7);
@@ -375,150 +370,156 @@
       }
 
       @media (max-width: 1280px) {
-  .services-container {
-    padding: 0 15px;
-    grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
-    gap: 20px;
-  }
+        .services-container {
+          padding: 0 15px;
+          grid-template-columns: repeat(2, 1fr);
+          /* Two columns on medium screens */
+          gap: 20px;
+        }
 
-  .section {
-    max-width: 250px; /* Smaller max width for smaller screens */
-    padding: 20px; /* Reduced padding */
-  }
+        .section {
+          max-width: 250px;
+          /* Smaller max width for smaller screens */
+          padding: 20px;
+          /* Reduced padding */
+        }
 
-  .section h3 {
-    font-size: 1.4rem; /* Slightly smaller font for titles */
-  }
+        .section h3 {
+          font-size: 1.4rem;
+          /* Slightly smaller font for titles */
+        }
 
-  .section p {
-    font-size: 0.8rem; /* Smaller text */
-  }
+        .section p {
+          font-size: 0.8rem;
+          /* Smaller text */
+        }
 
-  .section a.button {
-    font-size: 0.8rem; /* Adjust button font size */
-    max-width: 140px;
-  }
-}
+        .section a.button {
+          font-size: 0.8rem;
+          /* Adjust button font size */
+          max-width: 140px;
+        }
+      }
 
-        @media (max-width: 768px) {
-          header {
-            width: 90%;
-            height: 120px;
-            padding: 15px;
-          }
+      @media (max-width: 768px) {
+        header {
+          width: 90%;
+          height: 120px;
+          padding: 15px;
+        }
 
-          header h1 {
-            margin-bottom: 40px;
-            font-size: 1.2rem;
-          }
+        header h1 {
+          margin-bottom: 40px;
+          font-size: 1.2rem;
+        }
 
-          nav ul {
-            list-style: none;
-            font-size: 0.6rem;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-            font-weight: bold;
-            margin-top: 50px;
-          }
+        nav ul {
+          list-style: none;
+          font-size: 0.6rem;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: center;
+          font-weight: bold;
+          margin-top: 50px;
+        }
 
-          nav ul li a {
-            font-size: 14px;
-          }
+        nav ul li a {
+          font-size: 14px;
+        }
 
-          .welcome h2 {
-            font-size: 4rem;
-            margin-bottom: 55px;
-          }
+        .welcome h2 {
+          font-size: 4rem;
+          margin-bottom: 55px;
+        }
 
-          .welcome p {
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-          }
+        .welcome p {
+          font-size: 0.9rem;
+          margin-bottom: 15px;
+        }
 
-          .welcome button {
-            margin-top: 80px;
-            font-size: 1rem;
-            padding: 12px 30px;
-          }
+        .welcome button {
+          margin-top: 80px;
+          font-size: 1rem;
+          padding: 12px 30px;
+        }
 
-          .services-container {
-            padding: 0 10px;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-          }
+        .services-container {
+          padding: 0 10px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
 
-          .services-container>* {
-            width: 100%;
-            max-width: 150px;
-            height: 150px;
-            margin: 0 auto;
-            object-fit: cover;
-          }
+        .services-container>* {
+          width: 100%;
+          max-width: 150px;
+          height: 150px;
+          margin: 0 auto;
+          object-fit: cover;
+        }
 
-          .discord-button {
-            margin-bottom: 50px;
-          }
+        .discord-button {
+          margin-bottom: 50px;
+        }
 
-          .section {
-            padding: 20px;
-            width: 100%;
-            height: 100%;
-            max-width: 200px;
-            max-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            backdrop-filter: blur(5px);
-          }
+        .section {
+          padding: 20px;
+          width: 100%;
+          height: 100%;
+          max-width: 200px;
+          max-height: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          text-align: center;
+          backdrop-filter: blur(5px);
+        }
 
-          .section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
-          }
+        .section h3 {
+          font-size: 1.2rem;
+          margin-bottom: 10px;
+          text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
+        }
 
-          .section p {
-            font-size: 0.8rem;
-            margin-bottom: 0px;
-          }
+        .section p {
+          font-size: 0.8rem;
+          margin-bottom: 0px;
+        }
 
-          .section a.button {
-            max-width: 90px;
-            max-height: 25px;
-            padding: 5px 15px;
-            font-size: 0.7rem;
-            margin-top: 15px;
-            display: inline-block;
-            text-align: center;
-            line-height: 15px;
-            vertical-align: middle;
-            white-space: nowrap;
-          }
+        .section a.button {
+          max-width: 90px;
+          max-height: 25px;
+          padding: 5px 15px;
+          font-size: 0.7rem;
+          margin-top: 15px;
+          display: inline-block;
+          text-align: center;
+          line-height: 15px;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
 
-          .about {
-            padding: 100px 15px;
-          }
+        .about {
+          padding: 100px 15px;
+        }
 
-          .about h2 {
-            font-size: 3.5rem;
-          }
+        .about h2 {
+          font-size: 3.5rem;
+        }
 
-          .about p {
-            font-size: 1rem;
-          }
+        .about p {
+          font-size: 1rem;
+        }
 
-          footer {
-            height: auto;
-            padding: 10px 15px;
-          }
+        footer {
+          height: auto;
+          padding: 10px 15px;
+        }
 
-          footer p {
-            font-size: 0.9rem;
-          }
+        footer p {
+          font-size: 0.9rem;
+        }
     </style>
   </head>
   <body>
@@ -582,7 +583,7 @@
         <div class="section pcrblx">
           <h3>PCRBLX</h3>
           <p>PCRBLX HUB the best Roblox scripting hub with over 60+ Scripts, good moderation and, so much more!</p>
-          <a href="https://pcrblx.vercel.app/" class="button">Enter</a>
+          <a href="https://pcrblx.vercel.app/" class="button" target="_blank">Enter</a>
         </div>
       </div>
     </section>
