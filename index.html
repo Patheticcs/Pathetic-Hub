@@ -1,683 +1,676 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Pathetic Hub: Offering the best Roblox scripts, executors, proxies, and bypasses to enhance your gaming experience.">
-  <meta name="keywords" content="Roblox, scripts, executors, proxies, bypass, gaming, tools">
-  <meta name="author" content="Pathetic Hub">
-  <title>Home</title>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap" as="style">
-  <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        user-select: none
-      }
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="description" content="Pathetic Hub: Offering the best Roblox scripts, executors, proxies, and bypasses to enhance your gaming experience.">
+		<meta name="keywords" content="Roblox, scripts, executors, proxies, bypass, gaming, tools">
+		<meta name="author" content="Pathetic Hub">
+		<title>Home</title>
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap" as="style">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				user-select: none
+			}
 
-      body {
-        font-family: Lato, Arial, sans-serif !important;
-        background-color: #000;
-        color: #fff;
-        overflow-x: hidden;
-        overflow-y: auto;
-        font-size: 16px
-      }
+			body {
+				font-family: Lato, Arial, sans-serif !important;
+				background-color: #000;
+				color: #fff;
+				overflow-x: hidden;
+				overflow-y: auto;
+				font-size: 16px
+			}
 
-      body::-webkit-scrollbar {
-        display: none
-      }
+			body::-webkit-scrollbar {
+				display: none
+			}
 
-      #background-video {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-      }
+			#background-video {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				z-index: -1;
+			}
 
-      header {
-        margin-top: 10px;
-        position: fixed;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        max-width: 800px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 20px 30px;
-        backdrop-filter: blur(50px);
-        z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-        background: rgba(0, 0, 0, .2);
-        border-radius: 50px;
-        transition: opacity 1s ease, background 1s ease, box-shadow 1s ease, max-width 1s ease, height 1s ease;
-        height: 140px;
-        box-shadow: 0 0 5px rgba(255, 255, 255, .2), 0 0 20px rgba(255, 255, 255, .3);
-        backdrop-filter: blur(15px)
-      }
+			header {
+				margin-top: 10px;
+				position: fixed;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 100%;
+				max-width: 800px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				padding: 20px 30px;
+				backdrop-filter: blur(50px);
+				z-index: 1000;
+				opacity: 0;
+				visibility: hidden;
+				background: rgba(0, 0, 0, .2);
+				border-radius: 50px;
+				transition: opacity 1s ease, background 1s ease, box-shadow 1s ease, max-width 1s ease, height 1s ease;
+				height: 140px;
+				box-shadow: 0 0 5px rgba(255, 255, 255, .2), 0 0 20px rgba(255, 255, 255, .3);
+				backdrop-filter: blur(15px)
+			}
 
-      header.visible {
-        opacity: 1;
-        visibility: visible
-      }
+			header.visible {
+				opacity: 1;
+				visibility: visible
+			}
 
-      header:hover {
-        height: 145px;
-        max-width: 850px;
-        background: rgba(0, 0, 0, .5);
-        box-shadow: 0 0 15px rgba(255, 255, 255, .4), 0 0 30px rgba(255, 255, 255, .6);
-        backdrop-filter: blur(15px)
-      }
+			header:hover {
+				height: 145px;
+				max-width: 850px;
+				background: rgba(0, 0, 0, .5);
+				box-shadow: 0 0 15px rgba(255, 255, 255, .4), 0 0 30px rgba(255, 255, 255, .6);
+				backdrop-filter: blur(15px)
+			}
 
-      header h1 {
-        margin-top: 20px;
-        font-size: 1.1rem;
-        font-weight: 700;
-        text-shadow: 0 0 8px var(--highlight);
-        width: 100%;
-        text-align: center
-      }
+			header h1 {
+				margin-top: 20px;
+				font-size: 1.1rem;
+				font-weight: 700;
+				text-shadow: 0 0 8px var(--highlight);
+				width: 100%;
+				text-align: center
+			}
 
-      nav ul {
-        list-style: none;
-        font-size: .6rem;
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 50px
-      }
+			nav ul {
+				list-style: none;
+				font-size: .6rem;
+				display: flex;
+				gap: 20px;
+				flex-wrap: wrap;
+				justify-content: center;
+				margin-top: 50px
+			}
 
-      nav ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 16px;
-        transition: color .3s ease
-      }
+			nav ul li a {
+				text-decoration: none;
+				color: #fff;
+				font-size: 16px;
+				transition: color .3s ease
+			}
 
-      nav ul li a:hover {
-        color: rgba(255, 255, 255, .5)
-      }
+			nav ul li a:hover {
+				color: rgba(255, 255, 255, .5)
+			}
 
-      .discord-button {
-        margin-top: 25px;
-        margin-bottom: 25px;
-        width: 35px;
-        height: 35px;
-        background-color: rgba(255, 255, 255, 1);
-        box-shadow: 0 0 5px rgba(255, 255, 255, .9), 0 0 0 rgba(255, 255, 255, .9);
-        font-size: 13px;
-        border: none;
-        color: #000;
-        border-radius: 100px;
-        cursor: pointer;
-        transition: width .3s ease, height .3s ease, box-shadow .3s ease;
-        backdrop-filter: blur(15px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        position: relative
-      }
+			.discord-button {
+				margin-top: 25px;
+				margin-bottom: 25px;
+				width: 35px;
+				height: 35px;
+				background-color: rgba(255, 255, 255, 1);
+				box-shadow: 0 0 5px rgba(255, 255, 255, .9), 0 0 0 rgba(255, 255, 255, .9);
+				font-size: 13px;
+				border: none;
+				color: #000;
+				border-radius: 100px;
+				cursor: pointer;
+				transition: width .3s ease, height .3s ease, box-shadow .3s ease;
+				backdrop-filter: blur(15px);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				position: relative
+			}
 
-      .discord-button img.discord-icon {
-        width: 17px;
-        height: 17px;
-        object-fit: contain;
-        transition: transform .4s ease, width .7s ease, height .7s ease
-      }
+			.discord-button img.discord-icon {
+				width: 17px;
+				height: 17px;
+				object-fit: contain;
+				transition: transform .4s ease, width .7s ease, height .7s ease
+			}
 
-      .discord-button .discord-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-35%, -50%);
-        opacity: 0;
-        font-size: 13px;
-        color: #000;
-        pointer-events: none;
-        transition: opacity .4s ease
-      }
+			.discord-button .discord-text {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-35%, -50%);
+				opacity: 0;
+				font-size: 13px;
+				color: #000;
+				pointer-events: none;
+				transition: opacity .4s ease
+			}
 
-      .discord-button:hover {
-        box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
-        width: 150px;
-        height: 35px
-      }
+			.discord-button:hover {
+				box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
+				width: 150px;
+				height: 35px
+			}
 
-      .discord-button:hover .discord-icon {
-        transform: translateX(-40px);
-        width: 18px;
-        height: 18px
-      }
+			.discord-button:hover .discord-icon {
+				transform: translateX(-40px);
+				width: 18px;
+				height: 18px
+			}
 
-      .discord-button:hover .discord-text {
-        opacity: 1
-      }
+			.discord-button:hover .discord-text {
+				opacity: 1
+			}
 
-      .welcome {
-        position: relative;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-        animation: fadeIn 1.5s ease-out;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .4) 80%, rgba(0, 0, 0, .7))
-      }
+			.welcome {
+				position: relative;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				padding: 20px;
+				animation: fadeIn 1.5s ease-out;
+				background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .4) 80%, rgba(0, 0, 0, .7))
+			}
 
-      .welcome h2 {
-        font-size: 6.5rem;
-        text-transform: uppercase;
-        text-shadow: 0 0 100px #fff, 0 0 20px #fff, 0 0 30px #fff;
-        margin-bottom: 30px
-      }
+			.welcome h2 {
+				font-size: 6.5rem;
+				text-transform: uppercase;
+				text-shadow: 0 0 100px #fff, 0 0 20px #fff, 0 0 30px #fff;
+				margin-bottom: 30px
+			}
 
-      .welcome p {
-        font-size: 1.1rem;
-        max-width: 600px;
-        line-height: 1.8;
-        opacity: .8;
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #000, 0 0 70px #000;
-        margin-bottom: 50px
-      }
+			.welcome p {
+				font-size: 1.1rem;
+				max-width: 600px;
+				line-height: 1.8;
+				opacity: .8;
+				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #000, 0 0 70px #000;
+				margin-bottom: 50px
+			}
 
-      .welcome button {
-        margin-top: 5px;
-        padding: 15px 40px;
-        font-size: 1.2rem;
-        background-color: rgba(255, 255, 255, 0);
-        box-shadow: 0 0 25px rgba(255, 255, 255, .6);
-        border: none;
-        color: var(--white);
-        border-radius: 30px;
-        cursor: pointer;
-        transition: transform .5s ease, box-shadow .5s ease, text-shadow .5s ease;
-        backdrop-filter: blur(2px)
-      }
+			.welcome button {
+				margin-top: 5px;
+				padding: 15px 40px;
+				font-size: 1.2rem;
+				background-color: rgba(255, 255, 255, 0);
+				box-shadow: 0 0 25px rgba(255, 255, 255, .6);
+				border: none;
+				color: var(--white);
+				border-radius: 30px;
+				cursor: pointer;
+				transition: transform .5s ease, box-shadow .5s ease, text-shadow .5s ease;
+				backdrop-filter: blur(2px)
+			}
 
-      .welcome button:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 30px rgba(255, 255, 255, .7);
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000
-      }
+			.welcome button:hover {
+				transform: scale(1.03);
+				box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 30px rgba(255, 255, 255, .7);
+				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000
+			}
 
-      #section1 {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        position: relative;
-        background: rgba(0, 0, 0, .7);
-        overflow-y: auto;
-        scroll-behavior: smooth
-      }
+			#section1 {
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 20px;
+				position: relative;
+				background: rgba(0, 0, 0, .7);
+				overflow-y: auto;
+				scroll-behavior: smooth
+			}
 
-      #section2 {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        position: relative;
-        background: rgba(0, 0, 0, .7);
-        overflow-y: auto;
-        scroll-behavior: smooth
-      }
+			#section2 {
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 20px;
+				position: relative;
+				background: rgba(0, 0, 0, .7);
+				overflow-y: auto;
+				scroll-behavior: smooth
+			}
 
-      .services-container {
-        display: grid;
-        gap: 40px;
-        padding: 0 40px;
-        justify-items: center;
-        align-items: center;
-        z-index: 2;
-        max-width: 1000px;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
-      }
+			.services-container {
+				display: grid;
+				gap: 40px;
+				padding: 0 40px;
+				justify-items: center;
+				align-items: center;
+				z-index: 2;
+				max-width: 1000px;
+				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+			}
 
-      .section {
-        color: #fff;
-        border-radius: 30px;
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-        padding: 40px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-        transition: transform 0.4s ease-out, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
-        backdrop-filter: blur(5px);
-        background-color: transparent;
-      }
+			.section {
+				color: #fff;
+				border-radius: 30px;
+				box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+				padding: 40px;
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				text-align: center;
+				transition: transform 0.4s ease-out, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+				backdrop-filter: blur(5px);
+				background-color: transparent;
+			}
 
-      .section:hover {
-        box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
-        transform: scale(1.03);
-        background-color: rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(6px);
-      }
+			.section:hover {
+				box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+				transform: scale(1.03);
+				background-color: rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(6px);
+			}
 
-      .section h3 {
-        font-size: 2.3rem;
-        margin-bottom: 30px;
-        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1)
-      }
+			.section h3 {
+				font-size: 2.3rem;
+				margin-bottom: 30px;
+				text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1)
+			}
 
-      .section p {
-        font-size: .8rem;
-        margin-bottom: 35px
-      }
+			.section p {
+				font-size: .8rem;
+				margin-bottom: 35px
+			}
 
-      .section a.button {
-        display: inline-block;
-        padding: 12px 40px;
-        background-color: rgba(255, 255, 255, 1);
-        color: #000;
-        font-size: 1rem;
-        font-weight: 700;
-        border-radius: 100px;
-        cursor: pointer;
-        text-decoration: none;
-        width: 100%;
-        max-width: 160px;
-        max-height: 40px;
-        margin: 5px 0;
-        backdrop-filter: blur(10px);
-        transition: transform .3s ease, box-shadow .3s ease, margin .3s ease, width .3s ease, height .3s ease
-      }
+			.section a.button {
+				display: inline-block;
+				padding: 12px 40px;
+				background-color: rgba(255, 255, 255, 1);
+				color: #000;
+				font-size: 1rem;
+				font-weight: 700;
+				border-radius: 100px;
+				cursor: pointer;
+				text-decoration: none;
+				width: 100%;
+				max-width: 160px;
+				max-height: 40px;
+				margin: 5px 0;
+				backdrop-filter: blur(10px);
+				transition: transform .3s ease, box-shadow .3s ease, margin .3s ease, width .3s ease, height .3s ease
+			}
 
-      .section a.button:hover {
-        transform: scale(1.03);
-        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
-        box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
-        margin: 10px 0
-      }
+			.section a.button:hover {
+				transform: scale(1.03);
+				text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
+				box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
+				margin: 10px 0
+			}
 
-      .section.pcrblx {
-        background-image: url(https://iili.io/2ls9nZ7.png);
-        background-size: cover;
-        background-position: center;
-        color: #fff;
-        width: 210%;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 20px
-      }
+			.section.pcrblx {
+				background-image: url(https://iili.io/2ls9nZ7.png);
+				background-size: cover;
+				background-position: center;
+				color: #fff;
+				width: 210%;
+				max-width: 1000px;
+				margin: 0 auto;
+				padding: 20px
+			}
 
-      .about {
-        background: rgba(0, 0, 0, .7);
-        color: var(--white);
-        padding: 400px 20px;
-        text-align: center
-      }
+			.about {
+				background: rgba(0, 0, 0, .7);
+				color: var(--white);
+				padding: 400px 20px;
+				text-align: center
+			}
 
-      .about h2 {
-        font-size: 5rem;
-        margin-bottom: 70px;
-        text-transform: uppercase;
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000
-      }
+			.about h2 {
+				font-size: 5rem;
+				margin-bottom: 70px;
+				text-transform: uppercase;
+				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000
+			}
 
-      .about p {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        max-width: 800px;
-        margin: 0 auto
-      }
+			.about p {
+				font-size: 1.2rem;
+				line-height: 1.8;
+				max-width: 800px;
+				margin: 0 auto
+			}
 
-      footer {
-        background: rgba(0, 0, 0, .85);
-        color: var(--white);
-        text-align: center;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column
-      }
+			footer {
+				background: rgba(0, 0, 0, .85);
+				color: var(--white);
+				text-align: center;
+				height: 60px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column
+			}
 
-      footer p {
-        font-size: 1rem
-      }
+			footer p {
+				font-size: 1rem
+			}
 
-      footer a {
-        text-decoration: none;
-        color: var(--highlight);
-        font-weight: 700
-      }
+			footer a {
+				text-decoration: none;
+				color: var(--highlight);
+				font-weight: 700
+			}
 
-      ul.button-container li {
-        padding: 0;
-        margin: 0
-      }
+			ul.button-container li {
+				padding: 0;
+				margin: 0
+			}
 
-      ul.button-container {
-        list-style: none;
-        padding: 0;
-        margin: 0
-      }
+			ul.button-container {
+				list-style: none;
+				padding: 0;
+				margin: 0
+			}
 
-      @media (max-width:1280px) {
-        .services-container {
-          padding: 0 15px;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 20px
-        }
+			@media (max-width:768px) {
+				header {
+					width: 90%;
+					height: 150px;
+					padding: 15px;
+					transition: opacity 1s ease, background 1s ease, box-shadow 1s ease, width 1s ease, height 1s ease;
+				}
 
-        .section {
-          max-width: 250px;
-          padding: 20px
-        }
+				header:hover {
+					height: 160px;
+					width: 360px;
+				}
 
-        .section h3 {
-          font-size: 1.4rem
-        }
+				header h1 {
+					margin-top: 20px;
+					font-size: 1.2rem
+				}
 
-        .section p {
-          font-size: .8rem
-        }
+				nav ul {
+					list-style: none;
+					font-size: .6rem;
+					display: flex;
+					gap: 10px;
+					flex-wrap: wrap;
+					justify-content: center;
+					font-weight: 700;
+					margin-top: 50px;
+				}
 
-        .section a.button {
-          font-size: .8rem;
-          max-width: 140px
-        }
-      }
+				nav ul li a {
+					font-size: 14px
+				}
 
-      @media (max-width:768px) {
-        header {
-          width: 90%;
-          height: 120px;
-          padding: 15px
-        }
+				.welcome h2 {
+					font-size: 4rem;
+					margin-bottom: 55px
+				}
 
-        header h1 {
-          margin-bottom: 40px;
-          font-size: 1.2rem
-        }
+				.welcome p {
+					font-size: .9rem;
+					margin-bottom: 15px
+				}
 
-        nav ul {
-          list-style: none;
-          font-size: .6rem;
-          display: flex;
-          gap: 10px;
-          flex-wrap: wrap;
-          justify-content: center;
-          font-weight: 700;
-          margin-top: 50px
-        }
+				.welcome button {
+					margin-top: 80px;
+					font-size: 1rem;
+					padding: 12px 30px
+				}
 
-        nav ul li a {
-          font-size: 14px
-        }
+				.services-container {
+					padding: 0 10px;
+					grid-template-columns: repeat(2, 1fr);
+					gap: 10px
+				}
 
-        .welcome h2 {
-          font-size: 4rem;
-          margin-bottom: 55px
-        }
+				.services-container>* {
+					width: 100%;
+					max-width: 150px;
+					height: 150px;
+					margin: 0 auto;
+					object-fit: cover
+				}
 
-        .welcome p {
-          font-size: .9rem;
-          margin-bottom: 15px
-        }
+				.discord-button {
+					margin-bottom: 50px height: 20px;
+					width: 35px;
+				}
 
-        .welcome button {
-          margin-top: 80px;
-          font-size: 1rem;
-          padding: 12px 30px
-        }
+				.section {
+					padding: 20px;
+					width: 100%;
+					height: 100%;
+					max-width: 200px;
+					max-height: 200px;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					align-items: center;
+					text-align: center;
+					backdrop-filter: blur(5px)
+				}
 
-        .services-container {
-          padding: 0 10px;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 10px
-        }
+				.section h3 {
+					font-size: 1.2rem;
+					margin-bottom: 10px;
+					text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1)
+				}
 
-        .services-container>* {
-          width: 100%;
-          max-width: 150px;
-          height: 150px;
-          margin: 0 auto;
-          object-fit: cover
-        }
+				.section p {
+					font-size: .8rem;
+					margin-bottom: 0
+				}
 
-        .discord-button {
-          margin-bottom: 50px
-        }
+				.section a.button {
+					max-width: 90px;
+					max-height: 25px;
+					padding: 5px 15px;
+					font-size: .7rem;
+					margin-top: 15px;
+					display: inline-block;
+					text-align: center;
+					line-height: 15px;
+					vertical-align: middle;
+					white-space: nowrap
+				}
 
-        .section {
-          padding: 20px;
-          width: 100%;
-          height: 100%;
-          max-width: 200px;
-          max-height: 200px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: center;
-          text-align: center;
-          backdrop-filter: blur(5px)
-        }
+				.about {
+					padding: 100px 15px
+				}
 
-        .section h3 {
-          font-size: 1.2rem;
-          margin-bottom: 10px;
-          text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1)
-        }
+				.about h2 {
+					font-size: 3.5rem
+				}
 
-        .section p {
-          font-size: .8rem;
-          margin-bottom: 0
-        }
+				.about p {
+					font-size: 1rem
+				}
 
-        .section a.button {
-          max-width: 90px;
-          max-height: 25px;
-          padding: 5px 15px;
-          font-size: .7rem;
-          margin-top: 15px;
-          display: inline-block;
-          text-align: center;
-          line-height: 15px;
-          vertical-align: middle;
-          white-space: nowrap
-        }
+				footer {
+					height: auto;
+					padding: 10px 15px
+				}
 
-        .about {
-          padding: 100px 15px
-        }
-
-        .about h2 {
-          font-size: 3.5rem
-        }
-
-        .about p {
-          font-size: 1rem
-        }
-
-        footer {
-          height: auto;
-          padding: 10px 15px
-        }
-
-        footer p {
-          font-size: .9rem
-        }
-      }
-  </style>
-</head>
-<body>
-  <div class="background-container">
-    <video autoplay="" muted loop="" playsinline preload="auto" id="background-video"><source src="https://files.offshore.cat/g52W97M9.mp4" type="video/mp4"> Your browser does not support the video tag.</video>
-  </div>
-  <header>
-    <nav>
-      <ul>
-        <li>
-          <a href="#welcome">Home</a>
-        </li>
-        <li>
-          <a href="#section1">Roblox</a>
-        </li>
-        <li>
-          <a href="#section2">Exploits</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="header-buttons">
-      <button class="discord-button" onclick='window.open("https://discord.gg/Eg2EWXwYcn","_blank")'><img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6ac3c481f273141736_icon_clyde_black_RGB.png" alt="Discord" class="discord-icon"> <span class="discord-text">Discord</span></button>
-    </div>
-  </header>
-  <section id="welcome" class="welcome">
-    <h2>Welcome</h2>
-    <p>We are here to offer the best services for you!</p><button onclick='document.getElementById("section1").scrollIntoView({behavior:"smooth"}),document.querySelector("header").classList.add("visible"),document.body.style.overflowY="scroll"'>Get Started</button>
-  </section>
-  <section id="section1">
-    <div class="services-container">
-      <div class="section">
-        <h3>SCRIPTS</h3>
-        <p>50+ Free Scripts, all supported by SOLARA.</p><a href="scripts.html" class="button">Enter</a>
-      </div>
-      <div class="section">
-        <h3>EXECUTORS</h3>
-        <p>All Best Free Windows Executors</p><a href="executors.html" class="button">Enter</a>
-      </div>
-      <div class="section pcrblx">
-        <h3>PCRBLX</h3>
-        <p>PCRBLX HUB the best Roblox scripting hub with over 60+ Scripts, good moderation and, so much more!</p><a href="https://pcrblx.vercel.app/" class="button" target="_blank">Enter</a>
-      </div>
-    </div>
-  </section>
-  <section id="section2">
-    <div class="services-container">
-      <div class="section">
-        <h3>PROXIES</h3>
-        <p>Bored at school, every site getting blocked?</p><a href="proxies.html" class="button">Enter</a>
-      </div>
-      <div class="section">
-        <h3>BYPASS</h3>
-        <p>Tired of Ad Links? Well, we got you covered.</p><a href="bypass.html" class="button">Enter</a>
-      </div>
-      <div class="section">
-        <h3>FREE MOVIES</h3>
-        <p>Stream Videos, Download Videos, Torrent Videos</p><a href="movies.html" class="button">Enter</a>
-      </div>
-    </div>
-  </section>
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>We are a dedicated team focused on creating reliable and effective exploits for Roblox. Our aim is to provide users with tools that enhance their gaming experience, combining efficiency and quality in every solution we offer.</p>
-  </section>
-  <footer>
-    <p>© 2024 Pathetic Hub. All Rights Reserved.</p>
-  </footer>
-  <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        window.scrollTo(0, 0);
-        const isGetStartedClicked = sessionStorage.getItem('getStartedClicked');
-        if (!isGetStartedClicked) {
-          document.body.style.overflowY = 'hidden';
-          document.querySelector('header').classList.remove('visible');
-        } else {
-          document.body.style.overflowY = 'scroll';
-          document.querySelector('header').classList.add('visible');
-        }
-        document.addEventListener('contextmenu', function(e) {
-          e.preventDefault();
-        });
-        document.addEventListener('mousedown', function(e) {
-          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault();
-          }
-        });
-        document.addEventListener('touchstart', function(e) {
-          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault();
-          }
-        });
-        const links = document.querySelectorAll("a");
-        links.forEach(link => {
-          link.addEventListener("contextmenu", (event) => {
-            event.preventDefault();
-          });
-        });
-        document.addEventListener("keydown", function(event) {
-          if (event.ctrlKey || event.keyCode === 123) {
-            event.preventDefault();
-          }
-        });
-      });
-      document.querySelector('button').addEventListener('click', () => {
-        document.body.style.overflowY = 'scroll';
-        document.querySelector('header').classList.add('visible');
-        sessionStorage.setItem('getStartedClicked', 'true');
-      });
-      window.addEventListener('beforeunload', () => {
-        document.documentElement.style.scrollBehavior = 'auto';
-        window.scrollTo(0, 0);
-      });
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          document.documentElement.style.scrollBehavior = 'smooth';
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        }, 0);
-      });
-      document.addEventListener("DOMContentLoaded", () => {
-        const navLinks = document.querySelectorAll("header nav ul li a");
-        navLinks.forEach(link => {
-          link.addEventListener("click", (event) => {
-            event.preventDefault();
-            const targetId = link.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-              targetSection.scrollIntoView({
-                behavior: "smooth"
-              });
-            }
-          });
-        });
-      });
-      document.querySelectorAll('.section').forEach(section => {
-        let requestId = null;
-        section.addEventListener('mousemove', (e) => {
-          if (requestId) cancelAnimationFrame(requestId);
-          requestId = requestAnimationFrame(() => {
-            const rect = section.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const xPercent = (x / rect.width) - 0.5;
-            const yPercent = (y / rect.height) - 0.5;
-            const tiltX = -yPercent * 25; 
-            const tiltY = -xPercent * 25;
-            section.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.02)`;
-          });
-        });
-        section.addEventListener('mouseleave', () => {
-          if (requestId) cancelAnimationFrame(requestId);
-          // Reset on mouse leave
-          section.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
-        });
-      });
-  </script>
-</body>
+				footer p {
+					font-size: .9rem
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="background-container">
+			<video autoplay="" muted loop="" playsinline preload="auto" id="background-video">
+				<source src="https://files.offshore.cat/g52W97M9.mp4" type="video/mp4"> Your browser does not support the video tag.
+			</video>
+		</div>
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="#welcome">Home</a>
+					</li>
+					<li>
+						<a href="#section1">Roblox</a>
+					</li>
+					<li>
+						<a href="#section2">Exploits</a>
+					</li>
+					<li>
+						<a href="#about">About</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="header-buttons">
+				<button class="discord-button" onclick='window.open("https://discord.gg/Eg2EWXwYcn","_blank")'>
+					<img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6ac3c481f273141736_icon_clyde_black_RGB.png" alt="Discord" class="discord-icon">
+					<span class="discord-text">Discord</span>
+				</button>
+			</div>
+		</header>
+		<section id="welcome" class="welcome">
+			<h2>Welcome</h2>
+			<p>We are here to offer the best services for you!</p>
+			<button onclick='document.getElementById("section1").scrollIntoView({behavior:"smooth"}),document.querySelector("header").classList.add("visible"),document.body.style.overflowY="scroll"'>Get Started</button>
+		</section>
+		<section id="section1">
+			<div class="services-container">
+				<div class="section">
+					<h3>SCRIPTS</h3>
+					<p>50+ Free Scripts, all supported by SOLARA.</p>
+					<a href="scripts.html" class="button">Enter</a>
+				</div>
+				<div class="section">
+					<h3>EXECUTORS</h3>
+					<p>All Best Free Windows Executors</p>
+					<a href="executors.html" class="button">Enter</a>
+				</div>
+				<div class="section pcrblx">
+					<h3>PCRBLX</h3>
+					<p>PCRBLX HUB the best Roblox scripting hub with over 60+ Scripts, good moderation and, so much more!</p>
+					<a href="https://pcrblx.vercel.app/" class="button" target="_blank">Enter</a>
+				</div>
+			</div>
+		</section>
+		<section id="section2">
+			<div class="services-container">
+				<div class="section">
+					<h3>PROXIES</h3>
+					<p>Bored at school, every site getting blocked?</p>
+					<a href="proxies.html" class="button">Enter</a>
+				</div>
+				<div class="section">
+					<h3>BYPASS</h3>
+					<p>Tired of Ad Links? Well, we got you covered.</p>
+					<a href="bypass.html" class="button">Enter</a>
+				</div>
+				<div class="section">
+					<h3>FREE MOVIES</h3>
+					<p>Stream Videos, Download Videos, Torrent Videos</p>
+					<a href="movies.html" class="button">Enter</a>
+				</div>
+			</div>
+		</section>
+		<section id="about" class="about">
+			<h2>About Us</h2>
+			<p>We are a dedicated team focused on creating reliable and effective exploits for Roblox. Our aim is to provide users with tools that enhance their gaming experience, combining efficiency and quality in every solution we offer.</p>
+		</section>
+		<footer>
+			<p>© 2024 Pathetic Hub. All Rights Reserved.</p>
+		</footer>
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				window.scrollTo(0, 0);
+				const isGetStartedClicked = sessionStorage.getItem('getStartedClicked');
+				if (!isGetStartedClicked) {
+					document.body.style.overflowY = 'hidden';
+					document.querySelector('header').classList.remove('visible');
+				} else {
+					document.body.style.overflowY = 'scroll';
+					document.querySelector('header').classList.add('visible');
+				}
+				document.addEventListener('contextmenu', function(e) {
+					e.preventDefault();
+				});
+				document.addEventListener('mousedown', function(e) {
+					if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+						e.preventDefault();
+					}
+				});
+				document.addEventListener('touchstart', function(e) {
+					if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+						e.preventDefault();
+					}
+				});
+				const links = document.querySelectorAll("a");
+				links.forEach(link => {
+					link.addEventListener("contextmenu", (event) => {
+						event.preventDefault();
+					});
+				});
+				document.addEventListener("keydown", function(event) {
+					if (event.ctrlKey || event.keyCode === 123) {
+						event.preventDefault();
+					}
+				});
+			});
+			document.querySelector('button').addEventListener('click', () => {
+				document.body.style.overflowY = 'scroll';
+				document.querySelector('header').classList.add('visible');
+				sessionStorage.setItem('getStartedClicked', 'true');
+			});
+			window.addEventListener('beforeunload', () => {
+				document.documentElement.style.scrollBehavior = 'auto';
+				window.scrollTo(0, 0);
+			});
+			window.addEventListener('load', () => {
+				setTimeout(() => {
+					document.documentElement.style.scrollBehavior = 'smooth';
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
+				}, 0);
+			});
+			document.addEventListener("DOMContentLoaded", () => {
+				const navLinks = document.querySelectorAll("header nav ul li a");
+				navLinks.forEach(link => {
+					link.addEventListener("click", (event) => {
+						event.preventDefault();
+						const targetId = link.getAttribute("href").substring(1);
+						const targetSection = document.getElementById(targetId);
+						if (targetSection) {
+							targetSection.scrollIntoView({
+								behavior: "smooth"
+							});
+						}
+					});
+				});
+			});
+			document.querySelectorAll('.section').forEach(section => {
+				let requestId = null;
+				section.addEventListener('mousemove', (e) => {
+					if (requestId) cancelAnimationFrame(requestId);
+					requestId = requestAnimationFrame(() => {
+						const rect = section.getBoundingClientRect();
+						const x = e.clientX - rect.left;
+						const y = e.clientY - rect.top;
+						const xPercent = (x / rect.width) - 0.5;
+						const yPercent = (y / rect.height) - 0.5;
+						const tiltX = -yPercent * 25;
+						const tiltY = -xPercent * 25;
+						section.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.02)`;
+					});
+				});
+				section.addEventListener('mouseleave', () => {
+					if (requestId) cancelAnimationFrame(requestId);
+					// Reset on mouse leave
+					section.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+				});
+			});
+		</script>
+	</body>
 </html>
