@@ -29,13 +29,16 @@
         display: none
       }
 
-      #background-video {
-        position: fixed;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-        z-index: -1;
-      }
+#background-video {
+    position: fixed;   /* Keeps it fixed to the screen */
+    top: 0;            /* Ensures it starts from the top of the screen */
+    left: 0;           /* Ensures it starts from the left side */
+    width: 100%;       /* Makes the video span the full width of the screen */
+    height: 100%;      /* Makes the video span the full height of the screen */
+    object-fit: cover; /* Ensures the video covers the screen while maintaining its aspect ratio */
+    z-index: -1;       /* Sends the video behind other content */
+}
+
 
       header {
         margin-top: 10px;
