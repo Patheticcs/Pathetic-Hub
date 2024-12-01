@@ -197,7 +197,7 @@
 				padding: 15px 40px;
 				font-size: 1.2rem;
 				background-color: rgba(255, 255, 255, 0);
-				box-shadow: 0 0 25px rgba(255, 255, 255, .6);
+				box-shadow: 0 0 45px rgba(255, 255, 255, 1);
 				border: none;
 				color: var(--white);
 				border-radius: 30px;
@@ -208,7 +208,7 @@
 
 			.welcome button:hover {
 				transform: scale(1.03);
-				box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 30px rgba(255, 255, 255, .7);
+				box-shadow: 0 0 55px rgba(255, 255, 255, 1);
 				text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000
 			}
 
@@ -253,6 +253,7 @@
 				color: #fff;
 				border-radius: 30px;
 				box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+				background-color: rgba(0, 0, 0, .1);
 				padding: 40px;
 				width: 100%;
 				display: flex;
@@ -260,15 +261,14 @@
 				justify-content: space-between;
 				align-items: center;
 				text-align: center;
-				transition: transform 0.4s ease-out, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+				transition: transform 0.4s ease-out, box-shadow 0.3s ease, backdrop-filter 0.3s ease, background-color 1s ease;
 				backdrop-filter: blur(5px);
-				background-color: transparent;
 			}
 
 			.section:hover {
 				box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
 				transform: scale(1.03);
-				background-color: rgba(0, 0, 0, 0.1);
+				background-color: rgba(0, 0, 0, .7);
 				backdrop-filter: blur(6px);
 			}
 
@@ -309,7 +309,8 @@
 			}
 
 			.section.pcrblx {
-				background-image: url(https://iili.io/2ls9nZ7.png);
+                background-image: url(https://iili.io/2ls9nZ7.png);
+                background-color: rgba(255, 255, 255, 0.5);
 				background-size: cover;
 				background-position: center;
 				color: #fff;
