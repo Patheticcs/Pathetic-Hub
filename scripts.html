@@ -36,6 +36,16 @@
         scroll-behavior: smooth;
       }
 
+      #background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
       .welcome {
         position: relative;
         height: 100vh;
@@ -50,21 +60,23 @@
 
       .button {
         margin: 10px 0;
-        padding: 16px 20px; /* More balanced padding */
+        padding: 16px 20px;
+        /* More balanced padding */
         font-size: 1.2rem;
-        background-color: rgba(255, 255, 255, 0); /* Slight transparency for cleaner look */
+        background-color: rgba(255, 255, 255, 0);
         box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
         border: none;
-        color: #000;
-        border-radius: 30px; /* More rounded corners */
+        color: white;
+        border-radius: 30px;
+        /* More rounded corners */
         cursor: pointer;
-        transition: 
-          transform 0.3s ease, 
-          box-shadow 0.3s ease, 
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
           text-shadow 0.3s ease,
           margin-top 0.3s ease,
           margin-bottom 0.3s ease;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(3px);
         display: inline-block;
         text-align: center;
         text-decoration: none;
@@ -76,50 +88,48 @@
         transform: scale(1.01);
         box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6);
         text-shadow: 0 0 15px #fff, 0 0 25px #fff;
-        color: black;
       }
 
-.button.back {
-  margin-top: 5px;
-  padding: 15px 40px;
-  font-size: 1.2rem;
-  background-color: rgba(255, 255, 255, .3);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
-  border: none;
-  color: black;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  backdrop-filter: blur(5px);
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  margin-top: 30px;
-  width: 130px;
-  height: 50px;
-}
-      
+      .button.back {
+        margin-top: 5px;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+        border: none;
+        color: white;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        backdrop-filter: blur(2px);
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 30px;
+        width: 130px;
+        height: 50px;
+      }
+
       .button.back:hover {
         transform: scale(1.01);
         box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6);
         text-shadow: 0 0 15px #fff, 0 0 25px #fff;
-        color: black;
-}
+      }
 
       @keyframes fadeIn {
         0% {
           opacity: 0;
           transform: translateY(-50px);
         }
+
         100% {
           opacity: 1;
           transform: translateY(0);
         }
       }
-      
+
       .text {
-        background-color: white;
-        color: black;
+        color: white;
         display: flex;
         align-items: center;
         margin-top: 50px;
@@ -129,95 +139,98 @@
       /* Mobile Responsiveness */
       @media (max-width: 768px) {
         .button {
-          width: 200px; /* Make buttons slightly smaller on smaller screens */
+          width: 200px;
+          /* Make buttons slightly smaller on smaller screens */
           height: 60px;
         }
       }
 
       @media (max-width: 480px) {
         .button {
-          width: 180px; /* Even smaller on mobile devices */
+          width: 180px;
+          /* Even smaller on mobile devices */
           height: 55px;
-          font-size: 1rem; /* Smaller font size for mobile */
+          font-size: 1rem;
+          /* Smaller font size for mobile */
         }
       }
     </style>
   </head>
   <body>
-    <div id="background-video"></div>
-
-    <section id="welcome" class="welcome">
-      <button class="button" onclick="navigateTo('games.html')" aria-label="Navigate to Games">Games</button>
-      <button class="button" onclick="navigateTo('universal.html')" aria-label="Navigate to Universal">Universal</button>
-      <button class="button" onclick="navigateTo('cracks.html')" aria-label="Navigate to Cracks">Cracks</button>
-      <button class="button back" onclick="navigateTo('/')" aria-label="Navigate Back">Home</button>
-      <span class="text">We Don't Own These Scripts, all credits go to the rightful owner.</span>
-    </section>
-
-    <script>
-      // Define the navigateTo function
-      function navigateTo(url) {
-        window.location.href = url;
-      }
-      
-			// Function to disable right-click on the page
-			document.addEventListener('contextmenu', function(e) {
-				e.preventDefault();
-			});
-			// Prevent press and hold behavior on button links (for both desktop and mobile)
-			document.addEventListener('mousedown', function(e) {
-				if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-					e.preventDefault(); // Prevent the default behavior (click or long press) on links and buttons
-				}
-			});
-			// Disable long press on button links (mobile/touch devices)
-			document.addEventListener('touchstart', function(e) {
-				if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-					e.preventDefault(); // Prevent long press behavior on links and buttons (mobile)
-				}
-			});
-			// Additional handling for links after DOM content is loaded
-			document.addEventListener("DOMContentLoaded", () => {
-				// Select all links
-				const links = document.querySelectorAll("a");
-				// Add event listeners to each link for context menu prevention
-				links.forEach(link => {
-					link.addEventListener("contextmenu", (event) => {
-						event.preventDefault(); // Prevent context menu
-					});
-				});
-			});
-			// Function to enable smooth scroll on header button clicks
-			document.querySelectorAll('header nav ul li a').forEach(anchor => {
-				anchor.addEventListener('click', function(e) {
-					e.preventDefault();
-					const targetId = this.getAttribute('href').substring(1); // Get the target section's id
-					const targetElement = document.getElementById(targetId);
-					// Smooth scroll to the target element
-					targetElement.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start' // Scroll to the top of the target element
-					});
-					// Optionally, add a delay before showing the header (if needed for effect)
-					setTimeout(() => {
-						document.querySelector('header').classList.add('visible');
-					}, 500); // Adjust timing as needed
-				});
-			});
-			document.addEventListener("keydown", function(event) {
-				if (event.ctrlKey) {
-					event.preventDefault();
-				}
-				if (event.keyCode == 123) {
-					event.preventDefault();
-				}
-			});
-			document.querySelector('.down-button').addEventListener('click', function() {
-				window.scrollBy({
-					top: window.innerHeight, // Scroll by the full height of the viewport
-					behavior: 'smooth' // Smooth scroll effect
-				});
-			});
-    </script>
+    <div class="background-container">
+      <video autoplay="" muted loop="" playsinline preload="auto" id="background-video">
+        <source src="https://r2.ammo.lol/a8f43fff-1f64-4f72-bac8-491af0f46638.mp4" type="video/mp4"> Your browser does not support the video tag.
+      </video>
+      <section id="welcome" class="welcome">
+        <button class="button" onclick="navigateTo('games.html')" aria-label="Navigate to Games">Games</button>
+        <button class="button" onclick="navigateTo('universal.html')" aria-label="Navigate to Universal">Universal</button>
+        <button class="button" onclick="navigateTo('cracks.html')" aria-label="Navigate to Cracks">Cracks</button>
+        <button class="button back" onclick="navigateTo('/')" aria-label="Navigate Back">Home</button>
+        <span class="text">We Don't Own These Scripts, all credits go to the rightful owner.</span>
+      </section>
+      <script>
+        // Define the navigateTo function
+        function navigateTo(url) {
+          window.location.href = url;
+        }
+        // Function to disable right-click on the page
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+        // Prevent press and hold behavior on button links (for both desktop and mobile)
+        document.addEventListener('mousedown', function(e) {
+          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            e.preventDefault(); // Prevent the default behavior (click or long press) on links and buttons
+          }
+        });
+        // Disable long press on button links (mobile/touch devices)
+        document.addEventListener('touchstart', function(e) {
+          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            e.preventDefault(); // Prevent long press behavior on links and buttons (mobile)
+          }
+        });
+        // Additional handling for links after DOM content is loaded
+        document.addEventListener("DOMContentLoaded", () => {
+          // Select all links
+          const links = document.querySelectorAll("a");
+          // Add event listeners to each link for context menu prevention
+          links.forEach(link => {
+            link.addEventListener("contextmenu", (event) => {
+              event.preventDefault(); // Prevent context menu
+            });
+          });
+        });
+        // Function to enable smooth scroll on header button clicks
+        document.querySelectorAll('header nav ul li a').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1); // Get the target section's id
+            const targetElement = document.getElementById(targetId);
+            // Smooth scroll to the target element
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start' // Scroll to the top of the target element
+            });
+            // Optionally, add a delay before showing the header (if needed for effect)
+            setTimeout(() => {
+              document.querySelector('header').classList.add('visible');
+            }, 500); // Adjust timing as needed
+          });
+        });
+        document.addEventListener("keydown", function(event) {
+          if (event.ctrlKey) {
+            event.preventDefault();
+          }
+          if (event.keyCode == 123) {
+            event.preventDefault();
+          }
+        });
+        document.querySelector('.down-button').addEventListener('click', function() {
+          window.scrollBy({
+            top: window.innerHeight, // Scroll by the full height of the viewport
+            behavior: 'smooth' // Smooth scroll effect
+          });
+        });
+      </script>
   </body>
 </html>
