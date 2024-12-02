@@ -4,152 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A web page featuring custom styled buttons for games and universal scripts.">
-    <title>Games</title>
+    <title>Universal</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <style>
-      body {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: white;
-        font-family: 'Lato', sans-serif;
-        background-color: white;
-        font-weight: bold;
-        box-sizing: border-box;
-        text-align: center;
-        overflow-x: hidden;
-        /* Prevent horizontal scrolling */
-        overflow-y: auto;
-        /* Allow vertical scrolling */
-        height: 100%;
-        /* Ensure body fills viewport height */
-      }
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  background-color: white;
+  font-weight: bold;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+}
 
-      header {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-        box-sizing: border-box;
-        position: fixed;
-        top: 0;
-        z-index: 1;
-      }
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
 
-      .back-button-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        width: 100%;
-      }
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
 
-      #searchInput {
-        padding: 10px;
-        font-size: 16px;
-        border: 2px solid #ccc;
-        border-radius: 30px;
-        background-color: transparent;
-        color: black;
-        transition: box-shadow 0.5s ease, transform 0.5s ease, margin 0.5s ease;
-      }
+.back-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
 
-      .button-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        min-height: 100vh;
-        padding-top: 80px;
-        box-sizing: border-box;
-        overflow-y: auto;
-        /* Enable scrolling when content overflows */
-      }
+#searchInput {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  transition: box-shadow 0.5s ease, transform 0.5s ease, margin 0.5s ease;
+  outline: none; /* Remove outline */
+  backdrop-filter: blur(3px);
+}
 
-      .buttons-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 25px;
-        width: 100%;
-        max-width: 1000px;
-        padding: 0 20px;
-        margin-top: 100px;
-        margin-bottom: 100px;
-      }
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 80px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
 
-      .button {
-        width: 100px;
-        height: 40px;
-        padding: 15px 40px;
-        font-size: 1rem;
-        background-color: rgba(255, 255, 255, 0);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-        color: black;
-        border-radius: 30px;
-        cursor: pointer;
-        transition: all 0.4s ease-out;
-        /* Smoother hover transition */
-        backdrop-filter: blur(5px);
-        display: inline-flex;
-        /* Change from inline-block to inline-flex */
-        justify-content: center;
-        /* Horizontally center text */
-        align-items: center;
-        /* Vertically center text */
-        text-align: center;
-        text-decoration: none;
-      }
+.buttons-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 
-      .back-button {
-        background-color: white;
-        color: black;
-        height: 40px;
-        width: 100px;
-        text-align: center;
-        cursor: pointer;
-        border-radius: 30px;
-        border: 1px solid black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, margin-left 0.3s ease, margin-right 0.3s ease;
-      }
+.button {
+  width: 100px;
+  height: 40px;
+  padding: 15px 40px;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0px 10px rgba(255, 255, 255, 0.6);
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+  backdrop-filter: blur(3px);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  outline: none; /* Remove outline */
+}
 
-      .button:hover {
-        transform: scale(1.03);
-        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6);
-        text-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 50px rgba(0, 0, 0, 0.3);
-        color: black;
-      }
+.back-button {
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 30px;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, margin-left 0.3s ease, margin-right 0.3s ease;
+  backdrop-filter: blur(2px);
+  outline: none; /* Remove outline */
+}
 
-      .back-button:hover {
-        background-color: white;
-        color: black;
-        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
-        transform: scale(1.03);
-        margin-right: 5px;
-        margin-left: 5px;
-      }
+.button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0px 35px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.3);
+}
 
-      #searchInput:hover {
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.9), 0 0 70px rgba(0, 0, 0, 0.7);
-        transform: scale(1.03);
-        margin-left: 5px;
-        margin-right: 5px;
-      }
+.back-button:hover {
+  color: white;
+  box-shadow: 0 0px 35px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.3);  transform: scale(1.03);
+  margin-right: 5px;
+  margin-left: 5px;
+  backdrop-filter: blur(2px);
+}
 
-      .back-search-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        /* Space between back button and search field */
-        width: 100%;
-        padding: 10px;
-      }
+#searchInput:hover {
+  box-shadow: 0 0px 35px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.3);  transform: scale(1.03);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.back-search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+}
+
 
       /* Media query for mobile screens */
       @media (max-width: 768px) {
@@ -229,12 +233,17 @@
     </style>
   </head>
   <body>
+<div class="background-container">
+	<video autoplay="" muted loop="" playsinline preload="auto" id="background-video">
+		<source src="https://r2.ammo.lol/a8f43fff-1f64-4f72-bac8-491af0f46638.mp4" type="video/mp4"> Your browser does not support the video tag.
+   </video>
+	</div>
     <header>
       <div class="back-search-container">
         <button class="back-button" onclick="navigateTo('/scripts.html')" aria-label="Navigate Back">Back</button>
         <input type="text" id="searchInput" placeholder="Search..." oninput="filterButtons()" />
       </div>
-</header>
+    </header>
  <div class="button-container">
       <div class="buttons-grid" id="universalButtons">
         <div class="button" onclick="openLink('https://raw.githubusercontent.com/edgeiy/infiniteyield/master/source')" role="button" aria-label="Open Infinite Yield">
@@ -312,8 +321,7 @@
         <div class="button" onclick="openLink('https://pastebin.com/raw/RW7ZT29m')" role="button" aria-label="Open Bloxfruits">
           <span>Anti Lag</span>
         </div>
-      </div>
-      <script>
+        <script>
           // Function to open links
           function openLink(url) {
             window.open(url, '_blank');
