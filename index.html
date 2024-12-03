@@ -249,28 +249,31 @@
 
       .services-container {
         display: grid;
-        gap: 40px;
+        gap: 20px;
         padding: 0 40px;
         justify-items: center;
         align-items: center;
         z-index: 2;
         max-width: 1000px;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       }
 
       .section {
         color: #fff;
         border-radius: 35px;
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-        padding: 40px;
+        padding: 15px;
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         text-align: center;
         transition: transform 0.4s ease-out, box-shadow 0.3s ease, backdrop-filter 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
         backdrop-filter: blur(2px);
+        height: 280px;
+        overflow: hidden;
+        box-sizing: border-box;
       }
 
       .section:hover {
@@ -281,9 +284,9 @@
       }
 
       .section h3 {
-        font-size: 2.3rem;
-        margin-bottom: 30px;
-        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1)
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
       }
 
       .section p {
@@ -292,40 +295,26 @@
       }
 
       .section a.button {
-        display: inline-block;
-        padding: 12px 40px;
+        padding: 8px 20px;
         background-color: rgba(255, 255, 255, 1);
         color: #000;
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 700;
         border-radius: 100px;
         cursor: pointer;
         text-decoration: none;
         width: 100%;
-        max-width: 160px;
-        max-height: 40px;
-        margin: 5px 0;
+        max-width: 140px;
+        margin-top: 10px;
         backdrop-filter: blur(10px);
-        transition: transform .3s ease, box-shadow .3s ease, margin .3s ease, width .3s ease, height .3s ease
+        transition: transform .3s ease, box-shadow .3s ease, margin .3s ease, width .3s ease, height .3s ease;
+        text-align: center;
       }
 
       .section a.button:hover {
-        transform: scale(1.03);
-        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
+        transform: scale(1.05);
         box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
         margin-top: 10px;
-      }
-
-      .section.pcrblx {
-        background-image: url('https://iili.io/21NloTg.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: #fff;
-        width: 210%;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 20px;
       }
 
       .about {
@@ -395,19 +384,19 @@
         }
 
         header h1 {
-          margin-top: 20px;
+          margin-top: 10px;
           font-size: 1.2rem;
         }
 
         nav ul {
           list-style: none;
-          font-size: 0.6rem;
+          font-size: 0.5rem;
           display: flex;
           gap: 10px;
           flex-wrap: wrap;
           justify-content: center;
           font-weight: 700;
-          margin-top: 50px;
+          margin-top: 30px;
         }
 
         nav ul li a {
@@ -431,70 +420,62 @@
           padding: 12px 30px;
         }
 
+        .button {
+          margin-top: 20px;
+          margin-bottom: 25px;
+          width: 30px;
+          height: 30px;
+        }
+
+        .button img {
+          width: 10px;
+          height: 10px;
+        }
+
         .services-container {
-          display: grid;
           padding: 0 10px;
+          display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
-        }
-
-        .services-container>* {
-          width: 100%;
-          height: auto;
-          max-width: 150px;
-          aspect-ratio: 1 / 1;
-          margin: 0 auto;
-          object-fit: cover;
-        }
-
-        .discord-button {
-          margin-bottom: 50px;
-          height: 30px;
-          width: 30px;
-        }
-      
-        .youtube-button {
-          margin-bottom: 50px;
-          height: 30px;
-          width: 30px;
+          gap: 15px;
         }
 
         .section {
-          padding: 20px;
+          height: 170px;
           width: 100%;
-          height: 100%;
-          max-width: 250px;
-          max-height: 150px;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          justify-content: center;
           align-items: center;
-          text-align: center;
-          backdrop-filter: blur(5px);
         }
 
         .section h3 {
           font-size: 1rem;
           margin-bottom: 10px;
-          text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
-        }
-
-        .section p {
-          font-size: 0.8rem;
-          margin-bottom: 0;
+          text-align: center;
         }
 
         .section a.button {
-          max-width: 90px;
-          max-height: 25px;
-          padding: 5px 15px;
-          font-size: 0.7rem;
-          margin-top: 15px;
-          display: inline-block;
+          font-size: 0.8rem;
+          width: 100%;
+          max-width: 130px;
+          height: 30px;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           text-align: center;
-          line-height: 15px;
-          vertical-align: middle;
-          white-space: nowrap;
+          box-sizing: border-box;
+        }
+
+        .section p {
+          font-size: 0.75rem;
+          margin-bottom: 15px;
+          text-align: center;
+        }
+
+        .section a.button span {
+          display: block;
+          line-height: 1.2;
         }
 
         .about {
@@ -584,11 +565,6 @@
           <h3>EXPStatus</h3>
           <p>Real-time exploit status monitoring</p>
           <a href="https://www.expstatus.xyz/" class="button">Enter</a>
-        </div>
-        <div class="section pcrblx">
-          <h3>PCRBLX</h3>
-          <p> PCRBLX HUB the best Roblox scripting hub with over 60+ Scripts, good moderation and, so much more! </p>
-          <a href="https://pcrblx.vercel.app/" class="button" target="_blank">Enter</a>
         </div>
       </div>
     </section>
