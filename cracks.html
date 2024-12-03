@@ -14,19 +14,21 @@
   button, input, textarea, select {
     outline: none; 
   }
-  body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Lato', sans-serif;
-    background-color: white;
-    font-weight: bold;
-    text-align: center;
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: 100%;
-  }
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  font-family: 'Lato', sans-serif;
+  background-color: white;
+  font-weight: bold;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  min-height: 100vh;
+}
 
   #background-video {
     position: fixed;
@@ -124,7 +126,7 @@
     text-align: center;
     text-decoration: none;
   }
-  
+
   .button:hover {
     transform: scale(1.03);
     box-shadow: 0 0px 35px rgba(255, 255, 255, 0.6);
@@ -168,6 +170,33 @@
     padding: 10px;
   }
 
+  .text {
+    color: white;
+    margin-top: 50px;
+    font-size: 16px;
+  }
+
+  .text-button {
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.6);
+    color: white;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .text-button:hover {
+    text-shadow: 0 0 0px rgba(255, 255, 255, .3), 0 0 40px rgba(255, 255, 255, .5);
+    box-shadow: 0 0px 25px rgba(255, 255, 255, 0.6);
+    transform: scale(1.03);
+  }
   @media (max-width: 768px) {
     .button-container {
       padding-top: 10px;
@@ -209,35 +238,7 @@
     }
   }
 
-  .text {
-    color: white;
-    margin-top: 50px;
-    font-size: 16px;
-  }
-
-  .text-button {
-    background-color: rgba(0, 0, 0, .5);
-    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.6);
-    color: white;
-    height: 40px;
-    width: 200px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .text-button:hover {
-    text-shadow: 0 0 0px rgba(255, 255, 255, .3), 0 0 40px rgba(255, 255, 255, .5);
-    box-shadow: 0 0px 25px rgba(255, 255, 255, 0.6);
-    transform: scale(1.03);
-  }
 </style>
-
   </head>
   <body>
 <div class="background-container">
