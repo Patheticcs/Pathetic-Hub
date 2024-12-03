@@ -1,228 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta
-      name="description"
-      content="Pathetic Hub: Offering the best Roblox scripts, executors, proxies, and bypasses to enhance your gaming experience."
-    />
-		<meta
-      name="keywords"
-      content="Roblox, scripts, executors, proxies, bypass, gaming, tools"
-    />
-		<meta name="author" content="Pathetic Hub" />
-		<title>Home</title>
-		<link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap"
-      as="style"
-    />
-		<style>
-            * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-              user-select: none
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Pathetic Hub: Offering the best Roblox scripts, executors, proxies, and bypasses to enhance your gaming experience." />
+    <meta name="keywords" content="Roblox, scripts, executors, proxies, bypass, gaming, tools" />
+    <meta name="author" content="Pathetic Hub" />
+    <title>Home</title>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap" as="style" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none
+      }
 
-            body {
-              font-family: Lato, Arial, sans-serif !important;
-              background-color: #000;
-              color: #fff;
-              overflow-x: hidden;
-              overflow-y: auto;
-              font-size: 16px
-            }
+      body {
+        font-family: Lato, Arial, sans-serif !important;
+        background-color: #000;
+        color: #fff;
+        overflow-x: hidden;
+        overflow-y: auto;
+        font-size: 16px
+      }
 
-            body::-webkit-scrollbar {
-              display: none
-            }
+      body::-webkit-scrollbar {
+        display: none
+      }
 
-            #background-video {
-              position: fixed;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              z-index: -1;
-            }
+      #background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
 
-            header {
-              margin-top: 10px;
-              position: fixed;
-              top: 0;
-              left: 50%;
-              transform: translateX(-50%);
-              width: 100%;
-              max-width: 800px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-direction: column;
-              padding: 20px 30px;
-              backdrop-filter: blur(50px);
-              z-index: 1000;
-              opacity: 0;
-              visibility: hidden;
-              background: rgba(0, 0, 0, .2);
-              border-radius: 50px;
-              transition: opacity 1s ease, background 1s ease, box-shadow 1s ease, max-width 1s ease, height 1s ease, backdrop-filter 0.3s ease;
-              height: 140px;
-              box-shadow: 0 0 5px rgba(255, 255, 255, .2), 0 0 20px rgba(255, 255, 255, .3);
-              backdrop-filter: blur(3px)
-            }
+      header {
+        margin-top: 10px;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px 30px;
+        backdrop-filter: blur(50px);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        background: rgba(0, 0, 0, .2);
+        border-radius: 50px;
+        transition: opacity 1s ease, background 1s ease, box-shadow 1s ease, max-width 1s ease, height 1s ease, backdrop-filter 2s ease;
+        height: 140px;
+        box-shadow: 0 0 5px rgba(255, 255, 255, .2), 0 0 20px rgba(255, 255, 255, .3);
+        backdrop-filter: blur(3px)
+      }
 
-            header.visible {
-              opacity: 1;
-              visibility: visible
-            }
+      header.visible {
+        opacity: 1;
+        visibility: visible
+      }
 
-            header:hover {
-              height: 145px;
-              max-width: 850px;
-              background: rgba(0, 0, 0, .5);
-              box-shadow: 0 0 15px rgba(255, 255, 255, .4), 0 0 30px rgba(255, 255, 255, .6);
-              backdrop-filter: blur(15px)
-            }
+      header:hover {
+        height: 145px;
+        max-width: 850px;
+        background: rgba(0, 0, 0, .5);
+        box-shadow: 0 0 15px rgba(255, 255, 255, .4), 0 0 30px rgba(255, 255, 255, .6);
+        backdrop-filter: blur(15px)
+      }
 
-            header h1 {
-              margin-top: 20px;
-              font-size: 1.1rem;
-              font-weight: 700;
-              text-shadow: 0 0 8px var(--highlight);
-              width: 100%;
-              text-align: center
-            }
+      header h1 {
+        margin-top: 20px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-shadow: 0 0 8px var(--highlight);
+        width: 100%;
+        text-align: center
+      }
 
-            nav ul {
-              list-style: none;
-              font-size: .6rem;
-              display: flex;
-              gap: 20px;
-              flex-wrap: wrap;
-              justify-content: center;
-              margin-top: 50px
-            }
+      nav ul {
+        list-style: none;
+        font-size: .6rem;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 50px
+      }
 
-            nav ul li a {
-              text-decoration: none;
-              color: #fff;
-              font-size: 16px;
-              transition: color .3s ease
-            }
+      nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        transition: color .3s ease
+      }
 
-            nav ul li a:hover {
-              color: rgba(255, 255, 255, .5)
-            }
+      nav ul li a:hover {
+        color: rgba(255, 255, 255, .5)
+      }
 
-            .discord-button {
-              margin-top: 25px;
-              margin-bottom: 25px;
-              width: 35px;
-              height: 35px;
-              background-color: rgba(255, 255, 255, 1);
-              box-shadow: 0 0 5px rgba(255, 255, 255, .9), 0 0 0 rgba(255, 255, 255, .9);
-              font-size: 13px;
-              border: none;
-              color: #000;
-              border-radius: 100px;
-              cursor: pointer;
-              transition: width .3s ease, height .3s ease, box-shadow .3s ease;
-              backdrop-filter: blur(15px);
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              overflow: hidden;
-              position: relative
-            }
+      .discord-button {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        width: 35px;
+        height: 35px;
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, .9), 0 0 0 rgba(255, 255, 255, .9);
+        font-size: 13px;
+        border: none;
+        color: #000;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: width .3s ease, height .3s ease, box-shadow .3s ease;
+        backdrop-filter: blur(15px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative
+      }
 
-            .discord-button img.discord-icon {
-              width: 17px;
-              height: 17px;
-              object-fit: contain;
-              transition: transform .4s ease, width .7s ease, height .7s ease
-            }
+      .discord-button img.discord-icon {
+        width: 17px;
+        height: 17px;
+        object-fit: contain;
+        transition: transform .4s ease, width .7s ease, height .7s ease
+      }
 
-            .discord-button .discord-text {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-35%, -50%);
-              opacity: 0;
-              font-size: 13px;
-              color: #000;
-              pointer-events: none;
-              transition: opacity .4s ease
-            }
+      .discord-button .discord-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-35%, -50%);
+        opacity: 0;
+        font-size: 13px;
+        color: #000;
+        pointer-events: none;
+        transition: opacity .4s ease
+      }
 
-            .discord-button:hover {
-              box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
-              width: 150px;
-              height: 35px
-            }
+      .discord-button:hover {
+        box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
+        width: 150px;
+        height: 35px
+      }
 
-            .discord-button:hover .discord-icon {
-              transform: translateX(-40px);
-              width: 18px;
-              height: 18px
-            }
+      .discord-button:hover .discord-icon {
+        transform: translateX(-40px);
+        width: 18px;
+        height: 18px
+      }
 
-            .discord-button:hover .discord-text {
-              opacity: 1
-            }
+      .discord-button:hover .discord-text {
+        opacity: 1
+      }
 
-            .welcome {
-              position: relative;
-              height: 100vh;
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              text-align: center;
-              padding: 20px;
-              animation: fadeIn 1.5s ease-out;
-              background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .4) 80%, rgba(0, 0, 0, .7))
-            }
+      .welcome {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        animation: fadeIn 1.5s ease-out;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .4) 80%, rgba(0, 0, 0, .7))
+      }
 
-            .welcome h2 {
-              font-size: 6.5rem;
-              text-transform: uppercase;
-              text-shadow: 0 0 100px #fff, 0 0 20px #fff, 0 0 30px #fff;
-              margin-bottom: 30px
-            }
+      .welcome h2 {
+        font-size: 6.5rem;
+        text-transform: uppercase;
+        text-shadow: 0 0 100px #fff, 0 0 20px #fff, 0 0 30px #fff;
+        margin-bottom: 30px
+      }
 
-            .welcome p {
-              font-size: 1.1rem;
-              max-width: 600px;
-              line-height: 1.8;
-              opacity: .8;
-              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #000, 0 0 70px #000;
-              margin-bottom: 50px
-            }
+      .welcome p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        line-height: 1.8;
+        opacity: .8;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #000, 0 0 70px #000;
+        margin-bottom: 50px
+      }
 
-            .welcome button {
-              margin-top: 5px;
-              padding: 15px 40px;
-              font-size: 1.2rem;
-              background-color: rgba(255, 255, 255, 0);
-              box-shadow: 0 0 45px rgba(255, 255, 255, 1);
-              border: none;
-              color: var(--white);
-              border-radius: 30px;
-              cursor: pointer;
-              transition: transform .5s ease, box-shadow .5s ease, text-shadow .5s ease;
-              backdrop-filter: blur(2px)
-            }
+      .welcome button {
+        margin-top: 5px;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 0 45px rgba(255, 255, 255, 1);
+        border: none;
+        color: var(--white);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: transform .5s ease, box-shadow .5s ease, text-shadow .5s ease;
+        backdrop-filter: blur(2px)
+      }
 
-            .welcome button:hover {
-              transform: scale(1.03);
-              box-shadow: 0 0 55px rgba(255, 255, 255, 1);
-              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000
-            }
+      .welcome button:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 55px rgba(255, 255, 255, 1);
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000
+      }
 
-      #section1, #section2 {
+      #section1,
+      #section2 {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -246,394 +237,358 @@
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       }
 
-            .section {
-              color: #fff;
-              border-radius: 35px;
-              box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-              padding: 40px;
-              width: 100%;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              align-items: center;
-              text-align: center;
-              transition: transform 0.4s ease-out, box-shadow 0.3s ease, backdrop-filter 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
-              backdrop-filter: blur(2px);
-            }
-
-            .section:hover {
-              box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
-              transform: scale(1.03);
-              background-color: rgba(0, 0, 0, .2);
-              backdrop-filter: blur(6px);
-            }
-
-            .section h3 {
-              font-size: 2.3rem;
-              margin-bottom: 30px;
-              text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1)
-            }
-
-            .section p {
-              font-size: .8rem;
-              margin-bottom: 35px
-            }
-
-            .section a.button {
-              display: inline-block;
-              padding: 12px 40px;
-              background-color: rgba(255, 255, 255, 1);
-              color: #000;
-              font-size: 1rem;
-              font-weight: 700;
-              border-radius: 100px;
-              cursor: pointer;
-              text-decoration: none;
-              width: 100%;
-              max-width: 160px;
-              max-height: 40px;
-              margin: 5px 0;
-              backdrop-filter: blur(10px);
-              transition: transform .3s ease, box-shadow .3s ease, margin .3s ease, width .3s ease, height .3s ease
-            }
-
-            .section a.button:hover {
-              transform: scale(1.03);
-              text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
-              box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
-              margin-top: 10px;
-            }
-
-      .section.pcrblx {
-          background-image: url('https://iili.io/21NloTg.png');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          color: #fff;
-          width: 210%;
-          max-width: 1000px;
-          margin: 0 auto;
-          padding: 20px;
+      .section {
+        color: #fff;
+        border-radius: 35px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        padding: 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.4s ease-out, box-shadow 0.3s ease, backdrop-filter 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
+        backdrop-filter: blur(2px);
       }
 
-            .about {
-              background: rgba(0, 0, 0, .7);
-              color: var(--white);
-              padding: 500px 40px;
-              text-align: center
-            }
+      .section:hover {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+        transform: scale(1.03);
+        background-color: rgba(0, 0, 0, .2);
+        backdrop-filter: blur(6px);
+      }
 
-            .about h2 {
-              font-size: 5rem;
-              margin-bottom: 70px;
-              text-transform: uppercase;
-              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000
-            }
+      .section h3 {
+        font-size: 2.3rem;
+        margin-bottom: 30px;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1)
+      }
 
-            .about p {
-              font-size: 1.2rem;
-              line-height: 1.8;
-              max-width: 800px;
-              margin: 0 auto
-            }
+      .section p {
+        font-size: .8rem;
+        margin-bottom: 35px
+      }
 
-            footer {
-              background: rgba(0, 0, 0, .85);
-              color: var(--white);
-              text-align: center;
-              height: 60px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              flex-direction: column
-            }
+      .section a.button {
+        display: inline-block;
+        padding: 12px 40px;
+        background-color: rgba(255, 255, 255, 1);
+        color: #000;
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 100px;
+        cursor: pointer;
+        text-decoration: none;
+        width: 100%;
+        max-width: 160px;
+        max-height: 40px;
+        margin: 5px 0;
+        backdrop-filter: blur(10px);
+        transition: transform .3s ease, box-shadow .3s ease, margin .3s ease, width .3s ease, height .3s ease
+      }
 
-            footer p {
-              font-size: 1rem
-            }
+      .section a.button:hover {
+        transform: scale(1.03);
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
+        box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
+        margin-top: 10px;
+      }
 
-            footer a {
-              text-decoration: none;
-              color: var(--highlight);
-              font-weight: 700
-            }
+      .section.pcrblx {
+        background-image: url('https://iili.io/21NloTg.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: #fff;
+        width: 210%;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
 
-            ul.button-container li {
-              padding: 0;
-              margin: 0
-            }
+      .about {
+        background: rgba(0, 0, 0, .7);
+        color: var(--white);
+        padding: 500px 40px;
+        text-align: center
+      }
 
-            ul.button-container {
-              list-style: none;
-              padding: 0;
-              margin: 0
-            }
+      .about h2 {
+        font-size: 5rem;
+        margin-bottom: 70px;
+        text-transform: uppercase;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #000
+      }
 
-            @media (max-width: 768px) {
-              header {
-                width: 80%;
-                height: 120px;
-                padding: 15px;
-                transition: opacity 1s ease, background 1s ease, box-shadow 1s ease, width 1s ease, height 1s ease;
-              }
+      .about p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto
+      }
 
-              header:hover {
-                height: 140px;
-                width: 360px;
-              }
+      footer {
+        background: rgba(0, 0, 0, .85);
+        color: var(--white);
+        text-align: center;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
+      }
 
-              header h1 {
-                margin-top: 20px;
-                font-size: 1.2rem;
-              }
+      footer p {
+        font-size: 1rem
+      }
 
-              nav ul {
-                list-style: none;
-                font-size: 0.6rem;
-                display: flex;
-                gap: 10px;
-                flex-wrap: wrap;
-                justify-content: center;
-                font-weight: 700;
-                margin-top: 50px;
-              }
+      footer a {
+        text-decoration: none;
+        color: var(--highlight);
+        font-weight: 700
+      }
 
-              nav ul li a {
-                font-size: 14px;
-              }
+      ul.button-container li {
+        padding: 0;
+        margin: 0
+      }
 
-              .welcome h2 {
-                font-size: 3.5rem;
-                margin-bottom: 55px;
-              }
+      ul.button-container {
+        list-style: none;
+        padding: 0;
+        margin: 0
+      }
 
-              .welcome p {
-                max-width: 70%;
-                font-size: 0.9rem;
-                margin-bottom: 15px;
-              }
+      @media (max-width: 768px) {
+        header {
+          width: 80%;
+          height: 120px;
+          padding: 15px;
+          transition: opacity 1s ease, background 1s ease, box-shadow 1s ease, width 1s ease, height 1s ease;
+        }
 
-              .welcome button {
-                margin-top: 80px;
-                font-size: 1rem;
-                padding: 12px 30px;
-              }
+        header:hover {
+          height: 140px;
+          width: 360px;
+        }
 
-              .services-container {
-                display: grid;
-                padding: 0 10px;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-              }
+        header h1 {
+          margin-top: 20px;
+          font-size: 1.2rem;
+        }
 
-              .services-container>* {
-                width: 100%;
-                height: auto;
-                max-width: 150px;
-                aspect-ratio: 1 / 1;
-                margin: 0 auto;
-                object-fit: cover;
-              }
+        nav ul {
+          list-style: none;
+          font-size: 0.6rem;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: center;
+          font-weight: 700;
+          margin-top: 50px;
+        }
 
-              .discord-button {
-                margin-bottom: 50px;
-                height: 30px;
-                width: 30px;
-              }
+        nav ul li a {
+          font-size: 14px;
+        }
 
-              .section {
-                padding: 20px;
-                width: 100%;
-                height: 100%;
-                max-width: 250px;
+        .welcome h2 {
+          font-size: 3.5rem;
+          margin-bottom: 55px;
+        }
 
-                max-height: 150px;
+        .welcome p {
+          max-width: 70%;
+          font-size: 0.9rem;
+          margin-bottom: 15px;
+        }
 
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-                text-align: center;
-                backdrop-filter: blur(5px);
-              }
+        .welcome button {
+          margin-top: 80px;
+          font-size: 1rem;
+          padding: 12px 30px;
+        }
 
-              .section h3 {
-                font-size: 1rem;
-                margin-bottom: 10px;
-                text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
-              }
+        .services-container {
+          display: grid;
+          padding: 0 10px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
 
-              .section p {
-                font-size: 0.8rem;
-                margin-bottom: 0;
-              }
+        .services-container>* {
+          width: 100%;
+          height: auto;
+          max-width: 150px;
+          aspect-ratio: 1 / 1;
+          margin: 0 auto;
+          object-fit: cover;
+        }
 
-              .section a.button {
-                max-width: 90px;
-                max-height: 25px;
-                padding: 5px 15px;
-                font-size: 0.7rem;
-                margin-top: 15px;
-                display: inline-block;
-                text-align: center;
-                line-height: 15px;
-                vertical-align: middle;
-                white-space: nowrap;
-              }
+        .discord-button {
+          margin-bottom: 50px;
+          height: 30px;
+          width: 30px;
+        }
 
-              .about {
-                padding: 100px 15px;
-              }
+        .section {
+          padding: 20px;
+          width: 100%;
+          height: 100%;
+          max-width: 250px;
+          max-height: 150px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          text-align: center;
+          backdrop-filter: blur(5px);
+        }
 
-              .about h2 {
-                font-size: 3.5rem;
-              }
+        .section h3 {
+          font-size: 1rem;
+          margin-bottom: 10px;
+          text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
+        }
 
-              .about p {
-                font-size: 1rem;
-              }
+        .section p {
+          font-size: 0.8rem;
+          margin-bottom: 0;
+        }
 
-              footer {
-                height: auto;
-                padding: 10px 15px;
-              }
+        .section a.button {
+          max-width: 90px;
+          max-height: 25px;
+          padding: 5px 15px;
+          font-size: 0.7rem;
+          margin-top: 15px;
+          display: inline-block;
+          text-align: center;
+          line-height: 15px;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
 
-              footer p {
-                font-size: 0.9rem;
-              }
-            }
+        .about {
+          padding: 100px 15px;
+        }
+
+        .about h2 {
+          font-size: 3.5rem;
+        }
+
+        .about p {
+          font-size: 1rem;
+        }
+
+        footer {
+          height: auto;
+          padding: 10px 15px;
+        }
+
+        footer p {
+          font-size: 0.9rem;
+        }
+      }
     </style>
-	</head>
-	<body>
-		<div class="background-container">
-			<video
-        autoplay=""
-        muted
-        loop=""
-        playsinline
-        preload="auto"
-        id="background-video"
-      >
-				<source
-          src="https://r2.ammo.lol/a8f43fff-1f64-4f72-bac8-491af0f46638.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      
-			
-			</video>
-		</div>
-		<header>
-			<nav>
-				<ul>
-					<li>
-						<a href="#welcome">Home</a>
-					</li>
-					<li>
-						<a href="#section1">Roblox</a>
-					</li>
-					<li>
-						<a href="#section2">Exploits</a>
-					</li>
-					<li>
-						<a href="#about">About</a>
-					</li>
-				</ul>
-			</nav>
-			<div class="header-buttons">
-				<button
-          class="discord-button"
-          onclick='window.open("https://discord.gg/Eg2EWXwYcn","_blank")'
-        >
-					<img
-            src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6ac3c481f273141736_icon_clyde_black_RGB.png"
-            alt="Discord"
-            class="discord-icon"
-          />
-					<span class="discord-text">Discord</span>
-				</button>
-			</div>
-		</header>
-		<section id="welcome" class="welcome">
-			<h2>Welcome</h2>
-			<p>We are here to offer the best services for you!</p>
-			<button
-        onclick='document.getElementById("section1").scrollIntoView({behavior:"smooth"}),document.querySelector("header").classList.add("visible"),document.body.style.overflowY="scroll"'
-      >
-        Get Started
-      </button>
-		</section>
-		<section id="section1">
-			<div class="services-container">
-				<div class="section">
-					<h3>SCRIPTS</h3>
-					<p>50+ Free Scripts, all supported by SOLARA.</p>
-					<a href="scripts.html" class="button">Enter</a>
-				</div>
-				<div class="section">
-					<h3>EXECUTORS</h3>
-					<p>All Best Free Windows Executors</p>
-					<a href="executors.html" class="button">Enter</a>
-				</div>
-				<div class="section">
-					<h3>VOXLIS</h3>
-					<p>Ready To Inject?</p>
-					<a href="https://voxlis.net/" class="button">Enter</a>
-				</div>
-				<div class="section">
-					<h3>EXPStatus</h3>
-					<p>Real-time exploit status monitoring</p>
-					<a href="https://www.expstatus.xyz/" class="button">Enter</a>
-				</div>
-				<div class="section pcrblx">
-					<h3>PCRBLX</h3>
-					<p>
-            PCRBLX HUB the best Roblox scripting hub with over 60+ Scripts, good
-            moderation and, so much more!
-          </p>
-					<a href="https://pcrblx.vercel.app/" class="button" target="_blank"
-            >Enter</a
-          >
-				</div>
-			</div>
-		</section>
-		<section id="section2">
-			<div class="services-container">
-				<div class="section">
-					<h3>PROXIES</h3>
-					<p>Browse any website anonymously.</p>
-					<a href="proxies.html" class="button">Enter</a>
-				</div>
-				<div class="section">
-					<h3>BYPASS</h3>
-					<p>Bypass AD Links.</p>
-					<a href="bypass.html" class="button">Enter</a>
-				</div>
-				<div class="section">
-					<h3>FREE MOVIES</h3>
-					<p>Stream, Download, Torrent Videos</p>
-					<a href="movies.html" class="button">Enter</a>
-				</div>
-				<div class="section">
-					<h3>FMHY</h3>
-					<p>Collection of free stuff on the internet!</p>
-					<a href="https://fmhy.net/" class="button">Enter</a>
-				</div>
-			</div>
-		</section>
-		<section id="about" class="about">
-			<h2>About Us</h2>
-			<p>
-        We’re a passionate team focused on creating reliable, effective tools to
-        enhance your gaming and online experiences. We prioritize quality and
-        ease of use, ensuring every solution we offer meets the highest
-        standards to help you get the most out of your online activities.
-      </p>
-		</section>
-		<footer>
-			<p>2024 Pathetic. All Rights Reserved.</p>
-		</footer>
-		<script>
+  </head>
+  <body>
+    <div class="background-container">
+      <video autoplay="" muted loop="" playsinline preload="auto" id="background-video">
+        <source src="https://r2.ammo.lol/a8f43fff-1f64-4f72-bac8-491af0f46638.mp4" type="video/mp4" /> Your browser does not support the video tag.
+      </video>
+    </div>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="#welcome">Home</a>
+          </li>
+          <li>
+            <a href="#section1">Roblox</a>
+          </li>
+          <li>
+            <a href="#section2">Exploits</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-buttons">
+        <button class="discord-button" onclick='window.open("https://discord.gg/Eg2EWXwYcn","_blank")'>
+          <img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6ac3c481f273141736_icon_clyde_black_RGB.png" alt="Discord" class="discord-icon" />
+          <span class="discord-text">Discord</span>
+        </button>
+      </div>
+    </header>
+    <section id="welcome" class="welcome">
+      <h2>Welcome</h2>
+      <p>We are here to offer the best services for you!</p>
+      <button onclick='document.getElementById("section1").scrollIntoView({behavior:"smooth"}),document.querySelector("header").classList.add("visible"),document.body.style.overflowY="scroll"'> Get Started </button>
+    </section>
+    <section id="section1">
+      <div class="services-container">
+        <div class="section">
+          <h3>SCRIPTS</h3>
+          <p>50+ Free Scripts, all supported by SOLARA.</p>
+          <a href="scripts.html" class="button">Enter</a>
+        </div>
+        <div class="section">
+          <h3>EXECUTORS</h3>
+          <p>All Best Free Windows Executors</p>
+          <a href="executors.html" class="button">Enter</a>
+        </div>
+        <div class="section">
+          <h3>VOXLIS</h3>
+          <p>Ready To Inject?</p>
+          <a href="https://voxlis.net/" class="button">Enter</a>
+        </div>
+        <div class="section">
+          <h3>EXPStatus</h3>
+          <p>Real-time exploit status monitoring</p>
+          <a href="https://www.expstatus.xyz/" class="button">Enter</a>
+        </div>
+        <div class="section pcrblx">
+          <h3>PCRBLX</h3>
+          <p> PCRBLX HUB the best Roblox scripting hub with over 60+ Scripts, good moderation and, so much more! </p>
+          <a href="https://pcrblx.vercel.app/" class="button" target="_blank">Enter</a>
+        </div>
+      </div>
+    </section>
+    <section id="section2">
+      <div class="services-container">
+        <div class="section">
+          <h3>PROXIES</h3>
+          <p>Browse any website anonymously.</p>
+          <a href="proxies.html" class="button">Enter</a>
+        </div>
+        <div class="section">
+          <h3>BYPASS</h3>
+          <p>Bypass AD Links.</p>
+          <a href="bypass.html" class="button">Enter</a>
+        </div>
+        <div class="section">
+          <h3>FREE MOVIES</h3>
+          <p>Stream, Download, Torrent Videos</p>
+          <a href="movies.html" class="button">Enter</a>
+        </div>
+        <div class="section">
+          <h3>FMHY</h3>
+          <p>Collection of free stuff on the internet!</p>
+          <a href="https://fmhy.net/" class="button">Enter</a>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p> We’re a passionate team focused on creating reliable, effective tools to enhance your gaming and online experiences. We prioritize quality and ease of use, ensuring every solution we offer meets the highest standards to help you get the most out of your online activities. </p>
+    </section>
+    <footer>
+      <p>2024 Pathetic. All Rights Reserved.</p>
+    </footer>
+    <script>
       document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo(0, 0);
         const isGetStartedClicked = sessionStorage.getItem('getStartedClicked');
@@ -703,5 +658,5 @@
         });
       });
     </script>
-	</body>
+  </body>
 </html>
