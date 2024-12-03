@@ -107,7 +107,12 @@
         color: rgba(255, 255, 255, .5)
       }
 
-      .discord-button {
+      .button-container {
+        display: flex;
+        gap: 15px;
+      }
+
+      .button {
         margin-top: 25px;
         margin-bottom: 25px;
         width: 35px;
@@ -119,23 +124,23 @@
         color: #000;
         border-radius: 100px;
         cursor: pointer;
-        transition: width .3s ease, height .3s ease, box-shadow .3s ease;
+        transition: width .3s ease, height .3s ease, box-shadow .3s ease, backdrop-filter .3s ease;
         backdrop-filter: blur(15px);
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        position: relative
+        position: relative;
       }
 
-      .discord-button img.discord-icon {
+      .button img {
         width: 17px;
         height: 17px;
         object-fit: contain;
-        transition: transform .4s ease, width .7s ease, height .7s ease
+        transition: transform .4s ease, width .7s ease, height .7s ease;
       }
 
-      .discord-button .discord-text {
+      .button .button-text {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -144,23 +149,39 @@
         font-size: 13px;
         color: #000;
         pointer-events: none;
-        transition: opacity .4s ease
+        transition: opacity .4s ease;
       }
 
       .discord-button:hover {
         box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
         width: 150px;
-        height: 35px
+        height: 35px;
       }
 
-      .discord-button:hover .discord-icon {
+      .discord-button:hover img {
         transform: translateX(-40px);
         width: 18px;
-        height: 18px
+        height: 18px;
       }
 
-      .discord-button:hover .discord-text {
-        opacity: 1
+      .discord-button:hover .button-text {
+        opacity: 1;
+      }
+
+      .youtube-button:hover {
+        box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
+        width: 150px;
+        height: 35px;
+      }
+
+      .youtube-button:hover img {
+        transform: translateX(-40px);
+        width: 18px;
+        height: 18px;
+      }
+
+      .youtube-button:hover .button-text {
+        opacity: 1;
       }
 
       .welcome {
@@ -517,10 +538,18 @@
         </ul>
       </nav>
       <div class="header-buttons">
-        <button class="discord-button" onclick='window.open("https://discord.gg/Eg2EWXwYcn","_blank")'>
-          <img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6ac3c481f273141736_icon_clyde_black_RGB.png" alt="Discord" class="discord-icon" />
-          <span class="discord-text">Discord</span>
-        </button>
+        <!-- Button Container -->
+        <div class="button-container">
+          <!-- Discord Button -->
+          <button class="button discord-button" onclick='window.open("https://discord.gg/Eg2EWXwYcn","_blank")'>
+            <img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6ac3c481f273141736_icon_clyde_black_RGB.png" alt="Discord" class="discord-icon" />
+            <span class="button-text">Discord</span>
+          </button>
+          <button class="button youtube-button" onclick='window.open("https://www.youtube.com/@patheticcs","_blank")'>
+            <img src="https://iili.io/21OFkmX.png" alt="YouTube" class="youtube-icon" />
+            <span class="button-text">YouTube</span>
+          </button>
+        </div>
       </div>
     </header>
     <section id="welcome" class="welcome">
