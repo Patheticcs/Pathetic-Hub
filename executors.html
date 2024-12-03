@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pathetic Hub: Offering the best Roblox scripts, executors, proxies, and bypasses to enhance your gaming experience.">
-    <title>Executors</title>
+    <title>Proxies</title>
     <link rel="icon" href="https://iili.io/25Go0TF.png" type="image/x-icon">
     <style>
       #background-video {
@@ -24,16 +24,26 @@
       }
 
       body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #000;
-    color: #fff;
-    overflow-x: hidden;
-    overflow-y: hidden; /* Initially disable scrolling */
-    font-size: 16px;
-  }
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: #000;
+        color: #fff;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        font-size: 16px;
+      }
 
       html {
         scroll-behavior: smooth;
+      }
+
+      #background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
       }
 
       .welcome {
@@ -50,93 +60,99 @@
 
       .button {
         margin: 10px 0;
-        padding: 16px 20px; /* More balanced padding */
+        padding: 16px 20px;
+        /* More balanced padding */
         font-size: 1.2rem;
-        background-color: rgba(255, 255, 255, 0); /* Slight transparency for cleaner look */
-        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, .5);
+        box-shadow: 0 0px 25px rgba(255, 255, 255, 0.6);
         border: none;
-        color: #000;
-        border-radius: 30px; /* More rounded corners */
+        color: white;
+        border-radius: 30px;
+        /* More rounded corners */
         cursor: pointer;
-        transition: 
-          transform 0.3s ease, 
-          box-shadow 0.3s ease, 
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
           text-shadow 0.3s ease,
           margin-top 0.3s ease,
           margin-bottom 0.3s ease;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(3px);
         display: inline-block;
         text-align: center;
         text-decoration: none;
-        width: 280px;
+        width: 200px;
         height: 60px;
       }
 
       .button:hover {
         transform: scale(1.01);
-        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0px 35px rgba(255, 255, 255, 0.6);
         text-shadow: 0 0 15px #fff, 0 0 25px #fff;
-        color: black;
       }
 
-.button.back {
-  margin-top: 5px;
-  padding: 15px 40px;
-  font-size: 1.2rem;
-  background-color: rgba(255, 255, 255, .3);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
-  border: none;
-  color: black;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  backdrop-filter: blur(5px);
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  margin-top: 30px;
-  width: 130px;
-  height: 50px;
-}
-      
+      .button.back {
+        margin-top: 50px;
+        padding: 16px 20px;
+        font-size: 1.2rem;
+        background-color: rgba(0, 0, 0, .5);
+        box-shadow: 0 0px 25px rgba(255, 255, 255, 0.6);
+        border: none;
+        color: white;
+        border-radius: 30px;
+        cursor: pointer;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          text-shadow 0.3s ease,
+          margin-top 0.3s ease,
+          margin-bottom 0.3s ease;
+        backdrop-filter: blur(3px);
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        width: 120px;
+        height: 50px;
+      }
+
       .button.back:hover {
         transform: scale(1.01);
-        box-shadow: 0 8px 35px rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0px 35px rgba(255, 255, 255, 0.6);
         text-shadow: 0 0 15px #fff, 0 0 25px #fff;
-        color: black;
-}
+      }
 
       @keyframes fadeIn {
         0% {
           opacity: 0;
           transform: translateY(-50px);
         }
+
         100% {
           opacity: 1;
           transform: translateY(0);
         }
       }
 
-      /* Mobile Responsiveness */
       @media (max-width: 768px) {
         .button {
-          width: 200px; /* Make buttons slightly smaller on smaller screens */
+          width: 200px;
           height: 60px;
         }
       }
 
-      @media (max-width: 480px) {
+      @media (max-width: 480px) { 
         .button {
-          width: 160px; /* Even smaller on mobile devices */
-          height: 40px;
-          font-size: 1rem; /* Smaller font size for mobile */
+          width: 180px;
+          height: 55px;
+          font-size: 1rem;
         }
       }
     </style>
   </head>
   <body>
-    <div id="background-video"></div>
-
+    <div class="background-container">
+      <video autoplay="" muted loop="" playsinline preload="auto" id="background-video">
+        <source src="https://r2.ammo.lol/a8f43fff-1f64-4f72-bac8-491af0f46638.mp4" type="video/mp4"> Your browser does not support the video tag.
+      </video>
 <section id="welcome" class="welcome">
     <a class="button" href="https://getsolara.dev" target="_blank" rel="noopener noreferrer" aria-label="Solara">Solara</a>
     <a class="button" href="https://discord.com/invite/getxeno" target="_blank" rel="noopener noreferrer" aria-label="Xeno">Xeno</a>
@@ -145,11 +161,8 @@
     <a class="button" href="https://discord.gg/getluna" target="_blank" rel="noopener noreferrer" aria-label="Luna">Luna</a>
     <a class="button" href="https://discord.gg/getcloudy" target="_blank" rel="noopener noreferrer" aria-label="Cloudy">Cloudy</a>
     <a class="button" href="https://discord.gg/SW5d8kgndS" target="_blank" rel="noopener noreferrer" aria-label="Haze">Haze</a>
-    <!-- Using a button for 'Home' to trigger JavaScript -->
     <button class="button back" onclick="window.location.href='/'" aria-label="Navigate Back">Home</button>
 </section>
-
-
     <script>
       
 function replaceWithLink(url) {
@@ -213,14 +226,6 @@ function replaceWithLink(url) {
 					behavior: 'smooth' // Smooth scroll effect
 				});
 			});
-      
-      // Enable scrolling when the "Get Started" button is clicked
-  function enableScrolling() {
-    document.body.style.overflowY = "scroll";
-  }
-
-  // Example: Attach the function to a button click event
-  document.querySelector('.button.back').addEventListener('click', enableScrolling);
-    </script> 
+    </script>
   </body>
 </html>
