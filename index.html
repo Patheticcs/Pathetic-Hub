@@ -257,6 +257,69 @@
         box-sizing: border-box;
       }
 
+      .games-section {
+        color: #fff;
+        border-radius: 35px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.4s ease-out, box-shadow 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease, height 0.3s ease;
+        backdrop-filter: blur(2px);
+        height: 250px;
+        width: 1000px;
+        overflow: hidden;
+        box-sizing: border-box;
+        margin-left: 500px;
+      }
+
+      .games-section:hover {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+        transform: scale(1.03);
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(6px);
+      }
+
+      .games-section h3 {
+        margin-top: 15px;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1);
+      }
+
+      .games-section p {
+        font-size: 1rem;
+        margin-top: 20px;
+        margin-bottom: 35px;
+      }
+
+      .games-section a.button {
+        padding: 10px 20px;
+        background-color: rgba(255, 255, 255, 1);
+        color: #000;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border-radius: 100px;
+        cursor: pointer;
+        text-decoration: none;
+        width: 100%;
+        max-width: 300px;
+        height: 40px;
+        margin-top: 10px;
+        backdrop-filter: blur(10px);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        text-align: center;
+      }
+
+      .games-section a.button:hover {
+        transform: scale(1.07);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.7);
+        .section height=275px;
+      }
+
       .section {
         color: #fff;
         border-radius: 35px;
@@ -566,6 +629,11 @@
             <h3>EXPStatus</h3>
             <p>Real-time exploit status monitoring</p>
             <a href="https://www.expstatus.xyz/" class="button">Enter</a>
+          </div>
+          <div class="games-section">
+            <h3>ROBLOX UNBLOCKED</h3>
+            <p>Play ROBLOX at school, UNBLOCKED!</p>
+            <a href="https://pathetic-games.vercel.app/" class="button">Enter</a>
           </div>
         </div>
       </section>
