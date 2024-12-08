@@ -34,8 +34,9 @@
         z-index: -1;
       }
 
-      #home-button {
+      #button-back {
         margin-top: 30px;
+        border-width: 0;
         position: fixed;
         top: 0;
         left: 50%;
@@ -54,7 +55,7 @@
         will-change: transform;
       }
 
-      #home-button:hover {
+      #button-back:hover {
         transform: translateX(-50%) scale(1.03);
         filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
       }
@@ -180,12 +181,10 @@
     </style>
   </head>
   <body>
-    <div id="home-button" onclick="removePath()">Home</div>
-    <div class="background-container">
-      <video autoplay muted loop playsinline preload="auto" id="background-video">
-        <source src="https://r2.ammo.lol/a8f43fff-1f64-4f72-bac8-491af0f46638.mp4" type="video/mp4" /> Your browser does not support the video tag.
-      </video>
-    </div>
+    <button id="button-back" onclick="window.location.href='/'" aria-label="Navigate Back">Back</button>
+    <video autoplay muted loop playsinline preload="auto" id="background-video">
+      <source src="https://r2.ammo.lol/a8f43fff-1f64-4f72-bac8-491af0f46638.mp4" type="video/mp4" /> Your browser does not support the video tag.
+    </video>
     <section id="section1">
       <div class="services-container">
         <div class="section">
