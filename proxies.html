@@ -58,17 +58,73 @@
         animation: fadeIn 1.5s ease-out;
       }
 
+      .services-container {
+        display: grid;
+        gap: 20px;
+        padding: 0 40px;
+        justify-items: center;
+        align-items: center;
+        max-width: 1000px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+
+      .section {
+        color: #fff;
+        border-radius: 35px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        padding: 15px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.4s ease-out, box-shadow 0.3s ease;
+        backdrop-filter: blur(2px);
+        height: 250px;
+      }
+
+      .section:hover {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+        transform: scale(1.03);
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(6px);
+      }
+
+      .section h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1);
+      }
+
+      .section a.button {
+        padding: 10px 50px;
+        background-color: rgba(255, 255, 255, 1);
+        color: #000;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border-radius: 100px;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        margin-top: 50px;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+      }
+
+      .section a.button:hover {
+        transform: scale(1.07);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+      }
+
       .button {
         margin: 10px 0;
         padding: 16px 20px;
-
         font-size: 1.2rem;
         background-color: rgba(0, 0, 0, .5);
         box-shadow: 0 0px 25px rgba(255, 255, 255, 0.6);
         border: none;
         color: white;
         border-radius: 30px;
-
         cursor: pointer;
         transition:
           transform 0.3s ease,
@@ -120,6 +176,48 @@
         text-shadow: 0 0 15px #fff, 0 0 25px #fff;
       }
 
+      .welcome {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        animation: fadeIn 1.5s ease-out;
+      }
+
+      .button.websites {
+        margin-top: 50px;
+        padding: 16px 80px;
+        font-size: 1.2rem;
+        background-color: rgba(0, 0, 0, .5);
+        box-shadow: 0 0px 25px rgba(255, 255, 255, 0.6);
+        border: none;
+        color: white;
+        border-radius: 30px;
+        cursor: pointer;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          text-shadow 0.3s ease,
+          margin-top 0.3s ease,
+          margin-bottom 0.3s ease;
+        backdrop-filter: blur(3px);
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        width: auto;
+        height: 60px;
+      }
+
+      .button.websites:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0px 35px rgba(255, 255, 255, 0.6);
+        text-shadow: 0 0 15px #fff, 0 0 25px #fff;
+      }
+
       @keyframes fadeIn {
         0% {
           opacity: 0;
@@ -150,77 +248,16 @@
   </head>
   <body>
     <div class="background-container">
-      <video autoplay="" muted loop="" playsinline preload="auto" id="background-video">
+      <video autoplay muted loop playsinline preload="auto" id="background-video">
         <source src="https://r2.ammo.lol/a8f43fff-1f64-4f72-bac8-491af0f46638.mp4" type="video/mp4"> Your browser does not support the video tag.
       </video>
       <section id="welcome" class="welcome">
         <a href="https://pathetic-interstellar.vercel.app/" class="button" target="_blank">Interstellar</a>
         <a href="https://hypackellite.vercel.app/" class="button" target="_blank">Hypackel Lite</a>
         <a href="https://pathetic-artclass.vercel.app" class="button" target="_blank">Art Class</a>
-        <button class="button back" onclick="window.location.href='/'" aria-label="Navigate Back">Home</button>
+        <button class="button websites" onclick="proxies-website" aria-label="Navigate Back">Websites Unblocked</button>
+        <button class="button back" onclick="window.location.href='/'" aria-label="Navigate Back">Back</button>
       </section>
-      <script>
-        function replaceWithLink(url) {
-          window.location.href = url;
-        }
-
-        document.addEventListener('contextmenu', function(e) {
-          e.preventDefault();
-        });
-
-        document.addEventListener('mousedown', function(e) {
-          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault(); 
-          }
-        });
-
-        document.addEventListener('touchstart', function(e) {
-          if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault(); 
-          }
-        });
-
-        document.addEventListener("DOMContentLoaded", () => {
-
-          const links = document.querySelectorAll("a");
-
-          links.forEach(link => {
-            link.addEventListener("contextmenu", (event) => {
-              event.preventDefault(); 
-            });
-          });
-        });
-
-        document.querySelectorAll('header nav ul li a').forEach(anchor => {
-          anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1); 
-            const targetElement = document.getElementById(targetId);
-
-            targetElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start' 
-            });
-
-            setTimeout(() => {
-              document.querySelector('header').classList.add('visible');
-            }, 500); 
-          });
-        });
-        document.addEventListener("keydown", function(event) {
-          if (event.ctrlKey) {
-            event.preventDefault();
-          }
-          if (event.keyCode == 123) {
-            event.preventDefault();
-          }
-        });
-        document.querySelector('.down-button').addEventListener('click', function() {
-          window.scrollBy({
-            top: window.innerHeight, 
-            behavior: 'smooth' 
-          });
-        });
-      </script>
+    </div>
   </body>
 </html>
