@@ -17,9 +17,9 @@
         font-family: Lato, Arial, sans-serif !important;
         background-color: #000;
         color: #fff;
-        overflow-x: hidden;
-        overflow-y: auto;
-        font-size: 16px
+        align-items: center overflow-x: hidden;
+        justify-content: center overflow-y: auto;
+        font-size: 16px margin: 0;
       }
 
       body::-webkit-scrollbar {
@@ -231,8 +231,7 @@
       }
 
       #section1,
-      #section2,
-      #games {
+      #section2 {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -258,15 +257,16 @@
         box-sizing: border-box;
       }
 
-      .section.pcrblx {
-        background-color: rgba(0, 0, 0, 0.5);
-        background-size: cover;
-        background-position: center;
-        color: #fff;
-        width: 210%;
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 20px
+      .special-container {
+        display: grid;
+        gap: 20px;
+        padding: 0 400px;
+        justify-items: center;
+        align-items: center;
+        z-index: 2;
+        max-width: 1300px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        box-sizing: border-box;
       }
 
       .section {
@@ -388,7 +388,7 @@
         margin: 0
       }
 
-      @media (max-width: 1517px) and (max-height: 731px) {
+      @media only screen and (max-width: 600px) {
         header {
           width: 90%;
           height: 125px;
@@ -563,9 +563,6 @@
               <a href="#section2">Exploits</a>
             </li>
             <li>
-              <a href="#games">Games</a>
-            </li>
-            <li>
               <a href="#about">About</a>
             </li>
           </ul>
@@ -639,11 +636,7 @@
             <p>Collection of free stuff on the internet!</p>
             <a href="https://fmhy.net/" class="button" target="_blank">Enter</a>
           </div>
-        </div>
-      </section>
-      <section id="games">
-        <div class="services-container">
-          <div class="section pcrblx">
+          <div class="section">
             <h3>UNBLOCKED GAMES</h3>
             <p>Play Roblox and Minecraft UNBLOCKED!</p>
             <a href="https://pathetic-games.vercel.app/" class="button">Enter</a>
