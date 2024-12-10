@@ -26,7 +26,7 @@
         z-index: -1;
       }
 
-      .error-container {
+      .container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -42,14 +42,14 @@
         border: 1px solid rgba(255, 255, 255, 0.3);
       }
 
-      .error-container h1 {
+      .container h1 {
         font-size: 100px;
         color: #fff;
         margin-top: 40px;
         text-shadow: 0 0 200px #fff, 0 0 60px #fff, 0 0 3px #fff;
       }
 
-      .error-container p {
+      .container p {
         font-size: 18px;
         text-align: center;
         margin-bottom: 50px;
@@ -57,7 +57,7 @@
         flex-grow: 1;
       }
 
-      .error-container a {
+      .container a {
         font-size: 16px;
         background-color: #fff;
         color: #000;
@@ -70,27 +70,27 @@
         margin-bottom: 40px;
       }
 
-      .error-container a:hover {
+      .container a:hover {
         transform: scale(1.03);
         box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
       }
 
       @media (max-width: 600px) {
-        .error-container {
+        .container {
           width: 90%;
           height: auto;
           padding: 20px;
         }
 
-        .error-container h1 {
+        .container h1 {
           font-size: 80px;
         }
 
-        .error-container p {
+        .container p {
           font-size: 16px;
         }
 
-        .error-container a {
+        .container a {
           font-size: 14px;
         }
       }
@@ -99,14 +99,35 @@
   <body>
     <div class="background-container">
       <video autoplay muted loop playsinline preload="auto" id="background-video">
-        <source src="https://r2.ammo.lol/a8f43fff-1f64-4f72-bac8-491af0f46638.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+        <source src="https://r2.ammo.lol/a8f43fff-1f64-4f72-bac8-491af0f46638.mp4" type="video/mp4" /> Your browser does not support the video tag.
       </video>
     </div>
-    <div class="error-container">
+    <div class="container">
       <h1>404</h1>
       <p>Oops! The page you're looking for is not here.</p>
       <a href="/">Go Back to Home</a>
     </div>
   </body>
+  <script>
+    document.querySelector('.container').addEventListener('mousemove', function(e) {
+      const container = e.currentTarget;
+      const {
+        offsetWidth: width,
+        offsetHeight: height
+      } = container;
+      const {
+        offsetX,
+        offsetY
+      } = e;
+      const x = (offsetX / width) * 2 - 1;
+      const y = (offsetY / height) * 2 - 1;
+      container.style.transform = `perspective(1000px) rotateX(${y * 5}deg) rotateY(${x * 5}deg)`;
+      container.style.transition = "transform 0.1s ease-out";
+    });
+    document.querySelector('.container').addEventListener('mouseleave', function(e) {
+      const container = e.currentTarget;
+      container.style.transition = "transform 0.5s ease-out";
+      container.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    });
+  </script>
 </html>
