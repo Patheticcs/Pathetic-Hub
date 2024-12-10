@@ -716,23 +716,28 @@
             section.style.height = '250px';
           });
         });
-// Disable long press (context menu, etc.) on buttons only, allow regular tap
+        
 let touchTimeout;
 
 document.querySelectorAll('button').forEach(button => {
     button.addEventListener('touchstart', function(event) {
-        // Set the threshold for long press detection
+        // Start a timer to detect long press
         touchTimeout = setTimeout(function() {
-            // Prevent long press actions like context menu or custom long press behavior
+            // Prevent long press behavior
             event.preventDefault();
         }, 500); // 500ms threshold for long press
     });
 
     button.addEventListener('touchend', function(event) {
-        // Clear the timeout if the touch was quick (tap)
+        // Clear the timeout if it's a regular tap (quick touch)
         clearTimeout(touchTimeout);
     });
-});
 
+    // Ensure the button's regular tap functionality still works
+    button.addEventListener('click', function(event) {
+        // This ensures that the normal tap behavior is not affected
+        console.log("Button tapped!");
+    });
+});
 
       </script>
