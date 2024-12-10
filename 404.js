@@ -1,12 +1,13 @@
-// pages/404.js (or pages/404.tsx for TypeScript)
+// pages/404.js
 import React from 'react';
+import './style.css'; // Assuming your style.css is in the same directory or adjust the path accordingly
 
 const Custom404 = () => {
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
-      <h1>404 - Page Not Found</h1>
-      <p>Oops! The page you are looking for does not exist.</p>
-      <a href="/">Go back to the homepage</a>
+    <div className="error-container">
+      <h1>404</h1>
+      <p>Oops! The page you're looking for is not here.</p>
+      <a href="/">Go Back to Home</a>
     </div>
   );
 };
