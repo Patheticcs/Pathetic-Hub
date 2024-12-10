@@ -1,6 +1,6 @@
 // pages/404.js
 import React from 'react';
-import './style.css'; // Assuming your style.css is in the same directory or adjust the path accordingly
+import './404.html'; // Assuming your style.css is in the same directory or adjust the path accordingly
 
 const Custom404 = () => {
   return (
