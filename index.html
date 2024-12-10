@@ -715,19 +715,20 @@
             section.style.height = '250px';
           });
         });
-        // Disable long press hold on touch devices
-document.addEventListener('touchstart', function(event) {
-    let touchDuration = 500;  // 500ms threshold for a long press
-    let touchStartTime = Date.now();
-    
-    event.target.addEventListener('touchend', function() {
-        let touchEndTime = Date.now();
-        let touchDuration = touchEndTime - touchStartTime;
+// Disable long press hold, allow regular tap
+let touchTimeout;
 
-        if (touchDuration > 500) { 
-            event.preventDefault();  // Disable long touch actions
-        }
-    });
+document.addEventListener('touchstart', function(event) {
+    // Set the threshold time for detecting long press
+    touchTimeout = setTimeout(function() {
+        // Prevent long press actions like context menu
+        event.preventDefault();
+    }, 500); // 500ms is the threshold for long press
+});
+
+document.addEventListener('touchend', function(event) {
+    // Clear the timeout if the touch was fast (tap)
+    clearTimeout(touchTimeout);
 });
 
       </script>
