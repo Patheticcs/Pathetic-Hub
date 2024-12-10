@@ -652,106 +652,122 @@
         <a href="/404.html" class="footer-link">‎ ‎ ‎ 404 Page</a>
       </footer>
       <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          window.scrollTo(0, 0);
-          const isGetStartedClicked = sessionStorage.getItem('getStartedClicked');
-          if (!isGetStartedClicked) {
-            document.body.style.overflowY = 'hidden';
-            document.querySelector('header').classList.remove('visible');
-          } else {
-            document.body.style.overflowY = 'scroll';
-            document.querySelector('header').classList.add('visible');
-          }
-          document.addEventListener('contextmenu', function(e) {
+document.addEventListener("DOMContentLoaded", () => {
+    window.scrollTo(0, 0);
+
+    // Check if "get started" has been clicked before
+    const isGetStartedClicked = sessionStorage.getItem('getStartedClicked');
+    if (!isGetStartedClicked) {
+        document.body.style.overflowY = 'hidden';
+        document.querySelector('header').classList.remove('visible');
+    } else {
+        document.body.style.overflowY = 'scroll';
+        document.querySelector('header').classList.add('visible');
+    }
+
+    // Prevent context menu for right-click and long press
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Prevent mouse and touch events on links and buttons
+    document.addEventListener('mousedown', function(e) {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
             e.preventDefault();
-          });
-          document.addEventListener('mousedown', function(e) {
-            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-              e.preventDefault();
-            }
-          });
-          document.addEventListener('touchstart', function(e) {
-            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-              e.preventDefault();
-            }
-          });
-          const links = document.querySelectorAll("a");
-          links.forEach(link => {
-            link.addEventListener("contextmenu", (event) => {
-              event.preventDefault();
-            });
-          });
-          document.addEventListener("keydown", function(event) {
-            if (event.ctrlKey || event.keyCode === 123) {
-              event.preventDefault();
-            }
-          });
+        }
+    });
+    document.addEventListener('touchstart', function(e) {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            e.preventDefault();
+        }
+    });
+
+    // Prevent right-click on links
+    const links = document.querySelectorAll("a");
+    links.forEach(link => {
+        link.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
         });
-        document.querySelector('button').addEventListener('click', () => {
-          document.body.style.overflowY = 'scroll';
-          document.querySelector('header').classList.add('visible');
-          sessionStorage.setItem('getStartedClicked', 'true');
-        });
-        window.addEventListener('beforeunload', () => {
-          document.documentElement.style.scrollBehavior = 'auto';
-          window.scrollTo(0, 0);
-        });
-        window.addEventListener('load', () => {
-          setTimeout(() => {
-            document.documentElement.style.scrollBehavior = 'smooth';
-            window.scrollTo({
-              top: 0,
-              behavior: 'smooth'
-            });
-          }, 0);
-        });
-        document.addEventListener("DOMContentLoaded", () => {
-          const navLinks = document.querySelectorAll("header nav ul li a");
-          navLinks.forEach(link => {
-            link.addEventListener("click", (event) => {
-              event.preventDefault();
-              const targetId = link.getAttribute("href").substring(1);
-              const targetSection = document.getElementById(targetId);
-              if (targetSection) {
+    });
+
+    // Prevent F12 and Ctrl+Shift+I (developer tools)
+    document.addEventListener("keydown", function(event) {
+        if (event.ctrlKey || event.keyCode === 123) {
+            event.preventDefault();
+        }
+    });
+
+    // Smooth scroll for nav links
+    const navLinks = document.querySelectorAll("header nav ul li a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
                 targetSection.scrollIntoView({
-                  behavior: "smooth"
+                    behavior: "smooth"
                 });
-              }
-            });
-          });
+            }
         });
-        const buttons = document.querySelectorAll('.section a.button');
-        buttons.forEach(button => {
-          button.addEventListener('mouseover', () => {
+    });
+
+    // Button hover effects
+    const buttons = document.querySelectorAll('.section a.button');
+    buttons.forEach(button => {
+        button.addEventListener('mouseover', () => {
             const section = button.closest('.section');
             section.style.height = '260px';
-          });
-          button.addEventListener('mouseout', () => {
+        });
+        button.addEventListener('mouseout', () => {
             const section = button.closest('.section');
             section.style.height = '250px';
-          });
         });
-        
-let touchTimeout;
-
-document.querySelectorAll('button').forEach(button => {
-    button.addEventListener('touchstart', function(event) {
-        // Start a timer to detect long press
-        touchTimeout = setTimeout(function() {
-            // Prevent long press behavior
-            event.preventDefault();
-        }, 500); // 500ms threshold for long press
     });
 
-    button.addEventListener('touchend', function(event) {
-        // Clear the timeout if it's a regular tap (quick touch)
-        clearTimeout(touchTimeout);
+    // Get started button click behavior
+    document.querySelector('button').addEventListener('click', () => {
+        document.body.style.overflowY = 'scroll';
+        document.querySelector('header').classList.add('visible');
+        sessionStorage.setItem('getStartedClicked', 'true');
     });
 
-    // Ensure the button's regular tap functionality still works
-    button.addEventListener('click', function(event) {
-        // This ensures that the normal tap behavior is not affected
-        console.log("Button tapped!");
+    // Prevent long press (touchstart) and allow regular tap behavior
+    let touchTimeout;
+
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('touchstart', function(event) {
+            // Start a timer to detect long press
+            touchTimeout = setTimeout(function() {
+                // Prevent long press behavior (like context menu or long press)
+                event.preventDefault();
+            }, 500); // 500ms threshold for long press
+        });
+
+        button.addEventListener('touchend', function(event) {
+            // Clear the timeout if it's a regular tap (quick touch)
+            clearTimeout(touchTimeout);
+        });
+
+        // Ensure the button's regular tap functionality still works
+        button.addEventListener('click', function(event) {
+            console.log("Button tapped!");
+        });
+    });
+
+    // Scroll behavior for page load
+    window.addEventListener('beforeunload', () => {
+        document.documentElement.style.scrollBehavior = 'auto';
+        window.scrollTo(0, 0);
+    });
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.documentElement.style.scrollBehavior = 'smooth';
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }, 0);
     });
 });
 
