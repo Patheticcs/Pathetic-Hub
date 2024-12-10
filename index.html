@@ -752,6 +752,12 @@
           });
         });
       });
+      document.addEventListener("contextmenu", function (e) {
+  e.preventDefault()
+  e.stopPropagation()
+  console.log("Stopped")
+  return false;
+});
     </script>
   </body>
 </html>
