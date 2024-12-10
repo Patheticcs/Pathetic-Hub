@@ -669,9 +669,12 @@
         const clearTouchTimeout = () => {
           clearTimeout(touchTimeout);
         };
-        document.querySelectorAll('button, a.button').forEach(element => {
-          element.addEventListener('touchstart', preventLongPress);
-          element.addEventListener('touchend', clearTouchTimeout);
+        document.querySelectorAll('.section a.button').forEach(button => {
+          button.addEventListener('touchstart', preventLongPress);
+          button.addEventListener('touchend', clearTouchTimeout);
+          button.addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+          });
         });
         const links = document.querySelectorAll("a");
         links.forEach(link => {
