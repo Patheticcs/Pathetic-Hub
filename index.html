@@ -388,7 +388,7 @@
         margin: 0
       }
 
-@media (max-width: 768px) {
+      @media (max-width: 768px) {
         header {
           width: 90%;
           height: 125px;
@@ -466,7 +466,7 @@
           justify-content: center;
           align-items: center;
         }
-        
+
         .section:hover {
           height: 190px;
           width: 170px;
@@ -541,7 +541,7 @@
         footer p {
           font-size: 0.9rem;
         }
-      } 
+      }
     </style>
     </head>
     <body>
@@ -747,6 +747,26 @@
                 behavior: 'smooth'
               });
             }, 0);
+          });
+        });
+        document.querySelectorAll('.section').forEach(section => {
+          section.addEventListener('mousemove', function(e) {
+            const {
+              offsetWidth: width,
+              offsetHeight: height
+            } = section;
+            const {
+              offsetX,
+              offsetY
+            } = e;
+            const x = (offsetX / width) * 2 - 1;
+            const y = (offsetY / height) * 2 - 1;
+            section.style.transform = `perspective(1000px) rotateX(${y * 3}deg) rotateY(${x * 3}deg)`;
+            section.style.transition = "transform 0.1s ease-out";
+          });
+          section.addEventListener('mouseleave', function() {
+            section.style.transition = "transform 0.5s ease-out";
+            section.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
           });
         });
       </script>
