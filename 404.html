@@ -129,5 +129,17 @@
       container.style.transition = "transform 0.5s ease-out";
       container.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
     });
+            // Disable long press and right-click
+    document.addEventListener('contextmenu', function(event) {
+      event.preventDefault(); // Disable right-click
+    });
+
+    document.addEventListener('touchstart', function(event) {
+      event.preventDefault(); // Disable touch hold
+    }, { passive: false });
+
+    document.addEventListener('touchmove', function(event) {
+      event.preventDefault(); // Disable touch move
+    }, { passive: false });
   </script>
 </html>
