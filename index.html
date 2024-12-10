@@ -667,24 +667,44 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
     });
 
-    // Prevent mouse and touch events on links and buttons
-    document.addEventListener('mousedown', function(e) {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault();
-        }
-    });
-    document.addEventListener('touchstart', function(e) {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault();
-        }
+    // Prevent long press on mobile devices (touchstart and touchend)
+    let touchTimeout;
+    const preventLongPress = (event) => {
+        // Start a timer to detect long press
+        touchTimeout = setTimeout(() => {
+            event.preventDefault();  // Prevent long press behavior (like context menu or touch-hold)
+        }, 500);  // 500ms threshold for long press
+    };
+
+    const clearTouchTimeout = () => {
+        clearTimeout(touchTimeout);  // Clear the timeout if it's a regular tap (quick touch)
+    };
+
+    // Prevent touch events on links and buttons for long press
+    document.querySelectorAll('button, a').forEach(element => {
+        element.addEventListener('touchstart', preventLongPress);  // Detect long press on touchstart
+        element.addEventListener('touchend', clearTouchTimeout);  // Clear timeout on touchend
     });
 
-    // Prevent right-click on links
+    // Prevent right-click on links (for desktop and mobile)
     const links = document.querySelectorAll("a");
     links.forEach(link => {
         link.addEventListener("contextmenu", (event) => {
             event.preventDefault();
         });
+    });
+
+    // Prevent mouse and touch events on links and buttons (regular behavior)
+    document.addEventListener('mousedown', function(e) {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener('touchstart', function(e) {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+            e.preventDefault();
+        }
     });
 
     // Prevent F12 and Ctrl+Shift+I (developer tools)
@@ -729,29 +749,6 @@ document.addEventListener("DOMContentLoaded", () => {
         sessionStorage.setItem('getStartedClicked', 'true');
     });
 
-    // Prevent long press (touchstart) and allow regular tap behavior
-    let touchTimeout;
-
-    document.querySelectorAll('button').forEach(button => {
-        button.addEventListener('touchstart', function(event) {
-            // Start a timer to detect long press
-            touchTimeout = setTimeout(function() {
-                // Prevent long press behavior (like context menu or long press)
-                event.preventDefault();
-            }, 500); // 500ms threshold for long press
-        });
-
-        button.addEventListener('touchend', function(event) {
-            // Clear the timeout if it's a regular tap (quick touch)
-            clearTimeout(touchTimeout);
-        });
-
-        // Ensure the button's regular tap functionality still works
-        button.addEventListener('click', function(event) {
-            console.log("Button tapped!");
-        });
-    });
-
     // Scroll behavior for page load
     window.addEventListener('beforeunload', () => {
         document.documentElement.style.scrollBehavior = 'auto';
@@ -767,7 +764,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 0);
     });
 
-    // Old JavaScript for additional functionality (as per your original code)
+    // Additional old functionalities (example toggle functionality)
     const toggleBtns = document.querySelectorAll('.toggle-btn');
     toggleBtns.forEach(btn => {
         btn.addEventListener('click', (event) => {
@@ -785,7 +782,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
-    </script>
+ </script>
 </body>
 </html>
