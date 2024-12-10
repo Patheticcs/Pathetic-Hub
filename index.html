@@ -354,22 +354,27 @@
       footer {
         background: rgba(0, 0, 0, .85);
         color: var(--white);
-        text-align: center;
+        width: 100%;
         height: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column
+        padding: 0 20px;
       }
 
       footer p {
-        font-size: 1rem
+        font-size: 1rem;
+        margin: 0;
       }
 
       footer a {
         text-decoration: none;
         color: var(--highlight);
-        font-weight: 700
+        font-weight: 700;
+      }
+
+      .footer-link {
+        text-decoration: none;
       }
 
       ul.button-container li {
@@ -614,11 +619,11 @@
       </section>
       <section id="games">
         <div class="services-container">
-<div class="section pcrblx">
-  <h3>UNBLOCKED GAMES</h3>
-  <p>Play Roblox and Minecraft UNBLOCKED!</p>
-  <a href="https://pathetic-games.vercel.app/" class="button">Enter</a>
-</div>
+          <div class="section pcrblx">
+            <h3>UNBLOCKED GAMES</h3>
+            <p>Play Roblox and Minecraft UNBLOCKED!</p>
+            <a href="https://pathetic-games.vercel.app/" class="button">Enter</a>
+          </div>
       </section>
       <section id="about" class="about">
         <h2>About Us</h2>
@@ -626,6 +631,7 @@
       </section>
       <footer>
         <p>2024 Pathetic. All Rights Reserved.</p>
+        <a href="/404.html" class="footer-link">‎ ‎ ‎ 404 Page</a>
       </footer>
       <script>
         document.addEventListener("DOMContentLoaded", () => {
