@@ -181,6 +181,22 @@
         opacity: 1;
       }
 
+      .roblox-button:hover {
+        box-shadow: 0 0 15px rgba(255, 255, 255, .8), 0 0 15px rgba(255, 255, 255, .7);
+        width: 150px;
+        height: 35px;
+      }
+
+      .roblox-button:hover img {
+        transform: translateX(-40px);
+        width: 18px;
+        height: 18px;
+      }
+
+      .roblox-button:hover .button-text {
+        opacity: 1;
+      }
+
       .welcome {
         position: relative;
         height: 100vh;
@@ -425,11 +441,11 @@
           height: 10px;
         }
 
-      .services-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 10px;
-  }
+        .services-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
 
         .section {
           height: 190px;
@@ -532,6 +548,10 @@
             <button class="button youtube-button" onclick='window.open("https://www.youtube.com/@patheticcs","_blank")'>
               <img src="https://www.iconpacks.net/icons/1/free-youtube-icon-123-thumb.png" alt="YouTube" class="youtube-icon" />
               <span class="button-text">YouTube</span>
+            </button>
+            <button class="button roblox-button" onclick='window.open("https://www.roblox.com/users/2625446554/profile","_blank")'>
+              <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/0/e/e/0eeeb19633422b1241f4306419a0f15f39d58de9.png" alt="Roblox" class="roblox-icon" />
+              <span class="button-text">Roblox</span>
             </button>
           </div>
         </div>
