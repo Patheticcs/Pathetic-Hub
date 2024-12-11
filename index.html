@@ -425,11 +425,17 @@
           height: 10px;
         }
 
-        .services-container {
-          max-width: 1000px;
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-          gap: 10px;
-        }
+      .services-container {
+        display: grid;
+        gap: 20px;
+        padding: 0 40px;
+        justify-items: center;
+        align-items: center;
+        z-index: 2;
+        max-width: 1000px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        box-sizing: border-box;
+      }
 
         .section {
           height: 190px;
