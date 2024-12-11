@@ -61,14 +61,12 @@
       .button {
         margin: 10px 0;
         padding: 16px 20px;
-
         font-size: 1.2rem;
         background-color: rgba(0, 0, 0, .5);
         box-shadow: 0 0px 25px rgba(255, 255, 255, 0.6);
         border: none;
         color: white;
         border-radius: 30px;
-
         cursor: pointer;
         transition:
           transform 0.3s ease,
@@ -154,56 +152,47 @@
         <source src="https://r2.ammo.lol/a8f43fff-1f64-4f72-bac8-491af0f46638.mp4" type="video/mp4"> Your browser does not support the video tag.
       </video>
       <section id="welcome" class="welcome">
-    <a class="button" href="https://www.vidbinge.com/" target="_blank" rel="noopener noreferrer" aria-label="https://www.vidbinge.com/">Vid Bing</a>
-    <a class="button" href="https://movies.levrx.lol/" target="_blank" rel="noopener noreferrer" aria-label="https://movies.levrx.lol/">LEVRX</a>
+        <a class="button" href="https://www.vidbinge.com/" target="_blank" rel="noopener noreferrer" aria-label="https://www.vidbinge.com/">Vid Bing</a>
+        <a class="button" href="https://pstream.org/" target="_blank" rel="noopener noreferrer" aria-label="https://pstream.org/">PSTREAM</a>
         <button class="button back" onclick="window.location.href='/'" aria-label="Navigate Back">Home</button>
       </section>
       <script>
         function replaceWithLink(url) {
           window.location.href = url;
         }
-
         document.addEventListener('contextmenu', function(e) {
           e.preventDefault();
         });
-
         document.addEventListener('mousedown', function(e) {
           if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault(); 
+            e.preventDefault();
           }
         });
-
         document.addEventListener('touchstart', function(e) {
           if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-            e.preventDefault(); 
+            e.preventDefault();
           }
         });
-
         document.addEventListener("DOMContentLoaded", () => {
-
           const links = document.querySelectorAll("a");
-
           links.forEach(link => {
             link.addEventListener("contextmenu", (event) => {
-              event.preventDefault(); 
+              event.preventDefault();
             });
           });
         });
-
         document.querySelectorAll('header nav ul li a').forEach(anchor => {
           anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1); 
+            const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-
             targetElement.scrollIntoView({
               behavior: 'smooth',
-              block: 'start' 
+              block: 'start'
             });
-
             setTimeout(() => {
               document.querySelector('header').classList.add('visible');
-            }, 500); 
+            }, 500);
           });
         });
         document.addEventListener("keydown", function(event) {
@@ -216,8 +205,8 @@
         });
         document.querySelector('.down-button').addEventListener('click', function() {
           window.scrollBy({
-            top: window.innerHeight, 
-            behavior: 'smooth' 
+            top: window.innerHeight,
+            behavior: 'smooth'
           });
         });
       </script>
